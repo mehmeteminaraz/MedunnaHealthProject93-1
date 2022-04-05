@@ -1,6 +1,9 @@
 package utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,8 +17,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
+
+import static io.restassured.RestAssured.given;
 
 public class Driver {
     //create a driver instance
@@ -28,6 +35,25 @@ public class Driver {
     //We can use Driver class with different browser(chrome,firefox,headless)
     private Driver() {
         //we don't want to create another abject. Singleton pattern
+    }
+
+    //Authorization
+    public static String generateToken() {
+        String username = "Team93Admin";
+        String password = "Batch44+";
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("username", username);
+        map.put("password",password);
+        map.put("rememberme","true");
+
+        String endPoint = "https://www.medunna.com/api/authenticate";
+
+        Response response1 = given().contentType(ContentType.JSON).body(map).when().post(endPoint);
+
+        JsonPath token = response1.jsonPath();
+
+        return token.getString("id_token");
     }
 
     //to initialize the driver we create a static method

@@ -1,61 +1,79 @@
 package stepdefinitions.UIStepDefinitions;
 
-
 import com.github.javafaker.Faker;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.interactions.Actions;
 import pages.RegistrationPage;
-import utilities.ConfigurationReader;
+import pojos.Registrant;
 import utilities.Driver;
+
+import static utilities.WriteToTxt.saveRegistrantData;
 
 public class RegistrationStepDefinition {
 
-// -------------------------- KÜBRA -----------------------------
-    RegistrationPage rp=new RegistrationPage();
-    Faker faker;
-    Actions actions;
+    Registrant registrant = new Registrant();
+    Faker faker = new Faker();
+    RegistrationPage rp = new RegistrationPage();
 
-    @Given("Kullanıcı siteye gider {string}")
-    public void kullanıcıSiteyeGider(String medunnaUrl){
-        Driver.getDriver().get(ConfigurationReader.getProperty(medunnaUrl));
+    @Given("kullanici SNN girer {string}")
+    public void kullanici_snn_girer(String ssn) {
+        ssn = faker.idNumber().ssnValid();
+        registrant.setSSN(ssn);
+
+        Driver.waitAndSendText(rp.ssnTextBox, ssn);
     }
 
-    @When("Sayfaya gidildiği ana sayfadaki WELCOME TO MEDUNNA texti ile doğrulanır")
-    public void sayfaya_gidildiği_ana_sayfadaki_welcome_to_medunna_texti_ile_doğrulanır() {
-        Assert.assertTrue(rp.anaSayfaWelcomeToMedunnaYazısı.isDisplayed());
+    @Given("kulanici firstname ve lastname girer {string} ve {string}")
+    public void kulanici_firstname_ve_lastname_girer_ve(String firstname, String lastname) {
+        firstname = faker.name().firstName();
+        lastname = faker.name().lastName();
+
+        registrant.setFirstName(firstname);
+        registrant.setLastName(lastname);
+
+        Driver.waitAndSendText(rp.firstNameTextBox, firstname);
+        Driver.waitAndSendText(rp.lastNameTextBox, lastname);
     }
-    @When("Kullanıcı sayfaya giriş için CONTACT linkinin sağında bulunan kullanıcı girişi linkine tıklar")
-    public void kullanıcı_sayfaya_giriş_için_contact_linkinin_sağında_bulunan_kullanıcı_girişi_linkine_tıklar() {
-        rp.anaSayfaKullanıcıİkonu.click();
-    }
-    @Then("Kullanıcı kayıt oluşturabilmek için Register linkine tıklar")
-    public void kullanıcı_kayıt_oluşturabilmek_için_register_linkine_tıklar() {
-        rp.registerLinki.click();
-    }
-    @Then("Kayıt sayfasında olunduğu Registration yazısı ile doğrulanır")
-    public void kayıt_sayfasında_olunduğu_registration_yazısı_ile_doğrulanır() {
-        Assert.assertTrue(rp.registerYazısı.isDisplayed());
-    }
-    @And("Kullanıcı SSN textbox'ına rakamlardan oluşan bir {string} numarası girmeli")
-    public void kullanıcıSSNTextboxInaRakamlardanOluşanBirNumarasıGirmeli(String ssn) {
-        rp.ssnTextBox.sendKeys(ConfigurationReader.getProperty(ssn));
-    }
-    @Then("Girilecek olan SSN numarası dokuzu geçmemeli ve dokuzun altında olmamalı")
-    public void girilecek_olan_ssn_numarası_dokuzu_geçmemeli_ve_dokuzun_altında_olmamalı() {
+
+    @Given("kullanici username girer {string}")
+    public void kullanici_username_girer(String username) {
+        username = registrant.getFirstName() + registrant.getLastName();
+        registrant.setUsername(username);
+
+        Driver.waitAndSendText(rp.usernameTextBox,username);
 
     }
-    @Then("Kullanıcı SSN numarasının üçüncü ve beşinci rakamından sonra - koymalı")
-    public void kullanıcı_ssn_numarasının_üçüncü_ve_beşinci_rakamından_sonra_koymalı() {
 
+    @Then("kullanici email girer {string}")
+    public void kullanici_email_girer(String email) {
+        email = faker.internet().emailAddress();
+        registrant.setEmail(email);
+
+        Driver.waitAndSendText(rp.emailTextBox,email);
     }
-    @And("{string} numarası girildğinde Your SSN is invalid text'inin görünürlüğü test edilmeli")
-    public void numarasıGirildğindeYourSSNIsInvalidTextIninGörünürlüğüTestEdilmeli(String GeçersizSSN) {
-        rp.ssnTextBox.clear();
-        rp.ssnTextBox.sendKeys(ConfigurationReader.getProperty(GeçersizSSN));
-        Assert.assertTrue(rp.yourSsnIsInvalidYazısı.isDisplayed());
+
+    @Then("kullanici password girer {string}")
+    public void kullanici_password_girer(String password) {
+
+        password = faker.internet().password(8, 20,true,true);
+
+        registrant.setPassword(password);
+
+        Driver.waitAndSendText(rp.firstPasswordTextBox, password);
+        Driver.waitAndSendText(rp.secondPasswordTextBox, password);
+    }
+
+    @Then("kullanicinin kayit yaptigini dogrula")
+    public void kullanicinin_kayit_yaptigini_dogrula() {
+        Driver.waitAndClick(rp.registerButton);
+
+        Driver.sleep(1000);
+        Assert.assertTrue(rp.toastContainerMassage.isDisplayed());
+    }
+
+    @Then("kayit olan kullanicinin datalarini kaydet")
+    public void kayit_olan_kullanicinin_datalarini_kaydet() {
+        saveRegistrantData(registrant);
     }
 }
