@@ -1,11 +1,14 @@
 Feature:Physician "Edit Inpatient" (Yatılı Tedavi) işlemleri yapabilmeli
 
+
+  Background:
+    Given Kullanıcı siteye gider "medunnaUrl"
+
   Scenario: Doktor"ID, start and end dates, description, created date
   appointment id, status, room and patient" bilgilerini görüntülüyebilmeli ve güncelenebilmeli
 
-  Given Doktor url'ye gider
-  And  Doktor url'ye ulastigini title'dan kontrol eder
-  And Doktor sayfanin sagindaki kullanici iconuna tiklar
+    When  Sayfaya gidildiği ana sayfadaki WELCOME TO MEDUNNA texti ile doğrulanır
+    And   Kullanıcı sayfaya giriş için CONTACT linkinin sağında bulunan kullanıcı girişi linkine tıklar
     And Doktor acilan menuden 'Sign In' e tiklar
   And Doktor kendi User Name ve passwordunu girip Sign In butonuna tiklar
   Then Doktor sag ust kosede kendi adini gorur
