@@ -11,86 +11,78 @@ public class RegistrationPage {
         PageFactory.initElements(Driver.getDriver(), this);
 
     }
-        //Mainpage>Kullanici Iconu>Register/SsnTexBox
-        @FindBy(xpath = "//*[@name='ssn']")
-        public WebElement ssnTextBox;
+// ------------------------ KÜBRA -----------------------------
+//Medunna>MainPage/Ana sayfadaki Welcome To Medunna yazısı
+@FindBy(xpath = "//*[@id=\"hero\"]/div/h1")
+public WebElement anaSayfaWelcomeToMedunnaYazısı;
 
-        @FindBy(xpath = "//*[contains(text(),'Registration Saved')]")
-        public WebElement successMessageToastContainer;
+    //Medunna>MainPage/Ana sayfada sağ üstte ki kullanıcı ikonnu
+    @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
+    public WebElement anaSayfaKullanıcıİkonu;
 
-        @FindBy(xpath = "//*[@name='firstName']")
-        public WebElement firstNameTextBox;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+    public WebElement registerLinki;
 
-        @FindBy(xpath = "//*[@name='lastName']")
-        public WebElement lastNameTextBox;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Register sayfasındaki Register yazısı
+    @FindBy(xpath = "//*[@id=\"register-title\"]/span")
+    public WebElement registerYazısı;
 
-        @FindBy(xpath = "//*[@name='username']")
-        public WebElement usernameTextBox;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki/SSN textbox
+    @FindBy(xpath = "//input[@id='ssn']")
+    public WebElement ssnTextBox;
 
-        @FindBy(xpath = "//*[@name='email']")
-        public WebElement emailTextBox;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki/firstname textbox
+    @FindBy(xpath = "//input[@id='firstName']")
+    public WebElement firstnameTextBox;
 
-        @FindBy(xpath = "//*[@name='firstPassword']")
-        public WebElement firstPasswordTextBox;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki/lastname textbox
+    @FindBy(xpath = "//input[@id='lastName']")
+    public WebElement lastnameTextBox;
 
-        @FindBy(xpath = "//*[@name='secondPassword']")
-        public WebElement secondPasswordTextBox;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki/username textbox
+    @FindBy(xpath = "//input[@id='username']")
+    public WebElement usernameTextBox;
 
-        @FindBy(xpath = "//*[@id='strengthBar']")
-        public WebElement strengthBar;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki/email textbox
+    @FindBy(xpath = "//input[@id='email']")
+    public WebElement emailTextBox;
 
-        @FindBy(xpath = "(//*[@class='point'])[1]")
-        public WebElement strengthPoint1;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki>SSN textbox/Geçerli bir SSN numarası girilmediğinde SSN textbox'ın altında çıkan uyarı yazısı
+    @FindBy(xpath = "//div[text()='Your SSN is invalid']")
+    public WebElement yourSsnIsInvalidYazısı;
 
-        @FindBy(xpath = "(//*[@class='point'])[2]")
-        public WebElement strengthPoint2;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki>SSN textbox/Herhangi bir SSN numarası girilmediğinde SSN textbox'ın altında çıkan uyarı yazısı
+    @FindBy(xpath = "//div[text()='Your SSN is required.']")
+    public WebElement yourSsnIsRequiredYazısı;
 
-        @FindBy(xpath = "(//*[@class='point'])[3]")
-        public WebElement strengthPoint3;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki>firstname textbox/Herhangi bir isim girilmediğinde firstname textbox'ın altında çıkan uyarı yazısı
+    @FindBy(xpath = "//div[text()='Your FirstName is required.']")
+    public WebElement yourFirstnameIsRequiredYazısı;
 
-        @FindBy(xpath = "(//*[@class='point'])[4]")
-        public WebElement strengthPoint4;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Herhangi bir soyisim girilmediğinde lastname textbox'ın altında çıkan uyarı yazısı
+    @FindBy(xpath = "//div[text()='Your LastName is required.']")
+    public WebElement yourLastnameIsRequiredYazısı;
 
-        @FindBy(xpath = "(//*[@class='point'])[5]")
-        public WebElement strengthPoint5;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Herhangi bir kullanıcı adı girilmediğinde username textbox'ın altında çıkan uyarı yazısı
+    @FindBy(xpath = "//div[text()='Your username is required.']")
+    public WebElement yourUsernameIsRequiredYazısı;
 
-        @FindBy(xpath = "//*[@id='register-submit']")
-        public WebElement registerButton;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Geçerli bir kullanıcı adı girilmediğinde username textbox'ın altında çıkan uyarı yazısı
+    @FindBy(xpath = "//div[text()='Your username is invalid.']")
+    public WebElement yourUsernameIsInvalidYazısı;
 
-        @FindBy(xpath = "//*[contains(text(), 'Registration Saved')]")
-         public WebElement toastContainerMassage;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Email adresinde "@" ve "." girilmediğinde email textbox'ın altında çıkan uyarı yazısı
+    @FindBy(xpath = "//div[text()='This field is invalid']")
+    public WebElement thisFieldIsInvalidYazısı;
 
-        @FindBy(xpath = "//*[@id='register-title']")
-        public WebElement registrationTitle;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Herhangi bir email adresi girilmediğinde email textbox'ın altında çıkan uyarı yazısı
+    @FindBy(xpath = "//div[text()='Your email is required.']")
+    public WebElement yourEmailIsRequiredYazısı;
 
-        @FindBy(xpath = "(//*[@class='invalid-feedback'])[1]")
-        public WebElement invalidSsnFeedback;
+    //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Email adresi 5 karakterden az girildiği zaman email textbox'ın altında çıkan uyarı yazısı
+    @FindBy(xpath = "//*[@id=\"register-form\"]/div[5]/div")
+    public WebElement yourEmailIsRequiredToBeAtLeastFiveCharactersYazısı;
 
-        @FindBy(xpath = "//*[@class='invalid-feedback']")
-        public WebElement invalidfeedback;
-
-        @FindBy(xpath = "(//*[@class='invalid-feedback'])[2]")
-        public WebElement invalidFirstNameFeedback;
-
-        @FindBy(xpath = "(//*[@class='invalid-feedback'])[3]")
-        public WebElement invalidLastNameFeedback;
-
-        @FindBy(xpath = "(//*[@class='invalid-feedback'])[4]")
-        public WebElement invalidUsernameFeedback;
-
-        @FindBy(xpath = "(//*[@class='invalid-feedback'])[5]")
-        public WebElement invalidEmailFeedback;
-
-        @FindBy(xpath = "(//*[@class='invalid-feedback'])[6]")
-        public WebElement invalidPassword1Feedback;
-
-        @FindBy(xpath = "(//*[@class='invalid-feedback'])[7]")
-        public WebElement invalidPassword2Feedback;
-
-        @FindBy(xpath = "(//*[@class='invalid-feedback'])[6]")
-        public WebElement invalidPasswordFeedback;
-
-        @FindBy(xpath = "(//*[@class='invalid-feedback'])")
-        public WebElement generalInvalidFeedback;
 
 }
