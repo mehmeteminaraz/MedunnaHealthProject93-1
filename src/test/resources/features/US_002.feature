@@ -1,49 +1,49 @@
-Feature: US02 Kayıt olmak için email and username bilgileri girilebilmelidir.
+Feature: US02 Kayit olmak icin email and username bilgileri girilebilmelidir.
 
   Background:
-    Given Kullanıcı siteye gider "medunnaUrl"
+    Given Kullanici siteye gider "medunnaUrl"
 
   Scenario: TC01 Herhangi bir karakter içeren ve boş bırakılamayan geçerli bir "Username" olmalıdır
 
-    When  Sayfaya gidildiği ana sayfadaki WELCOME TO MEDUNNA texti ile doğrulanır
-    And   Kullanıcı sayfaya giriş için CONTACT linkinin sağında bulunan kullanıcı girişi linkine tıklar
-    Then  Kullanıcı kayıt oluşturabilmek için Register linkine tıklar
-    And   Kayıt sayfasında olunduğu Registration yazısı ile doğrulanır
-    And   Kullanıcı geçerli bir ssn numarası girmeli
-    Then  Firstname textboxına geçerli bir isim girilmeli
-    Given Lastname textboxına geçerli bir soyisim girilmeli
-    And   Username textboxı boş bırakıldığında çıkan Your username is required textinin görünürlüğü test edilmeli
-    Then  Boşluk bırakılarak girilen bir username in geçersiz olduğu Your username is invalid textinin görünürlüğü ile test edilmeli
-    And   Username textboxına geçerli bir kullanıcı adı girilmeli
+    When  Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir
+    And   Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar
+    Then  Kullanici kayıt olusturabilmek icin Register linkine tiklar
+    And   Kayit sayfasinda olundugu Registration yazisi ile dogrulanir
+    Then  Kullanici gecerli bir ssn numarasi girmeli
+    Then  Firstname textboxina gecerli bir isim girilmeli
+    Then  Lastname textboxina gecerli bir soyisim girilmeli
+    And   Username textboxi bos birakildiginda cikan Your username is required textinin gorunurlugu test edilmeli
+    Then  Bosluk birakilarak girilen bir username in gecersiz oldugu Your username is invalid textinin gorunurlugu ile test edilmeli
+    And   Username textboxina gecerli bir kullanici adı girilmeli
 
   Scenario Outline: TC02 Email adresi "@" ve "." karakterleri olmadan doldurulamamalıdır.
 
-    When  Sayfaya gidildiği ana sayfadaki WELCOME TO MEDUNNA texti ile doğrulanır
-    And   Kullanıcı sayfaya giriş için CONTACT linkinin sağında bulunan kullanıcı girişi linkine tıklar
-    Then  Kullanıcı kayıt oluşturabilmek için Register linkine tıklar
-    And   Kayıt sayfasında olunduğu Registration yazısı ile doğrulanır
-    And   Kullanıcı geçerli bir ssn numarası girmeli
-    Then  Firstname textboxına geçerli bir isim girilmeli
-    Given Lastname textboxına geçerli bir soyisim girilmeli
-    And   Username textboxına geçerli bir kullanıcı adı girilmeli
-    Then  Email textboxına "<işaretler>" @ ve . işareti içermeyen bir adres girildiğinde çıkan This field is invalid textin görünürlüğü test edilmeli
-    And   Email textboxına beş karakterden az olucak şekilde email adresi yazıldığında çıkan Your email is required to be at least five characters textin görünürlüğü test edilmeli
+    When  Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir
+    And   Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar
+    Then  Kullanici kayıt olusturabilmek icin Register linkine tiklar
+    And   Kayit sayfasinda olundugu Registration yazisi ile dogrulanir
+    Then  Kullanici gecerli bir ssn numarasi girmeli
+    Then  Firstname textboxina gecerli bir isim girilmeli
+    Then  Lastname textboxina gecerli bir soyisim girilmeli
+    And   Username textboxina gecerli bir kullanici adı girilmeli
+    Then  Email textboxina "<isaretler>" @ ve . isareti icermeyen bir adres girildiginde cikan This field is invalid textin gorunurlugu test edilmeli
+    And   Email textboxina bes karakterden az olucak sekilde email adresi yazildiginda cikan Your email is required to be at least five characters textin gorunurlugu test edilmeli
 
     Examples:
-      | işaretler          |
+      | isaretler          |
       |qakubrahotmail.com  |
       |qakubra@hotmailcom |
       |qakubrahotmailcom   |
 
-  Scenario: TC03 e-mail boş bırakılamaz.
+  Scenario: TC03 e-mail bos birakilamaz
 
-    When  Sayfaya gidildiği ana sayfadaki WELCOME TO MEDUNNA texti ile doğrulanır
-    And   Kullanıcı sayfaya giriş için CONTACT linkinin sağında bulunan kullanıcı girişi linkine tıklar
-    Then  Kullanıcı kayıt oluşturabilmek için Register linkine tıklar
-    And   Kayıt sayfasında olunduğu Registration yazısı ile doğrulanır
-    And   Kullanıcı geçerli bir ssn numarası girmeli
-    Then  Firstname textboxına geçerli bir isim girilmeli
-    Given Lastname textboxına geçerli bir soyisim girilmeli
-    And   Username textboxına geçerli bir kullanıcı adı girilmeli
-    Then  Email textboxı boş bırakıldığında çıkan Your email is required textinin görünürlüğü test edilmeli
-    And   Email textboxına geçerli bir adres girilmeli
+    When  Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir
+    And   Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar
+    Then  Kullanici kayıt olusturabilmek icin Register linkine tiklar
+    And   Kayit sayfasinda olundugu Registration yazisi ile dogrulanir
+    Then  Kullanici gecerli bir ssn numarasi girmeli
+    Then  Firstname textboxina gecerli bir isim girilmeli
+    Then  Lastname textboxina gecerli bir soyisim girilmeli
+    And   Username textboxina gecerli bir kullanici adı girilmeli
+    Then  Email textboxi bos birakildiginda cikan Your email is required textinin gorunurlugu test edilmeli
+    And   Email textboxina gecerli bir adres girilmeli
