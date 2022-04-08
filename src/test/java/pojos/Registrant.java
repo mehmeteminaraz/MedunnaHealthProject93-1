@@ -2,31 +2,31 @@ package pojos;
 
 public class Registrant {
 
-    private String SSN;
+    private String login;
     private String firstName;
     private String lastName;
-    private String username;
+    private String SSN;
     private String email;
-    private String password;
+    private String authorities;
 
     public Registrant() {
     }
 
-    public Registrant(String SSN, String firstName, String lastName, String username, String email, String password) {
-        this.SSN = SSN;
+    public Registrant(String login, String firstName, String lastName, String SSN, String email, String authorities) {
+        this.login = login;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
-
-    public String getSSN() {
-        return SSN;
-    }
-
-    public void setSSN(String SSN) {
         this.SSN = SSN;
+        this.email = email;
+        this.authorities = authorities;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getFirstName() {
@@ -45,12 +45,12 @@ public class Registrant {
         this.lastName = lastName;
     }
 
-    public String getUsername() {
-        return username;
+    public String getSSN() {
+        return SSN;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setSSN(String SSN) {
+        this.SSN = SSN;
     }
 
     public String getEmail() {
@@ -61,23 +61,46 @@ public class Registrant {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getAuthorities() {
+        return authorities;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAuthorities(String authorities) {
+        this.authorities = authorities;
     }
 
     @Override
     public String toString() {
         return "Registrant{" +
-                "SSN='" + SSN + '\'' +
+                "login='" + login + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", username='" + username + '\'' +
+                ", SSN='" + SSN + '\'' +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
+                ", authorities='" + authorities + '\'' +
                 '}';
     }
+
+    /*{
+       "id": 43200,
+       "login": "doctorkubra",
+       "firstName": "Kübra",
+       "lastName": "P",
+       "ssn": "123-97-0123",
+       "email": "kubra1231@gmail.com",
+       "imageUrl": null,
+       "activated": true,
+       "langKey": "en",
+       "createdBy": "anonymousUser",
+       "createdDate": "2022-03-29T10:36:15.080262Z",
+       "lastModifiedBy": "team93admin",
+       "lastModifiedDate": "2022-03-29T10:53:48.171042Z",
+       "authorities": [
+           "ROLE_PHYSICIAN"
+       ]
+   }
+   */
+
+
+
 }
