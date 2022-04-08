@@ -18,16 +18,16 @@ public class MedunnaPage {
 
     //Medunna>MainPage/Ana sayfadaki Welcome To Medunna yazısı
     @FindBy(xpath = "//*[@id=\"hero\"]/div/h1")
-    public WebElement anaSayfaWelcomeToMedunnaYazısı;
+    public WebElement anaSayfaWelcomeToMedunnaYazisi;
     //Medunna>MainPage/Ana sayfada sağ üstte ki kullanıcı ikonnu
     @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
-    public WebElement anaSayfaKullanıcıİkonu;
+    public WebElement anaSayfaKullaniciIkonu;
     //Medunna>MainPage>Kullanıcı ikonu>Register Linki
     @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
     public WebElement registerLinki;
     //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Register sayfasındaki Register yazısı
     @FindBy(xpath = "//*[@id=\"register-title\"]/span")
-    public WebElement registerYazısı;
+    public WebElement registerYazisi;
     //Medunna>MainPage>Kullanıcı ikonu>Register Linki/SSN textbox
     @FindBy(xpath = "//input[@id='ssn']")
     public WebElement ssnTextBox;
@@ -45,31 +45,31 @@ public class MedunnaPage {
     public WebElement emailTextBox;
     //Medunna>MainPage>Kullanıcı ikonu>Register Linki>SSN textbox/Geçerli bir SSN numarası girilmediğinde SSN textbox'ın altında çıkan uyarı yazısı
     @FindBy(xpath = "//div[text()='Your SSN is invalid']")
-    public WebElement yourSsnIsInvalidYazısı;
+    public WebElement yourSsnIsInvalidYazisi;
     //Medunna>MainPage>Kullanıcı ikonu>Register Linki>SSN textbox/Herhangi bir SSN numarası girilmediğinde SSN textbox'ın altında çıkan uyarı yazısı
     @FindBy(xpath = "//div[text()='Your SSN is required.']")
-    public WebElement yourSsnIsRequiredYazısı;
+    public WebElement yourSsnIsRequiredYazisi;
     //Medunna>MainPage>Kullanıcı ikonu>Register Linki>firstname textbox/Herhangi bir isim girilmediğinde firstname textbox'ın altında çıkan uyarı yazısı
     @FindBy(xpath = "//div[text()='Your FirstName is required.']")
-    public WebElement yourFirstnameIsRequiredYazısı;
+    public WebElement yourFirstnameIsRequiredYazisi;
     //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Herhangi bir soyisim girilmediğinde lastname textbox'ın altında çıkan uyarı yazısı
     @FindBy(xpath = "//div[text()='Your LastName is required.']")
-    public WebElement yourLastnameIsRequiredYazısı;
+    public WebElement yourLastnameIsRequiredYazisi;
     //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Herhangi bir kullanıcı adı girilmediğinde username textbox'ın altında çıkan uyarı yazısı
     @FindBy(xpath = "//div[text()='Your username is required.']")
-    public WebElement yourUsernameIsRequiredYazısı;
+    public WebElement yourUsernameIsRequiredYazisi;
     //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Geçerli bir kullanıcı adı girilmediğinde username textbox'ın altında çıkan uyarı yazısı
     @FindBy(xpath = "//div[text()='Your username is invalid.']")
-    public WebElement yourUsernameIsInvalidYazısı;
+    public WebElement yourUsernameIsInvalidYazisi;
     //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Email adresinde "@" ve "." girilmediğinde email textbox'ın altında çıkan uyarı yazısı
     @FindBy(xpath = "//div[text()='This field is invalid']")
-    public WebElement thisFieldIsInvalidYazısı;
+    public WebElement thisFieldIsInvalidYazisi;
     //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Herhangi bir email adresi girilmediğinde email textbox'ın altında çıkan uyarı yazısı
     @FindBy(xpath = "//div[text()='Your email is required.']")
-    public WebElement yourEmailIsRequiredYazısı;
+    public WebElement yourEmailIsRequiredYazisi;
     //Medunna>MainPage>Kullanıcı ikonu>Register Linki/Email adresi 5 karakterden az girildiği zaman email textbox'ın altında çıkan uyarı yazısı
     @FindBy(xpath = "//*[@id=\"register-form\"]/div[5]/div")
-    public WebElement YourEmailIsRequiredToBeAtLeastFiveCharactersYazısı;
+    public WebElement yourEmailIsRequiredToBeAtLeastFiveCharactersYazisi;
 
     //-----------------US05-Sezen------------------------------
 
@@ -459,6 +459,122 @@ public class MedunnaPage {
     @FindBy(xpath = "//span[text()='My Appointments']")
     public WebElement myAppointmentsElementi;
 
+    //*************** US_011 ****************************
+
+    //*********************************   MAIN PAGE ************************************
+
+    // contact@medunna.com ==> main page
+    @FindBy(xpath = "//a[@href='mailto:contact@medunna.com']")
+    public WebElement ContactMedunnaCom;
+
+    // contact@medunna.com  IMG ==> main page
+    @FindBy(xpath = "(//i[@class='bi bi-envelope'])[1]")
+    public WebElement ContactMedunnaComImg;
+
+    // contact number Main Page
+    @FindBy(xpath = "(//div[@class='contact-info d-flex align-items-center'])[2]")
+    public WebElement ContactNumber;
+
+    // twitter image main page header
+    @FindBy(xpath = "(//a[@class='twitter'])[1]")
+    public WebElement twitterImageTop;
+
+    // facebook image main page header
+    @FindBy(xpath = "(//a[@class='facebook'])[1]")
+    public WebElement facebookImageTop;
+
+    // instegram image main page header
+    @FindBy(xpath = "(//a[@class='instagram'])[1]")
+    public WebElement instegramImageTop;
+
+    // linkedin image main page header
+    @FindBy(xpath = "(//a[@class='linkedin'])[1]")
+    public WebElement linkedInImageTop;
+
+        //************ US_001 ***************
+  /*
+  Registration should be available using SSN, Firstname and Lastname
+There should be api and DB validation
+   */
+
+    // MainPage>>SignIn&Register dropdown item
+    @FindBy(xpath = "//li[@id='account-menu']")
+    public WebElement accountMenuDropdownElement;
+
+    // MainPage>>SignIn&Register Dropdown item/SignIn
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[1]")
+    public WebElement SignInIconElement;
+
+    // MainPage >>>>SignIn&Register Dropdown item/Registration
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+    public WebElement RegistrationIconElement;
+
+    // MainPage>>Sign In/ Usernamebox
+    @FindBy(xpath = "//input[@name='username']")
+    public WebElement usrnameBoxSignInElement;
+
+
+    // MainPage>>Sign In/ Passwordbox
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement passwordBoxSignInElement;
+
+    // MainPage>>Sign In/ remembermebox
+    @FindBy(xpath = "//input[@name='rememberMe']")
+    public WebElement rememberMeBoxSignInElement;
+
+    // MainPage>>Sign In/ sign in
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement SignInElement;
+
+
+    //MainPage>>SignIn as a Doctor>>My Pages
+    @FindBy(xpath = "//li[@id='entity-menu']")
+    public WebElement myPagesElement;
+
+    //MainPage>>SignIn as a Doctor>>My Pages/My Appointments
+    @FindBy(xpath = "//span[text()='My Appointments']")
+    public WebElement myAppoitnmentsPagesElement;
+
+    //MainPage>>SignIn as a Doctor>>My Pages>>My Appointments page/ Appointments header word
+    @FindBy(xpath = "//h2[@id='appointment-heading']")
+    public WebElement AppoitnmentsHeaderWordElement;
+
+    //MainPage>>SignIn as a Doctor>>My Pages>>My Appointments page/ date from...
+    @FindBy(xpath = "//input[@name='fromDate']")
+    public WebElement fromDateBoxElement;
+
+    //MainPage>>SignIn as a Doctor>>My Pages>>My Appointments page/ date ... to
+    @FindBy(xpath = "//input[@name='toDate']")
+    public WebElement toDateBoxElement;
+
+    //Doctor page>>My Appointments/ status>>Pending
+    @FindBy(xpath = "//*[@span='PENDING']")
+    public WebElement pendingYazisiElement;
+
+    //Doctor page>>My Appointments/ status>>UNAPPROVED
+    @FindBy(xpath = "//*[@span='UNAPPROVED']")
+    public WebElement UnapprovedYazisiElement;
+
+    //Doctor page>>My Appointments/ status>>COMPLETED
+    @FindBy(xpath = "//*[@span='COMPLETED']")
+    public WebElement CompletedYazisiElement;
+
+    //Doctor page>>My Appointments/ status>>CANCELLED
+    @FindBy(xpath = "//*[@span='CANCELLED']")
+    public WebElement CancelledYazisiElement;
+
+    //Doctor page>>My Appointments/ status>>Edit icon
+    @FindBy(xpath = "//*[@span='Edit']")
+    public WebElement EditIconElement;
+
+    //Doctor page>>My Appointments>>Edit/Anamnesis box
+    @FindBy(xpath = "//*[@span='Anamnesis']")
+    public WebElement AnamnesisBoxElement;
+
+    //Doctor page>>My Appointments>>Edit/Treatment box
+    @FindBy(xpath = "//*[@span='Treatment']")
+    public WebElement TreatmentBoxElement;
+
     //-------------------US014 Locaten Onur--------------------------
 
       // Main Page>Kullanici iconu
@@ -467,31 +583,83 @@ public class MedunnaPage {
 
     // Main Page>Kullanici iconu>Sign In
     @FindBy(xpath = "(//a[@role='menuitem'])[1]")
-    public WebElement signId;
+    public WebElement signInlink;
 
     // Main Page>Kullanici iconu>Sign In>User Name
     @FindBy(xpath = "//input[@name='username']")
     public WebElement userName;
 
-    // Main Page>Kullanici iconu>Sign In>User Name
+    // Main Page>Kullanici iconu>Sign In>Password
     @FindBy(xpath = "//input[@name='password']")
     public WebElement passWord;
 
+    // Main Page>Kullanici iconu>Sign In>sign in
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signIn;
+
+    // Main Page>Kullanici iconu>Sign In>Doktor text
+    @FindBy(xpath = "//*[@id=\"account-menu\"]/a")
+    public WebElement recepaltinkaya;
+
     // Doctor Page>My pages
-    @FindBy(xpath = "//li[@id='entity-menu']")
-    public WebElement mayPages;
+    @FindBy(xpath = "//*[@id=\"entity-menu\"]")
+    public WebElement myPages;
 
     // Doctor Page>My pages>My Inpatients
     @FindBy(xpath = "(//a[@role='menuitem'])[3]")
     public WebElement myInpatients;
 
-    // Doctor Page>My pages>My Inpatients>Id (For dongu ile digerlerine ulas)
+    // Doctor Page>My pages>My Inpatients>inpatients From Text Box
+    @FindBy(xpath = "//input[@id='fromDate']")
+    public WebElement inpatientsFromTextBox;
+
+    // Doctor Page>My pages>My Inpatients>inpatients to Text Box
+    @FindBy(xpath = "//input[@id='fromDate']")
+    public WebElement inpatientsToTextBox;
+
+    // Doctor Page>My pages>My Inpatients>Id )
     @FindBy(xpath = "//tbody//tr[2]//td[1]")
     public WebElement inpatientId;
 
+    // Doctor Page>My pages>My Inpatients>start date
+    @FindBy(xpath = "//tbody//tr[2]//td[2]")
+    public WebElement inpatientStart;
+
+    // Doctor Page>My pages>My Inpatients>end date
+    @FindBy(xpath = "//tbody//tr[2]//td[3]")
+    public WebElement inpatientEnd;
+
+    // Doctor Page>My pages>My Inpatients>status
+    @FindBy(xpath = "//tbody//tr[3]//td[4]")
+    public WebElement inpatientstatus;
+
+    // Doctor Page>My pages>My Inpatients>Description
+    @FindBy(xpath = "//tbody//tr[2]//td[5]")
+    public WebElement inpatientDescription;
+
+    // Doctor Page>My pages>My Inpatients>Created Date
+    @FindBy(xpath = "(//*[text()='30/03/22 22:10'])[2]")
+    public WebElement inpatientCreatedDate;
+
+    // Doctor Page>My pages>My Inpatients>Room
+    @FindBy(xpath = "//tbody//tr[2]//td[7]")
+    public WebElement inpatientRoom;
+
+    // Doctor Page>My pages>My Inpatients>Appointment
+    @FindBy(xpath = "//tbody//tr[2]//td[8]")
+    public WebElement inpatientAppointment;
+
+    // Doctor Page>My pages>My Inpatients>Patient
+    @FindBy(xpath = "//tbody//tr[2]//td[9]")
+    public WebElement inpatientPatient;
+
     // Doctor Page>My pages>My Inpatients>Edit Button
-    @FindBy(xpath = "(//div[@class='btn-group flex-btn-group-container'])[2]")
+    @FindBy(xpath = "(//div[@class='btn-group flex-btn-group-container'])[3]")
     public WebElement editButton;
+
+    // Doctor Page>My pages>My Inpatients>Edit Button
+    @FindBy(xpath = "(//div[@class='btn-group flex-btn-group-container'])[1]")
+    public WebElement editButton1;
 
     // Doctor Page>My pages>My Inpatients>Edit Button>id Textbox
     @FindBy(xpath = "//input[@name='id']")
@@ -512,6 +680,10 @@ public class MedunnaPage {
     // Doctor Page>My pages>My Inpatients>Edit Button>createdDate Textbox
     @FindBy(xpath = "//input[@name='createdDate']")
     public WebElement createdDateTextbox;
+
+    // Doctor Page>My pages>My Inpatients>Edit Button>createdDate Textbox
+    @FindBy(xpath = "(//input[@value='2022-03-30T22:10'])[2]")
+    public WebElement createdDateTextboxDate;
 
     // Doctor Page>My pages>My Inpatients>Edit Button>appointment Textbox
     @FindBy(xpath = "//select[@id='in-patient-appointment']")

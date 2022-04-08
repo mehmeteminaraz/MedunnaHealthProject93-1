@@ -217,6 +217,22 @@ public class Driver {
             e.printStackTrace();
         }
     }
+    public static void wait1(int secs) {
+
+        try {
+            Thread.sleep(200 * secs);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        } catch (StaleElementReferenceException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
@@ -282,6 +298,7 @@ public class Driver {
     public static void clickWithJS(WebElement element) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+
     }
 
     /**

@@ -36,9 +36,7 @@ select * from jhi_user</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="c5f23f09-d99d-474d-aae5-cf71e06e4c34" object-ref="consoles/Medunna_Database" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="c5f23f09-d99d-474d-aae5-cf71e06e4c34" />
