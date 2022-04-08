@@ -297,6 +297,45 @@ public class MedunnaPage {
     @FindBy(xpath = "//a[@id='cancel-save']")
     public WebElement backAppointmentButton;
 
+    @FindBy(xpath = "//tbody//tr")
+    public List<WebElement> rawsList;
+    // Patient Control Text
+    @FindBy(xpath = "//h2//span[text()='Patients']")
+    public WebElement patientInfoControl;
+    // Patient List Next Button
+    @FindBy(xpath = "//li[@class='page-item'][2]")
+    public WebElement patientListNextButton;
+    // Confirm delete operation --> Delete Button
+    @FindBy(xpath = "//button[@id='jhi-confirm-delete-patient']")
+    public WebElement confirmDeleteOperationElement;
+    // Confirm delete operation --> Cancel Button
+    @FindBy(xpath = "//button[@class='btn btn-secondary']")
+    public WebElement cancelDeleteOperationElement;
+    // New Patient Created Alert
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement newPatientCreatedMessage;
+    // Create or edit a Patient Form
+    @FindBy(xpath = "//h2[@id='hospitalmsappfrontendApp.patient.home.createOrEditLabel']")
+    public WebElement createOrEditPatientForm;
+    // Patient is Updated Message
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement patientUpdatedMessage;
+    // Staff --> Show Appointments Button --> Appointment Text Header
+    @FindBy(xpath = "//h2[text()='Appointments']")
+    public WebElement appointmentListText;
+    // Staff --> Show Appointments Button --> Edit Button
+    @FindBy(xpath = "//tbody//td//div//a[1]")
+    public WebElement editButtonShowAppointments;
+    // Staff --> Show Appointments Button --> Show Tests
+    @FindBy(xpath = "//tbody//td//div//a[2]")
+    public WebElement showTestsButton;
+    // Staff --> Show Appointments Button --> Show Tests --> Test Text Header
+    @FindBy(xpath = "//span[text()='Tests']")
+    public WebElement testsListText;
+    // Staff --> Show Appointments Button --> Edit Button --> Appointment is Updated Message
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement appointmentUpdatedMessage;
+
     //--------------US010 Mehmet Emin Araz--------------------
 
     //Medunna>login Admin olarak/username
