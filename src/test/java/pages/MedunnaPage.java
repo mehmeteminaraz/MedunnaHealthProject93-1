@@ -530,7 +530,7 @@ public class MedunnaPage {
     @FindBy(xpath = "(//a[@class='linkedin'])[1]")
     public WebElement linkedInImageTop;
 
-        //************ US_001 ***************
+    //************ US_001 ***************
   /*
   Registration should be available using SSN, Firstname and Lastname
 There should be api and DB validation
@@ -616,7 +616,7 @@ There should be api and DB validation
 
     //-------------------US014 Locaten Onur--------------------------
 
-      // Main Page>Kullanici iconu
+    // Main Page>Kullanici iconu
     @FindBy(xpath = "//li[@id='account-menu']")
     public WebElement userIcon;
 
@@ -743,4 +743,29 @@ There should be api and DB validation
     // Doctor Page>My pages>My Inpatients>Edit Button>save Button
     @FindBy(xpath = "//button[@id='save-entity']")
     public WebElement saveButton;
+
+    //--------------US010 Mehmet Emin Araz--------------------
+
+    //Medunna>MainPage>Admin olarak>Appointment/Create a new Appointment
+    @FindBy(xpath = "(//*[@value='PENDING'])")
+    public static WebElement pendingAnAppointment;
+
+    //Medunna>MainPage>Admin olarak>Appointment/Create a new Appointment/successMessage
+    @FindBy(xpath = "//*[@class='Toastify']")
+    public static WebElement successMessageT;
+
+    //Medunna>MainPage> items&titileDropdown/Appointment/Appointments/fromDate
+    @FindBy (id="fromDate")
+    public static WebElement fromDateAppointment1;
+
+    @FindBy(xpath = "//*[.='Days between begin date and end date must be max 15 days']")
+    public static WebElement alertMessage;
+
+    @FindBy(xpath = "(//*[span='Edit'])[1]" )
+    public static WebElement editFirstAppointment;
+
+    //Medunna>MainPage>Doctor Page>physician-appointment>appointment liste
+    @FindBy(xpath = "(//*[tr])[1]")
+    public static WebElement headersOfAppointmentsTable;
+
 }
