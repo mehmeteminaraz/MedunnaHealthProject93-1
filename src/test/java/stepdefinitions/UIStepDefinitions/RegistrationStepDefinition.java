@@ -455,5 +455,102 @@ public class RegistrationStepDefinition {
         Assert.assertTrue( Driver.waitForVisibility(MedunnaPage.successMessageT,5).isDisplayed());
 
     }
+    //------------------------SEZEN---------------------------
+    @Given("Kullanici web uygulamasinin url'ine gider.")
+    public void kullanici_web_uygulamasinin_url_ine_gider() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("medunnaUrl"));
+    }
+
+    @And("Siteye gidildigini dogrular.")
+    public void siteyeGidildiginiDogrular() {
+        Assert.assertTrue(mp.medunnaLogoElementi.isDisplayed());
+    }
+
+    @And("Make an Appointment butonuna tiklar.")
+    public void makeAnAppointmentButonunaTiklar() {
+        mp.makeAnAppointmentButonu.click();
+    }
+
+    @And("Make an Appointment yazisinin goruldugunu dogrular.")
+    public void makeAnAppointmentYazisininGoruldugunuDogrular() {
+        Assert.assertTrue(mp.makeAnAppointmentYazisi.isDisplayed());
+        Driver.wait(1);
+    }
+
+    @And("Firstname TextBox'a {string} girer.")
+    public void firstnameTextBoxAGirer(String firstname) {
+        mp.makeAnAppointmentFirstNameTextBox.sendKeys(firstname);
+        Driver.wait(1);
+    }
+
+    @And("Make An Appointment First Name Uyari Yazisinin gorundugunu dogrular.")
+    public void makeAnAppointmentFirstNameUyariYazisininGorundugunuDogrular() {
+        Assert.assertTrue(mp.makeAnAppointmentFirstNameUyariYazisi.isDisplayed());
+    }
+
+    @And("Send an Appointment Request butonuna tiklar.")
+    public void sendAnAppointmentRequestButonunaTiklar() {
+        mp.sendAnAppointmentRequestButton.click();
+        Driver.wait(3);
+    }
+
+    @And("SSN TextBox'a {string} girer.")
+    public void ssnTextBoxAGirer(String ssn) {
+        mp.ssnTextBox.sendKeys(ssn);
+    }
+
+    @And("Make An Appointment SSN icin SSN Uyari Yazisi gorundugunu dogrular.")
+    public void makeAnAppointmentSSNIcinSSNUyariYazisiGorundugunuDogrular() {
+        String ssn = "Your SSN is required.";
+        Assert.assertEquals(mp.makeAnAppointmentSSNUyariYazisi.getText(),ssn);
+    }
+
+    @And("Make An Appointment invalid SSN icin SSN Uyari Yazisi gorundugunu dogrular.")
+    public void makeAnAppointmentInvalidSSNIcinSSNUyariYazisiGorundugunuDogrular() {
+        String ssn = "Your SSN is invalid";
+        Assert.assertEquals(mp.makeAnAppointmentSSNInvalidUyariYazisi.getText(),ssn);
+    }
+
+    @And("Lastname TextBox'a {string} girer.")
+    public void lastnameTextBoxAGirer(String lastname) {
+        mp.makeAnAppointmentLastNameTextBox.sendKeys(lastname);
+    }
+
+    @And("Make An Appointment Last Name Uyari Yazisinin gorundugunu dogrular.")
+    public void makeAnAppointmentLastNameUyariYazisininGorundugunuDogrular() {
+        Assert.assertTrue(mp.makeAnAppointmentLastNameUyariYazisi.isDisplayed());
+    }
+
+    @And("Email TextBox'a {string} girer.")
+    public void emailTextBoxAGirer(String email) {
+        mp.makeAnAppointmentEmailTextBox.sendKeys(email);
+    }
+
+    @And("Make An Appointment Email icin {string} gorundugunu dogrular.")
+    public void makeAnAppointmentEmailIcinGorundugunuDogrular(String email) {
+        Assert.assertEquals(mp.makeAnAppointmentEmailUyariYazisi.getText(),email);
+    }
+
+    @And("Make An Appointment invalid Email icin {string} gorundugunu dogrular.")
+    public void makeAnAppointmentInvalidEmailIcinGorundugunuDogrular(String invalidUyari) {
+        Assert.assertEquals(mp.makeAnAppointmentEmailInvalidUyariYazisi.getText(),invalidUyari);
+    }
+
+    @And("Phone TextBox'a {string} girer.")
+    public void phoneTextBoxAGirer(String phone) {
+        mp.makeAnAppointmentPhoneTextBox.sendKeys(phone);
+    }
+
+    @And("Make An Appointment invalid Phone icin Phone Uyari Yazisi gorundugunu dogrular.")
+    public void makeAnAppointmentInvalidPhoneIcinPhoneUyariYazisiGorundugunuDogrular() {
+        String phone = "Phone number is invalid";
+        Assert.assertEquals(mp.makeAnAppointmentInvalidPhoneUyariYazisi.getText(),phone);
+    }
+
+    @And("Make An Appointment Phone icin Phone Uyari Yazisi gorundugunu dogrular.")
+    public void makeAnAppointmentPhoneIcinPhoneUyariYazisiGorundugunuDogrular() {
+        String phone = "Phone number is required.";
+        Assert.assertEquals(mp.makeAnAppointmentPhoneUyariYazisi.getText(),phone);
+    }
 
 }

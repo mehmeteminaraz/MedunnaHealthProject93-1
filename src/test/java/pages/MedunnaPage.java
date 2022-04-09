@@ -768,4 +768,26 @@ There should be api and DB validation
     @FindBy(xpath = "(//*[tr])[1]")
     public static WebElement headersOfAppointmentsTable;
 
+    //-----------------US05-Sezen-eklenenler------------------------------
+
+    //Medunna>MainPage>Make an Appointment/SSN Uyari Yazisi
+    @FindBy(xpath = "//div[text()='Your SSN is invalid']")
+    public WebElement makeAnAppointmentSSNInvalidUyariYazisi;
+
+    //Medunna>MainPage>Make an Appointment/Email Uyari Yazisi
+    @FindBy(xpath = "//div[text()='This field is invalid']")
+    public WebElement makeAnAppointmentEmailInvalidUyariYazisi;
+
+    //Medunna>MainPage>Make an Appointment/Phone Uyari Yazisi
+    @FindBy(xpath = "//div[text()='Phone number is invalid']")
+    public WebElement makeAnAppointmentInvalidPhoneUyariYazisi;
+
+    //Medunna>MainPage>Send an Appointment Request butonu
+    @FindBy(xpath = "//button[@id='register-submit']")
+    public WebElement sendAnAppointmentRequestButton;
+
+    //Medunna>MainPage>Make an Appointment Yazisi
+    @FindBy(xpath = "(//h2)[4]")
+    public WebElement makeAnAppointmentYazisi;
+
 }
