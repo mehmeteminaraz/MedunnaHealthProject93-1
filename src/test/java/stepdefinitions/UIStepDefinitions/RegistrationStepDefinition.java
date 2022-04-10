@@ -553,4 +553,122 @@ public class RegistrationStepDefinition {
         Assert.assertEquals(mp.makeAnAppointmentPhoneUyariYazisi.getText(),phone);
     }
 
+
+
+    //********************** Mali *******************************
+    @Given("Kullanici kendisine verilen {string} ve {string} ile sign in yapar ve Appointments sayfasina girer")
+    public void kullaniciKendisineVerilenVeIleSignInYaparVeAppointmentsSayfasinaGirer(String username, String password) {
+        mp.signInIconElement.click();
+        mp.signInLinki.click();
+        mp.signInUsernameTextBox.sendKeys(username);
+        mp.signInPasswordTextBox.sendKeys(password);
+        mp.signInButonu.click();
+        Driver.wait(2);
+        mp.myPagesElement.click();
+        mp.myAppointment.click();
+
+
+    }
+    @Then("Kullanici mevcut gun ile ileri tarihleri arasindaki statusu unapproved olanlari gorur")
+    public void kullanici_mevcut_gun_ile_ileri_tarihleri_arasindaki_statusu_unapproved_olanlari_gorur() {
+        mp.fromDateBoxElement.sendKeys("13/05/2022");
+        mp.toDateBoxElement.sendKeys("27/05/2022");
+
+    }
+
+    @Then("Kullanici mevcut gun ile ileri tarihleri arasindaki statusu pending olanlari gorur")
+    public void kullanici_mevcut_gun_ile_ileri_tarihleri_arasindaki_statusu_pending_olanlari_gorur() {
+        Driver.wait(1);
+        Assert.assertTrue(mp.pendingYazisiElement.isDisplayed());
+    }
+
+    @Then("Kullanici mevcut gun ile ileri tarihlkeri arasindaki statusu Canceled olanlari gorur")
+    public void kullanici_mevcut_gun_ile_ileri_tarihlkeri_arasindaki_statusu_canceled_olanlari_gorur() {
+        Driver.wait(1);
+        Assert.assertTrue(mp.cancelledwordElementi.isDisplayed());
+
+    }
+
+    @Then("Kullanici patient icin edit e tiklar")
+    public void kullanici_patient_icin_edit_e_tiklar() {
+        Driver.wait(2);
+        mp.editElementidoctorpage.click();
+    }
+
+    @Then("Kullanici Create or Edit an Appointment yazisini gorur")
+    public void kullanici_create_or_edit_an_appointment_yazisini_gorur() {
+        Assert.assertTrue(mp.createElementiyazisi.isDisplayed());
+    }
+
+    @Given("Kullanici Anamnesis box i bos biraktiginda This field is required uyari yazisini gormeli")
+    public void kullaniciAnamnesisBoxIBosBiraktigindaThisFieldIsRequiredUyariYazisiniGormeli() {
+        Driver.wait(2);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        mp.anamnesisTextBox.sendKeys("");
+
+        //Assert.assertTrue(mp.thisFieldIsRequiredYazisi.isDisplayed());
+
+    }
+
+    @Then("Kullanici Treatment box i bos biraktiginda This field is required uyari yazisini gormeli")
+    public void kullaniciTreatmentBoxIBosBiraktigindaThisFieldIsRequiredUyariYazisiniGormeli() {
+        Driver.wait(1);
+
+        mp.treatmentTextBox.sendKeys("");
+        //Assert.assertTrue(mp.thisFieldIsRequiredYazisi.isDisplayed());
+
+
+    }
+
+    @Then("Kullanici Diagnosis box i bos biraktiginda This field is required uyari yazisini gormeli")
+    public void kullaniciDiagnosisBoxIBosBiraktigindaThisFieldIsRequiredUyariYazisiniGormeli() {
+        mp.diagnosisTextBox.sendKeys("");
+
+        //mp.prescriptionwordElementi.sendKeys("");
+        Assert.assertTrue(mp.thisFieldIsRequiredYazisi.isDisplayed());
+
+    }
+
+    @Given("Kullanici {string} box a veri girisi yapabilmeli")
+    public void kullaniciBoxAVeriGirisiYapabilmeli(String anamnesis) {
+        Driver.wait(1);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        mp.anamnesisTextBox.sendKeys(anamnesis);
+
+    }
+
+    @Then("Kullanici {string} box a veri girisi yapar")
+    public void kullaniciBoxAVeriGirisiYapar(String treatment) {
+        mp.treatmentTextBox.sendKeys(treatment);
+
+    }
+
+    @And("Kullanici {string} box a veri girisi yaparsa")
+    public void kullaniciBoxAVeriGirisiYaparsa(String diagnosis) {
+        mp.diagnosisTextBox.sendKeys(diagnosis);
+    }
+
+    @Then("Kullanici save yapar ve succesfully saved yazisini gorur")
+    public void kullaniciSaveYaparVeSuccesfullySavedYazisiniGorur() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        Driver.wait(1);
+        mp.saveDoctorEditPage.click();
+        Driver.wait(2);
+        Assert.assertTrue(mp.registersavedYazisiElementi.isDisplayed());
+
+    }
+
+    @And("Kullanici statusu cancelled yapar")
+    public void kullaniciStatusuCancelledYapar() {
+        Driver.wait(1);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        Select select = new Select(mp.statuswordElementi);
+        select.selectByIndex(3);
+
+    }
+
 }
