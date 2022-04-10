@@ -26,7 +26,7 @@ public class RegistrationStepDefinition {
     Faker faker;
     Actions actions;
     SoftAssert softAssert = new SoftAssert();
-
+    String doktorName;
     // ------------------------- KÜBRA -----------------------------------
     @Given("Kullanici siteye gider {string}")
     public void kullaniciSiteyeGider(String medunnaUrl) {
@@ -558,7 +558,7 @@ public class RegistrationStepDefinition {
     //********************** Mali *******************************
     @Given("Kullanici kendisine verilen {string} ve {string} ile sign in yapar ve Appointments sayfasina girer")
     public void kullaniciKendisineVerilenVeIleSignInYaparVeAppointmentsSayfasinaGirer(String username, String password) {
-        mp.signInIconElement.click();
+        mp.anaSayfaKullaniciIkonu.click();
         mp.signInLinki.click();
         mp.signInUsernameTextBox.sendKeys(username);
         mp.signInPasswordTextBox.sendKeys(password);
@@ -668,6 +668,240 @@ public class RegistrationStepDefinition {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         Select select = new Select(mp.statuswordElementi);
         select.selectByIndex(3);
+
+    }
+
+    //===================salih========================
+
+
+    @Then("Web Sayfasinda bulunan person ikonuna tiklar.")
+    public void web_sayfasinda_bulunan_person_ikonuna_tiklar() {
+        MedunnaPage.mainPagePersonİkonuElementi.click();
+
+    }
+    @Then("Sign in sekmesine tiklar.")
+    public void sign_in_sekmesine_tiklar() {
+
+        Driver.waitAndClick( MedunnaPage.signInLinkiElementi);
+
+    }
+    @Then("Username Box'a gecerli {string} girer.")
+    public void username_box_a_gecerli_girer(String username) {
+        doktorName=username;
+        MedunnaPage.usernameBoxElementi.sendKeys(username);
+
+    }
+    @Then("Password Box'a gecerli {string} girer.")
+    public void password_box_a_gecerli_girer(String password) {
+        MedunnaPage.passwordBoxElementi.sendKeys(password);
+
+    }
+    @Then("Sign in butonuna tiklar.")
+    public void sign_in_butonuna_tiklar() {
+        MedunnaPage.girisSignInButtonElementi.click();
+
+    }
+    @Then("Doktor kendi sayfasina basarili sekilde giris yaptigini gorur.")
+    public void doktor_kendi_sayfasina_basarili_sekilde_giris_yaptigini_gorur() {
+        String actualusername=MedunnaPage.siteyeGirisYapanUsernameElementi.getText();
+        Assert.assertEquals(doktorName,actualusername);
+
+    }
+    @Then("My Pages sekmesine tiklar.")
+    public void my_pages_sekmesine_tiklar() {
+        Driver.wait2(1);
+        MedunnaPage.myPagesLinkiElementi.click();
+
+    }
+    @Then("My Appointments linkine tiklar.")
+    public void my_appointments_linkine_tiklar() {
+
+        MedunnaPage.myAppointmentsElementi.click();
+    }
+
+    @Then("Test istemek istedigi hasta randevusunu secer.")
+    public void test_istemek_istedigi_hasta_randevusunu_secer() {
+
+        List<WebElement> hastaEditListesi=MedunnaPage.hastaEditButonuElementiListesi;
+        Driver.wait2(1);
+        int secilenEditSirasi=faker.random().nextInt(1,hastaEditListesi.size());
+
+        String dinamikXpath="(//a[@class='btn btn-primary btn-sm'])["+secilenEditSirasi+"]";
+
+        Driver.getDriver().findElement(By.xpath(dinamikXpath)).click();
+    }
+    @Then("Request A Test butonuna tiklar.")
+    public void request_a_test_butonuna_tiklar() {
+        Driver.wait2(1);
+        MedunnaPage.requestATestButonElementi.click();
+        Driver.wait2(2);
+    }
+    @Then("Doktor gerekli testleri secer.")
+    public void doktor_gerekli_testleri_secer() {
+        Driver.wait(3);
+        List<WebElement> testIDListesi=MedunnaPage.testIDListOlusturma();
+        List<String> testIDleri= Driver.getElementsText(testIDListesi);
+        List<WebElement> secilenCheckbox= new ArrayList<>();
+
+        for (int i = 0; i < 6; i++) {
+            int index=faker.random().nextInt(0,testIDleri.size());
+
+            String ID=testIDleri.get(index);
+
+            //input[@id='1402']
+            WebElement dinamikXpath=Driver.getDriver().findElement(By.xpath("//input[@id='"+ID+"']"));
+
+            secilenCheckbox.add(dinamikXpath);
+        }
+        System.out.println(secilenCheckbox);
+
+        Driver.clickWithJSAsList(secilenCheckbox);
+    }
+    @Then("Testin ilgili birime gonderilmesi icin save butonuna tiklar.")
+    public void testin_ilgili_birime_gonderilmesi_icin_save_butonuna_tiklar() {
+        actions.sendKeys(Keys.END).perform();
+        Driver.wait2(1);
+        MedunnaPage.testSaveButonElementi.click();
+
+    }
+    @Then("Test isteginin ilgili birime gonderildigini test eder.")
+    public void test_isteginin_ilgili_birime_gonderildigini_test_eder() {
+        actions.sendKeys(Keys.PAGE_UP).perform();
+        Driver.wait2(2);
+        String actualData= MedunnaPage.saveSonrasiUyarielementi.getText();
+        String expectedData="A new Test is created with identifier";
+
+        Driver.wait(2);
+        Assert.assertTrue(actualData.contains(expectedData));
+
+    }
+
+    @Then("Acilan sayfadaki testName'ler arasinda  Glucose, Urea, Creatinine, Sodium, Potassium, Total protein, Albumin, Hemoglobin seçenekleri oldugunu gorur.")
+    public void acilanSayfadakiTestNameLerArasindaGlucoseUreaCreatinineSodiumPotassiumTotalProteinAlbuminHemoglobinSeçenekleriOldugunuGorur() {
+        Driver.wait2(3);
+        List<String> testNameStringList= new ArrayList<>();
+
+        List<WebElement> testNameElementleri=MedunnaPage.testNameListOlustur();
+
+        testNameStringList=Driver.getElementsText(testNameElementleri);
+
+        Driver.wait2(2);
+
+        for (int i = 0; i < 8; i++) {
+
+            Assert.assertTrue(testNameStringList.contains(MedunnaPage.testNameExpectedDataOlustur().get(i)));
+
+        }
+
+    }
+
+    @Then("Doktor kendi sayfasina basarili sekilde giris yaptigini dogrular.")
+    public void doktor_kendi_sayfasina_basarili_sekilde_giris_yaptigini_dogrular() {
+
+        Driver.wait2(2);
+        String expectedUsername = MedunnaPage.siteyeGirisYapanUsernameElementi.getText();
+        expectedUsername =  expectedUsername.toLowerCase().replaceAll(" ","");
+
+        Assert.assertEquals(expectedUsername,doktorName);
+
+    }
+    @Then("Test sayfasindan istenilen testlerin checkbox kutusu tiklanir.")
+    public void testSayfasindanIstenilenTestlerinCheckboxKutusuTiklanir() {
+        //input[@id='1402']
+        List<WebElement> secilenCheckbox1=new ArrayList<>();
+
+        for (int i = 1401; i < 1409; i++) {
+            secilenCheckbox1.add(Driver.getDriver().findElement(By.xpath("//input[@id='"+i+"']")));
+
+        }
+
+        Driver.clickWithJSAsList(secilenCheckbox1);
+    }
+
+    @Then("Show Test Result'a tiklar.")
+    public void showTestResultATiklar() {
+        actions.sendKeys(Keys.HOME).perform();
+        Driver.wait(2);
+        Driver.waitAndClick(MedunnaPage.showTestResultElementi);
+    }
+
+    @Then("View Result butonuna tiklar.")
+    public void viewResultButonunaTiklar() {
+        actions.sendKeys(Keys.HOME).perform();
+        Driver.waitAndClick(MedunnaPage.testResultsViewResultsElementi);
+
+    }
+
+
+    @Then("Doktor Test Result sayfasinda istenilen testlerin TestResultValue sonuclarini gorur.")
+    public void doktorTestResultSayfasindaIstenilenTestlerinTestResultValueSonuclariniGorur() {
+
+        List<WebElement> testsBaslikListesi=MedunnaPage.testsSayfasiBaslikListeOlusturma();
+
+        List<String>testBaslikStringListesi=Driver.getElementsText(testsBaslikListesi);
+        System.out.println(testBaslikStringListesi);
+        Driver.wait2(1);
+
+        for (int i = 0; i < MedunnaPage.testResultValueStringOlustur().size(); i++) {
+            Assert.assertTrue(testBaslikStringListesi.contains(MedunnaPage.testResultValueStringOlustur().get(i)));
+
+        }
+
+    }
+
+    @And("Hasta edit sayfasina geri doner")
+    public void hastaEditSayfasinaGeriDoner() {
+        Driver.getDriver().navigate().back();
+        Driver.wait2(1);
+        Driver.getDriver().navigate().back();
+
+    }
+
+    @Then("Request Inpatient butonuna tiklar.")
+    public void requestInpatientButonunaTiklar() {
+        Driver.wait(2);
+        MedunnaPage.requestInpatientButonElementi.click();
+
+    }
+
+    @And("Ana sayfaya geri doner.")
+    public void anaSayfayaGeriDoner() {
+        Driver.wait(2);
+        Driver.waitAndClick(MedunnaPage.medunnaLogoElementi);
+    }
+
+    @Then("Giris yapilan hesaptan signOut yapar.")
+    public void girisYapilanHesaptanSignOutYapar() {
+        Driver.waitAndClick(MedunnaPage.cikisIcinSignInLinkiElementi);
+        Driver.waitAndClick(MedunnaPage.signOutLinkiElementi);
+    }
+
+    @Then("Hasta yatis isteginin gonderildigini dogrular.")
+    public void hastaYatisIstegininGonderildiginiDogrular() {
+
+    }
+
+    @And("Doktor gerekli test {string} secer.")
+    public void doktorGerekliTestSecer(String istenenBaslikStr) {
+
+        Driver.wait(3);
+
+        MedunnaPage.testIDListOlusturma();
+
+    }
+
+    @Then("Web uygulamasindan cikis yapar.")
+    public void webUygulamasindanCikisYapar() {
+
+        Driver.closeDriver();
+    }
+
+
+    @Then("Test istemek istedigi hasta randevusunu secer")
+    public void testIstemekIstedigiHastaRandevusunuSecer() {
+
+        Driver.wait(1);
+        MedunnaPage.ikinciSiradakiHastaEditButonu.click();
 
     }
 
