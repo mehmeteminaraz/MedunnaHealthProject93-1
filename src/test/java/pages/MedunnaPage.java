@@ -1,10 +1,12 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MedunnaPage {
@@ -840,6 +842,155 @@ There should be api and DB validation
     // doctor pages status>> status yazisi elementi
     @FindBy(xpath = "//select[@name='status']")
     public WebElement statuswordElementi;
+
+    //=============================SalihEk1==================================
+
+    //Medunna>MainPage/Ana sayfada ki person ikonnu
+    @FindBy(xpath = "(//a[@href='#'])[1]")
+    public WebElement mainPagePersonİkonuElementi;
+
+    //mainPage>personIkonu altindaki signOut linki butonu
+    @FindBy(xpath = "//span[text()='Sign out']")
+    public WebElement signOutLinkiElementi;
+
+
+    // mainPage> MY PAGES
+    @FindBy(xpath = "//a[@aria-expanded='false']")
+    public WebElement myPagesLinkiElementi;
+
+    //*******
+    //mainPage>myPages>myAppointments/Edit Butonu
+    @FindBy(xpath = "//a[@class='btn btn-primary btn-sm']")
+    public List<WebElement> hastaEditButonuElementiListesi;
+
+
+    //mainPage>myPages>myAppointments>EditButton>RequestATest Butonu> Test Id'leri
+    @FindBy(xpath = "(//a[@class='btn btn-link btn-sm'])[3]")
+    public WebElement testIDElementi;
+
+    public List<WebElement> testIDListOlusturma() {
+        List<WebElement> testIDList = new ArrayList<WebElement>();
+
+        for (int i = 1; i < 247; i++) {
+            String xpath = "(//a[@class='btn btn-link btn-sm'])[" + i + "]";
+
+            testIDList.add(Driver.getDriver().findElement(By.xpath(xpath)));
+
+        }
+        return testIDList;
+
+    }
+
+    public List<WebElement> testNameListOlustur() {
+        List<WebElement> testNameList = new ArrayList<WebElement>();
+
+        for (int i = 1; i < 247; i++) {
+            String xpath = "(//tbody//tr//td[2])[" + i + "]";
+
+            testNameList.add(Driver.getDriver().findElement(By.xpath(xpath)));
+
+        }
+        return testNameList;
+    }
+
+
+    //mainPage>myPages>myAppointments>EditButton>RequestATest Butonu>tablo basliklari
+    @FindBy(xpath = "//thead//tr//th")
+    public List<WebElement> baslikWebelementListesi;
+
+
+    public List<WebElement> sutunListesiGetir(int index) {
+
+        //     //tbody//tr//td[3]
+
+        String dinamikXpath = "//tbody//tr//td[" + (index + 1) + "]";
+
+        List<WebElement> istenenSutunWebelementleri = Driver.getDriver().findElements(By.xpath(dinamikXpath));
+
+        return istenenSutunWebelementleri;
+
+    }
+
+    @FindBy(xpath = "//tbody//tr")
+    public List<WebElement> viewResultTbody;
+
+
+    @FindBy(xpath = "//tbody//tr//td[2]")
+    public List<WebElement> testResultNames;
+
+
+    @FindBy(xpath = "  //li[@id='account-menu']//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
+    public WebElement cikisIcinSignInLinkiElementi;
+
+    @FindBy(xpath = "//thead//tr//th")
+    public List<WebElement> testsSayfasiBaslikListeElementi;
+
+    @FindBy(xpath = "//button[@class='btn btn-warning btn-sm']")
+    public WebElement requestInpatientButonElementi;
+
+    @FindBy(xpath = "(//a[@class='btn btn-info btn-sm'])[1]")
+    public WebElement testResultsViewResultsElementi;
+
+
+    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[2]")
+    public WebElement ikinciSiradakiHastaEditButonu;
+
+    public List<WebElement> testsSayfasiBaslikListeOlusturma() {
+        List<WebElement> testsSayfasiBaslikListesi = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+
+            String a = ("//thead//tr//th[" + i + "]");
+            Driver.getDriver().findElement(By.xpath(a));
+            testsSayfasiBaslikListesi.add(Driver.getDriver().findElement(By.xpath(a)));
+
+        }
+        return testsSayfasiBaslikListesi;
+    }
+
+
+    public void viewResultListOlustur() {
+        int index = viewResultTbody.size();
+        List<WebElement> viewResultList = new ArrayList<WebElement>();
+        // (//a[@class='btn btn-link btn-sm'])[1]
+
+        for (int i = 1; i < viewResultTbody.size(); i++) {
+            String xpath = "(//a[@class='btn btn-info btn-sm'])[" + i + "]";
+            Driver.getDriver().findElement(By.xpath(xpath));
+            viewResultList.add(Driver.getDriver().findElement(By.xpath(xpath)));
+
+        }
+        WebElement viewResultTest = Driver.getDriver().findElement(By.xpath(String.valueOf(viewResultList.get(index))));
+
+        viewResultTest.click();
+
+    }
+
+    public List<String> testResultValueStringOlustur() {
+        List<String> testResultValue = new ArrayList<String>();
+        testResultValue.add("ID");
+        testResultValue.add("Name ");
+        testResultValue.add("Default Min. Value");
+        testResultValue.add("Default Max. Value");
+        testResultValue.add("Test");
+        testResultValue.add("Description");
+        testResultValue.add("Date");
+
+        return testResultValue;
+    }
+
+    public List<String> testNameExpectedDataOlustur() {
+        List<String> testNameExpectedData = new ArrayList<String>();
+        testNameExpectedData.add("Glucose");
+        testNameExpectedData.add("Urea");
+        testNameExpectedData.add("Creatinine");
+        testNameExpectedData.add("Sodium");
+        testNameExpectedData.add("Potassium");
+        testNameExpectedData.add("Total protein");
+        testNameExpectedData.add("Albumin");
+        testNameExpectedData.add("Hemoglobin");
+
+        return testNameExpectedData;
+    }
 
 
 }
