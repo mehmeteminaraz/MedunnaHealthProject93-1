@@ -1,2 +1,0 @@
-file:src/test/resources/features/US_011.feature:50
-file:src/test/resources/features/US_005.feature:16:17:115
