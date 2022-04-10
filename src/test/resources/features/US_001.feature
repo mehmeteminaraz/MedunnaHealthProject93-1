@@ -19,7 +19,7 @@ Feature: US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilm
              | 0           |  -12364-569-7-     |
              | 0630        |  23-98-48-237      |
              | 9870        |  1-2-3-4-5-6-7-8-9 |
-             | 12345678391  |  --------          |
+             | 12345678391  |  --------         |
 
 
   Scenario: TC02 SSN bos birakilamaz
