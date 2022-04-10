@@ -14,7 +14,7 @@ Feature: US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilm
     Then  Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "<tireliSSN>" koymali
     And   Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli
 
-    Examples:test
+    Examples:test data
              | ssn         | tireliSSN          |
              | 0           |  -12364-569-7-     |
              | 0630        |  23-98-48-237      |
