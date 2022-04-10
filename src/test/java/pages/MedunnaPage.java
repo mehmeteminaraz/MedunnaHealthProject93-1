@@ -158,29 +158,27 @@ public class MedunnaPage {
     public WebElement NoAppointmentsFoundYazisi;
 
 //-------------------US09 Zeynep--------------------------
-
-    // Staff --> MY PAGES menüsü
-    @FindBy(xpath = "//li[7]")
-    public WebElement myPagesMenu;
+// Staff --> MY PAGES menüsü
+@FindBy(xpath = "//li[@id='entity-menu']")
+public WebElement myPagesMenu;
     // Staff --> MY PAGES menüsü --> Search Patient item
-    @FindBy(xpath = "//li[7]//div[1]//a[1]//span[1]")
+    @FindBy(xpath = "//ul//li//div//a//span[text()='Search Patient']")
     public WebElement searchPatientItem;
     //  Staff --> MY PAGES menüsü --> In Patient item
-    @FindBy(xpath = "//li[7]//div[1]//a[2]//span[1]")
+    @FindBy(xpath = "//li//div//a[2]//span[text()='In Patient']")
     public WebElement inPatientItem;
     // Staff --> Search Patient item --> patientSSN textbox
     @FindBy(xpath = "//input[@name='ssn']")
     public WebElement patientSSN;
     // Admin --> Items&Titles menüsü
-    @FindBy(xpath = "//nav//div//ul//li[7]")
+    @FindBy(xpath = "//li[@id='entity-menu']")
     public WebElement itemsTitlesMenu;
     // Admin --> Items&Titles menüsü --> Patient item
-    @FindBy(xpath = "(//div//a[@class='dropdown-item'])[1]")
+    @FindBy(xpath = "//li//div//a[1]//span[text()='Patient']")
     public WebElement patientItem;
     // Admin --> Items&Titles menüsü --> Patient item --> Create a new Patient
     @FindBy(xpath = "//a[@class='btn btn-primary float-right jh-create-entity']")
     public WebElement createNewPatient;
-    //----------------------------------------//
     // Search Patient --> View
     // Staff --> Search Patient --> View Button --> Edit Button
     @FindBy(xpath = "//a[@class='btn btn-primary']")
@@ -188,7 +186,6 @@ public class MedunnaPage {
     // Staff --> Patients --> View Button --> Back Button
     @FindBy(xpath = "//a[@class='btn btn-info']")
     public WebElement backButtonView;
-    //----------------------------------------//
     // Search Patient --> Edit -->
     // Staff --> Create or edit a Patient --> First Name Textbox
     @FindBy(xpath = "//input[@name='firstName']")
@@ -232,8 +229,7 @@ public class MedunnaPage {
     // Staff --> Search Patient item --> Edit Button --> Create or edit a Patient --> Back Button
     @FindBy(xpath = "//a[@id='cancel-save']")
     public WebElement backButtonEditPatientForm;
-    //----------------------------------------//
-// Search Patient --> Show Appointments
+    // Search Patient --> Show Appointments
 // Staff --> Search Patient --> Appointments --> Edit --> Start DateTime
     @FindBy(xpath = "//input[@name='startDate']")
     public WebElement startDateTimeDropBox;
@@ -267,8 +263,7 @@ public class MedunnaPage {
     // Staff --> Search Patient --> Appointments --> Edit --> Back Button
     @FindBy(xpath = "//a[@id='cancel-save']")
     public WebElement backButtonAppointment;
-    //----------------------------------------//
-// In Patient --> In Patients --> from
+    // In Patient --> In Patients --> from
     @FindBy(xpath = "//input[@name='fromDate']")
     public WebElement fromDateAppointment;
     // In Patient --> In Patients --> to
@@ -298,7 +293,6 @@ public class MedunnaPage {
     // In Patient --> In Patients --> Edit --> Create or edit a In Patient --> Back
     @FindBy(xpath = "//a[@id='cancel-save']")
     public WebElement backAppointmentButton;
-
     @FindBy(xpath = "//tbody//tr")
     public List<WebElement> rawsList;
     // Patient Control Text
@@ -315,12 +309,12 @@ public class MedunnaPage {
     public WebElement cancelDeleteOperationElement;
     // New Patient Created Alert
     @FindBy(xpath = "//div[@role='alert']")
-    public WebElement newPatientCreatedMessage;
+    public WebElement allAlertMessages;
     // Create or edit a Patient Form
     @FindBy(xpath = "//h2[@id='hospitalmsappfrontendApp.patient.home.createOrEditLabel']")
     public WebElement createOrEditPatientForm;
     // Patient is Updated Message
-    @FindBy(xpath = "//div[@role='alert']")
+    @FindBy(xpath = "//*[@class='Toastify']")
     public WebElement patientUpdatedMessage;
     // Staff --> Show Appointments Button --> Appointment Text Header
     @FindBy(xpath = "//h2[text()='Appointments']")
@@ -336,8 +330,7 @@ public class MedunnaPage {
     public WebElement testsListText;
     // Staff --> Show Appointments Button --> Edit Button --> Appointment is Updated Message
     @FindBy(xpath = "//div[@role='alert']")
-    public WebElement appointmentUpdatedMessage;
-
+    public WebElement appointmentNotUpdatedMessage;
     //--------------US010 Mehmet Emin Araz--------------------
 
     //Medunna>login Admin olarak/username
@@ -991,6 +984,27 @@ There should be api and DB validation
 
         return testNameExpectedData;
     }
+
+    //________________________ZEYNEP___________________________//
+
+    // In Patient View Button
+    @FindBy(xpath = "//tbody//tr[" + 1 + "]//td//div//a")
+    public WebElement  viewButtonGetirInPatient;
+
+    // Create or edit a In Patient Text Header
+    @FindBy(xpath = "//span[text()='Create or edit a In Patient']")
+    public WebElement inPatientCreateOrEditText;
+
+    // In Patient Hasta bilgisi olusturulamadi Alert
+    @FindBy(xpath = "//div[text()='InPatient status can not be changed with this type of status']")
+    public WebElement inPatientNotCreatedAlert;
+
+    // Staff --> Patient Control Text --> View --> Edit
+    @FindBy(xpath = "//h2//span[text()='Patient']")
+    public WebElement patientInfoControlStaffEdit;
+
+    //__________________________________________________________//
+
 
 
 }

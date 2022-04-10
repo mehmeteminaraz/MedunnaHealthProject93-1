@@ -905,4 +905,366 @@ public class RegistrationStepDefinition {
 
     }
 
+    //____________________ZEYNEP______________________________//
+
+    @Given("Kullanici siteye gider {string}")
+    public void kullanici_siteye_gider(String string) {
+        Driver.getDriver().get(ConfigurationReader.getProperty("medunnaUrl"));
+    }
+    @Then("Kullanici Web Sayfasinda bulunan person ikonuna tiklar.")
+    public void kullanici_web_sayfasinda_bulunan_person_ikonuna_tiklar() {
+        Driver.waitAndClick(mp.anaSayfaKullaniciIkonu);
+    }
+    @Then("Kullanici Sign in sekmesine tiklar.")
+    public void kullanici_sign_in_sekmesine_tiklar() {
+        Driver.waitAndClick(mp.signInlink);
+    }
+    @Then("Kullanici Username Box'a gecerli {string} girer.")
+    public void kullanici_username_box_a_gecerli_girer(String username) {
+        mp.usernameBoxElementi.sendKeys(username);
+    }
+    @Then("Kullanici Password Box'a gecerli {string} girer.")
+    public void kullanici_password_box_a_gecerli_girer(String password) {
+        mp.passwordBoxElementi.sendKeys(password);
+    }
+    @Then("Kullanici Sign in butonuna tiklar.")
+    public void kullanici_sign_in_butonuna_tiklar() {
+        mp.signInButonu.click();
+    }
+    @Then("Ust menudeki MY_PAGES menusune tiklanir.")
+    public void ust_menudeki_my_pages_menusune_tiklanir() {
+        Driver.wait(2);
+        mp.myPagesMenu.click();
+        Driver.wait(1);
+    }
+    @Then("Menunun altinda cikan Search Patient item'ina tiklanir.")
+    public void menunun_altinda_cikan_search_patient_item_ina_tiklanir() {
+        mp.searchPatientItem.click();
+        Driver.wait(1);
+    }
+    @Then("Patients basligi altinda hasta listesi gorunur.")
+    public void patients_basligi_altinda_hasta_listesi_gorunur() {
+        Assert.assertTrue(mp.patientInfoControl.isDisplayed());
+        Driver.wait(2);
+    }
+    @Then("Staff hasta bilgi satirindaki View butonuna tiklar.")
+    public void staff_hasta_bilgi_satirindaki_view_butonuna_tiklar() {
+        WebElement viewButton = Driver.getDriver().findElement(By.xpath("//tbody//tr[" + 1 + "]//td//div//a[@class='btn btn-info btn-sm']"));
+        Driver.clickWithJS(viewButton);
+    }
+    @Then("Patient bilgilerinin altindaki Edit butonuna tiklanir.")
+    public void patient_bilgilerinin_altindaki_edit_butonuna_tiklanir() {
+        Driver.waitAndClick(mp.editButtonView,1000);
+    }
+    @Then("First Name alanina isim girilir.")
+    public void first_name_alanina_isim_girilir() {
+        Driver.wait(1);
+        mp.firstNameEditTextBox.clear();
+        faker = new Faker();
+        String firstName = faker.name().firstName();
+        Driver.waitAndSendText(mp.firstNameEditTextBox,firstName);
+    }
+    @Then("Last Name alanina soyisim girilir.")
+    public void last_name_alanina_soyisim_girilir() throws InterruptedException {
+        mp.lastNameEditTextbox.clear();
+        faker = new Faker();
+        String lastName = faker.name().lastName();
+        Driver.waitAndSendText(mp.lastNameEditTextbox,lastName);
+    }
+    @Then("Birth Date alanindan dogum tarihi secilir.")
+    public void birth_date_alanindan_dogum_tarihi_secilir() {
+        mp.birthDateDropbox.clear();
+        Driver.waitAndSendText(mp.birthDateDropbox,("03-12-201200:02:45"));
+    }
+    @Then("Email alanina email bilgisi girilir.")
+    public void email_alanina_email_bilgisi_girilir() throws InterruptedException {
+        mp.emailTextbox.clear();
+        faker = new Faker();
+        String emailAddress = faker.internet().emailAddress();
+        Driver.waitAndSendText(mp.emailTextbox,emailAddress);
+    }
+    @Then("Phone alanina telefon bilgisi girilir.")
+    public void phone_alanina_telefon_bilgisi_girilir() {
+        mp.phoneTextbox.clear();
+        faker = new Faker();
+        String phone = "1234567890";
+        Driver.waitAndSendText(mp.phoneTextbox,phone);
+    }
+    @Then("Gender alanina cinsiyet girilir.")
+    public void gender_alanina_cinsiyet_girilir() {
+        Driver.selectAnItemFromDropdown(mp.genderSelect,"FEMALE");
+        Driver.wait(1);
+    }
+    @Then("Blood Group alanina kan grubu girilir.")
+    public void blood_group_alanina_kan_grubu_girilir() {
+        Driver.selectAnItemFromDropdown(mp.bloodGroupSelect,"AB+");
+        Driver.wait(1);
+    }
+    @Then("Address alanina adres bilgisi girilir.")
+    public void address_alanina_adres_bilgisi_girilir() {
+        mp.adressTextBox.clear();
+        faker = new Faker();
+        String address = faker.address().fullAddress();
+        Driver.waitAndSendText(mp.adressTextBox,address);
+    }
+    @Then("Description alanina veri girilir.")
+    public void description_alanina_veri_girilir() {
+        mp.descriptionTextBox.clear();
+        faker = new Faker();
+        String description = faker.expression("Patient Info");
+        Driver.waitAndSendText(mp.descriptionTextBox,description);
+    }
+    @Then("User alanindan kullanici secilir.")
+    public void user_alanindan_kullanici_secilir() {
+        Driver.selectAnItemFromDropdown(mp.userSelect,"system");
+        Driver.wait(2);
+    }
+    @Then("Country alanindan ulke secilir.")
+    public void country_alanindan_ulke_secilir() {
+        Driver.selectAnItemFromDropdown(mp.countrySelect,"US");
+        Driver.wait(1);
+    }
+    @Then("State City alanindan sehir secilir.")
+    public void state_city_alanindan_sehir_secilir() {
+        Driver.selectAnItemFromDropdown(mp.stateCitySelect,"Hawaii");
+        Driver.wait(1);
+    }
+    @Then("Save butonuna tiklanir.")
+    public void save_butonuna_tiklanir() {
+        Driver.waitAndClickElement(mp.saveButtonEditPatientForm,1);
+    }
+    @Then("Back butonuna tiklanir.")
+    public void back_butonuna_tiklanir() {
+        Driver.waitAndClickElement(mp.backButtonEditPatientForm,1);
+    }
+    //_______________________________________________________//
+    @Then("Staff hasta bilgi satirindaki Edit butonuna tiklar.")
+    public void staff_hasta_bilgi_satirindaki_edit_butonuna_tiklar() {
+        WebElement editButton = Driver.getDriver().findElement(By.xpath("//tbody//tr[" + 1 + "]//td//div//a[@class='btn btn-primary btn-sm']"));
+        Driver.clickWithJS(editButton);
+    }
+    @Then("Create or edit a Patient formu gorunur.")
+    public void create_or_edit_a_patient_formu_gorunur() {
+        Assert.assertTrue(mp.createOrEditPatientForm.isDisplayed());
+        Driver.wait(2);
+    }
+    @Then("A Patient is Updated mesaji goruntulenir.")
+    public void a_patient_is_updated_mesaji_goruntulenir() {
+        Assert.assertTrue(mp.patientUpdatedMessage.isDisplayed());
+        Driver.wait(8);
+    }
+    //____________________________________________________________________//
+    @Then("Staff Hasta bilgi satirindaki Show Appointments butonuna tiklanir.")
+    public void staff_hasta_bilgi_satirindaki_show_appointments_butonuna_tiklanir() {
+        WebElement showAppointmentsButton = Driver.getDriver().findElement(By.xpath("//tbody//tr[" + 2 + "]//td//div//a[@class='btn btn-warning btn-sm']"));
+        Driver.clickWithJS(showAppointmentsButton);
+    }
+    @Then("Hasta randevu bilgileri goruntulenir.")
+    public void hasta_randevu_bilgileri_goruntulenir() {
+        Driver.wait(2);
+        Assert.assertTrue(mp.appointmentListText.isDisplayed());
+        Driver.wait(2);
+    }
+    @Then("Hasta bilgi satirindaki Edit butonuna tiklanir.")
+    public void hasta_bilgi_satirindaki_edit_butonuna_tiklanir() {
+        Driver.wait(1);
+        WebElement viewButtonGetirShowAppointments = Driver.getDriver().findElement(By.xpath("//tbody//tr[1]//td//div//a[1]"));
+        Driver.waitAndClickElement(viewButtonGetirShowAppointments,1);
+        Driver.wait(2);
+    }
+    @Then("Start DateTime alanindan tarih secilir.")
+    public void start_date_time_alanindan_tarih_secilir() {
+        Driver.wait(1);
+        mp.startDateTimeDropBox.clear();
+        Driver.waitAndSendText(mp.startDateTimeDropBox,("12-04-202200:10:50"));
+    }
+    @Then("End DateTime alanindan tarih secilir.")
+    public void end_date_time_alanindan_tarih_secilir() {
+        mp.endDateTimeDropBox.clear();
+        Driver.waitAndSendText(mp.endDateTimeDropBox,("12-04-202200:11:45"));
+    }
+    @Then("Status alaninda statu durumu secilir.")
+    public void status_alaninda_statu_durumu_secilir() {
+        Driver.selectAnItemFromDropdown(mp.statusSelect,"PENDING");
+        Driver.wait(1);
+    }
+    @Then("Anamnesis alanina veri girilir.")
+    public void anamnesis_alanina_veri_girilir() {
+        mp.anamnesisTextBox.clear();
+        faker = new Faker();
+        String anamnesis = faker.expression("Anamnesis Info");
+        Driver.waitAndSendText(mp.anamnesisTextBox,anamnesis);
+    }
+    @Then("Treatment alanina veri girilir.")
+    public void treatment_alanina_veri_girilir() {
+        mp.treatmentTextBox.clear();
+        faker = new Faker();
+        String treatment = faker.expression("Treatment Info");
+        Driver.waitAndSendText(mp.treatmentTextBox,treatment);
+    }
+    @Then("Diagnosis alanina veri girilir.")
+    public void diagnosis_alanina_veri_girilir() {
+        mp.diagnosisTextBox.clear();
+        faker = new Faker();
+        String diagnosis = faker.expression("Diagnosis Info");
+        Driver.waitAndSendText(mp.diagnosisTextBox,diagnosis);
+    }
+    @Then("Prescription alanina veri girilir.")
+    public void prescription_alanina_veri_girilir() {
+        mp.prescriptionTextBox.clear();
+        faker = new Faker();
+        String prescription = faker.expression("Prescription Info");
+        Driver.waitAndSendText(mp.prescriptionTextBox,prescription);
+    }
+    @Then("Appointment Description alanina veri girilir.")
+    public void appointment_description_alanina_veri_girilir() {
+        mp.descriptionAppointmentTextBox.clear();
+        faker = new Faker();
+        String description = faker.expression("Description Info");
+        Driver.waitAndSendText(mp.descriptionAppointmentTextBox,description);
+    }
+    @Then("Physician alanindan doktor secimi yapilir.")
+    public void physician_alanindan_doktor_secimi_yapilir() {
+        Driver.selectAnItemFromDropdown(mp.physicianSelect,"46059:Prof.Dr.Salih Kaya:NEUROLOGY");
+        Driver.wait(1);
+    }
+    @Then("Hasta Appointment formundaki Save butonuna tiklanir.")
+    public void hasta_appointment_formundaki_save_butonuna_tiklanir() {
+        Driver.waitAndClickElement(mp.saveButtonAppointment,1);
+        Driver.wait(2);
+    }
+    @Then("Hasta Appointment bilgileri guncellenir.")
+    public void hasta_appointment_bilgileri_guncellenir() {
+        Assert.assertTrue(mp.allAlertMessages.isDisplayed());
+        Driver.wait(5);
+    }
+    @Then("Appointments Hasta bilgi satirindaki Show Tests butonuna tiklanir.")
+    public void appointmentsHastaBilgiSatirindakiShowTestsButonunaTiklanir() {
+        Driver.wait(2);
+        WebElement viewButtonGetirShowAppointments = Driver.getDriver().findElement(By.xpath("//tbody//tr[1]//td//div//a[2]"));
+        Driver.waitAndClickElement(viewButtonGetirShowAppointments,2);
+    }
+    @Then("Hasta testleri goruntulenir.")
+    public void hasta_testleri_goruntulenir() {
+        Assert.assertTrue(mp.testsListText.isDisplayed());
+        Driver.wait(2);
+    }
+    //___________________________________________________________________________//
+    @And("Patients basligi altindaki Patient SSN textbox'una SSN numarasi girilir.")
+    public void patientsBasligiAltindakiPatientSSNTextboxUnaSSNNumarasiGirilir() {
+        Driver.waitAndSendText(mp.ssnTextBox, "147-25-8963");
+        Driver.wait(2);
+    }
+    //________________________________________________________________________//
+    @Then("Menunun altinda cikan In Patient item'ina tiklanir.")
+    public void menunun_altinda_cikan_in_patient_item_ina_tiklanir() {
+        mp.inPatientItem.click();
+    }
+    @Then("from textbox'undan tarih secilir")
+    public void from_textbox_undan_tarih_secilir() {
+        Driver.waitAndSendText(mp.fromDateAppointment,("04-04-2022"));
+    }
+    @Then("to textbox'undan tarih secilir")
+    public void to_textbox_undan_tarih_secilir() {
+        Driver.waitAndSendText(mp.endDateAppointmentTextBox,("15-04-2022"));
+    }
+    @Then("In Patient Hasta bilgi satirindaki Edit butonuna tiklanir.")
+    public void in_patient_hasta_bilgi_satirindaki_edit_butonuna_tiklanir() {
+        WebElement viewButton = Driver.getDriver().findElement(By.xpath("//tbody//tr[" + 1 + "]//td//div//a"));
+        Driver.clickWithJS(viewButton);
+        Driver.wait(2);
+    }
+    @Then("Create or edit a In Patient formu gorunur.")
+    public void create_or_edit_a_in_patient_formu_gorunur() {
+        WebElement inPatientCreateOrEditText = Driver.waitForVisibility(mp.inPatientCreateOrEditText,3000);
+        Assert.assertTrue(inPatientCreateOrEditText.isDisplayed());
+    }
+    @Then("Start Date alanindan tarih secilir.")
+    public void start_date_alanindan_tarih_secilir() {
+        Driver.waitAndSendText(mp.startDateAppointmentTextBox,("10-04-202200:09:45"));
+    }
+    @Then("End Date alanindan tarih secilir.")
+    public void end_date_alanindan_tarih_secilir() {
+        Driver.waitAndSendText(mp.endDateAppointmentTextBox,("14-04-202200:10:45"));
+    }
+    @Then("In Patient Description alanina veri girilir.")
+    public void in_patient_description_alanina_veri_girilir() {
+        Driver.waitAndSendText(mp.descriptionAppointmentInPatientTextBox,("Description"));
+    }
+    @Then("Created Date alanindan tarih secilir.")
+    public void created_date_alanindan_tarih_secilir() {
+        Driver.waitAndSendText(mp.createdDateAppointmentTextBox,("01-04-202200:08:45"));
+    }
+    @Then("Status alanindan randevu statusu secilir.")
+    public void status_alanindan_randevu_statusu_secilir() {
+        Driver.selectAnItemFromDropdown(mp.statusAppointmentSelect,"STAYING");
+    }
+    @Then("Room alanindan oda secilir.")
+    public void room_alanindan_oda_secilir() {
+        Driver.selectAnItemFromDropdown(mp.roomSelect,"808:TWIN FULL-UNAVAILABLE");
+    }
+    @Then("In Patient Save butonuna tiklanir.")
+    public void in_patient_save_butonuna_tiklanir() {
+        Driver.waitAndClickElement(mp.saveAppointmentButton,2000);
+    }
+    @Then("In Patient Hasta bilgisi olusturulur.")
+    public void in_patient_hasta_bilgisi_olusturulur() {
+        WebElement inPatientNotCreatedAlert = Driver.waitForVisibility(mp.inPatientNotCreatedAlert, 3000);
+        Assert.assertTrue(inPatientNotCreatedAlert.isDisplayed());
+        Driver.wait(2);
+    }
+    @Then("In Patient formunda back butonuna tiklanir.")
+    public void in_patient_formunda_back_butonuna_tiklanir() {
+        Driver.waitAndClickElement(mp.backAppointmentButton,1000);
+    }
+    //___________________________________________________________________________//
+    @Then("Items Titles menusune tiklanir.")
+    public void items_titles_menusune_tiklanir() {
+        Driver.waitAndClick(mp.itemsTitlesMenu);
+    }
+    @Then("Altinda acilan Patient item'ina tiklanir.")
+    public void altinda_acilan_patient_item_ina_tiklanir() {
+        Driver.waitAndClick(mp.patientItem);
+    }
+    @Then("Hasta bilgi satirindaki Delete butonuna tiklanir")
+    public void hasta_bilgi_satirindaki_delete_butonuna_tiklanir() {
+        Driver.wait(1);
+        WebElement deleteButton = Driver.getDriver().findElement(By.xpath("//tbody//tr[" + 1 + "]//td//div//a[@class='btn btn-danger btn-sm']"));
+        Driver.clickWithJS(deleteButton);
+        Driver.wait(2);
+    }
+    @Then("Confirm Delete Operation uyarisinda Delete butonuna tiklanir.")
+    public void confirm_delete_operation_uyarisinda_delete_butonuna_tiklanir() {
+        Driver.waitAndClick(mp.confirmDeleteOperationElement);
+        Driver.wait(2);
+    }
+    @Then("Confirm Delete Operation uyarisinda Cancel butonuna tiklanir.")
+    public void confirm_delete_operation_uyarisinda_cancel_butonuna_tiklanir() {
+        Driver.waitAndClick(mp.cancelDeleteOperationElement);
+        Driver.wait(1);
+    }
+    @Then("Create a new Patient butonuna tiklanir.")
+    public void create_a_new_patient_butonuna_tiklanir() {
+        Driver.waitAndClickElement(mp.createNewPatient,1);
+    }
+    @Then("New Patient Created mesaji gorunur.")
+    public void new_patient_created_mesaji_gorunur() {
+        WebElement newPatientCreatedMessage = Driver.waitForVisibility(mp.allAlertMessages,2000);
+        Assert.assertTrue(newPatientCreatedMessage.isDisplayed());
+    }
+    //___________________________________________________________________________//
+    @Then("Admin Hasta bilgi satirindaki View butonuna tiklar.")
+    public void adminHastaBilgiSatirindakiViewButonunaTiklar() {
+        Driver.wait(2);
+        WebElement viewButton = Driver.getDriver().findElement(By.xpath("//tbody//tr[" + 1 + "]//td//div//a[@class='btn btn-info btn-sm']"));
+        Driver.clickWithJS(viewButton);
+    }
+    //___________________________________________________________________________//
+    @Then("Admin Hasta bilgi satirindaki Edit butonuna tiklar.")
+    public void adminHastaBilgiSatirindakiEditButonunaTiklar() {
+        Driver.wait(2);
+        WebElement editButton = Driver.getDriver().findElement(By.xpath("//tbody//tr[" + 1 + "]//td//div//a[@class='btn btn-primary btn-sm']"));
+        Driver.clickWithJS(editButton);
+    }
+
 }
