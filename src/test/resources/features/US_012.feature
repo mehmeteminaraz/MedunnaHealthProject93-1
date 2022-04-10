@@ -26,7 +26,7 @@ Feature: US_012 Physician (Doktor) test isteyebilmeli
       |prof.dr.salihkaya|drsalih |
 
 
-
+  @Team93
   Scenario Outline: TC02
 
 

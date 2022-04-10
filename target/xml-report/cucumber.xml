@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="4" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="45" time="162.045">
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır." time="8.261">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "0" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "-12364-569-7" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 2" time="1.072">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "63" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "23-98-48-237" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 3" time="1.557">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "987" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "1-2-3-4-5-6-7-8-9" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 4" time="1.373">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "0236" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "123654987-" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 5" time="0.724">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "12354" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "1234567-89" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 6" time="0.763">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "654832" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "-1-29-48-963-4" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 7" time="0.773">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "8756214" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "223-897-456" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 8" time="1.455">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "12345678" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "--------" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 9" time="1.606">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "12345-67891" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "-1236-" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC02 SSN bos birakilamaz" time="0.882">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+And SSN textboxi bos birakildiginda Your SSN is required textinin gorunurlugu test edilmeli.passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC03 Herhangi bir karakter içeren ve boş bırakılamayan geçerli bir &quot;First Name&quot; olmalıdır" time="2.068">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxı bos birakildiginda cikan Your FirstName is required textinin gorunurlugu test edilmeli.passed
+And Firstname textboxina gecerli bir isim girilmeli.........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC04 Herhangi bir karakter içeren ve boş bırakılamayan geçerli bir &quot;Last Name&quot; olmalıdır" time="1.844">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxina gecerli bir isim girilmeli........................passed
+And Lastname textboxi bos birakildiginda cikan Your LastName is required textinin gorunurlugu test edilmeli.passed
+Then Lastname textboxina gecerli bir soyisim girilmeli......................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US02 Kayit olmak icin email and username bilgileri girilebilmelidir." name="TC01 Herhangi bir karakter içeren ve boş bırakılamayan geçerli bir &quot;Username&quot; olmalıdır" time="3.441">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxina gecerli bir isim girilmeli........................passed
+Then Lastname textboxina gecerli bir soyisim girilmeli......................passed
+And Username textboxi bos birakildiginda cikan Your username is required textinin gorunurlugu test edilmeli.passed
+Then Bosluk birakilarak girilen bir username in gecersiz oldugu Your username is invalid textinin gorunurlugu ile test edilmeli.passed
+And Username textboxina gecerli bir kullanici adı girilmeli.................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US02 Kayit olmak icin email and username bilgileri girilebilmelidir." name="TC02 Email adresi &quot;@&quot; ve &quot;.&quot; karakterleri olmadan doldurulamamalıdır." time="3.891">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxina gecerli bir isim girilmeli........................passed
+Then Lastname textboxina gecerli bir soyisim girilmeli......................passed
+And Username textboxina gecerli bir kullanici adı girilmeli.................passed
+Then Email textboxina "qakubrahotmail.com" @ ve . isareti icermeyen bir adres girildiginde cikan This field is invalid textin gorunurlugu test edilmeli.passed
+And Email textboxina bes karakterden az olucak sekilde email adresi yazildiginda cikan Your email is required to be at least five characters textin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US02 Kayit olmak icin email and username bilgileri girilebilmelidir." name="TC02 Email adresi &quot;@&quot; ve &quot;.&quot; karakterleri olmadan doldurulamamalıdır. 2" time="4.287">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxina gecerli bir isim girilmeli........................passed
+Then Lastname textboxina gecerli bir soyisim girilmeli......................passed
+And Username textboxina gecerli bir kullanici adı girilmeli.................passed
+Then Email textboxina "qakubra@hotmailcom" @ ve . isareti icermeyen bir adres girildiginde cikan This field is invalid textin gorunurlugu test edilmeli.passed
+And Email textboxina bes karakterden az olucak sekilde email adresi yazildiginda cikan Your email is required to be at least five characters textin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US02 Kayit olmak icin email and username bilgileri girilebilmelidir." name="TC02 Email adresi &quot;@&quot; ve &quot;.&quot; karakterleri olmadan doldurulamamalıdır. 3" time="3.716">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxina gecerli bir isim girilmeli........................passed
+Then Lastname textboxina gecerli bir soyisim girilmeli......................passed
+And Username textboxina gecerli bir kullanici adı girilmeli.................passed
+Then Email textboxina "qakubrahotmailcom" @ ve . isareti icermeyen bir adres girildiginde cikan This field is invalid textin gorunurlugu test edilmeli.passed
+And Email textboxina bes karakterden az olucak sekilde email adresi yazildiginda cikan Your email is required to be at least five characters textin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US02 Kayit olmak icin email and username bilgileri girilebilmelidir." name="TC03 e-mail bos birakilamaz" time="1.349">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxina gecerli bir isim girilmeli........................passed
+Then Lastname textboxina gecerli bir soyisim girilmeli......................passed
+And Username textboxina gecerli bir kullanici adı girilmeli.................passed
+Then Email textboxi bos birakildiginda cikan Your email is required textinin gorunurlugu test edilmeli.passed
+And Email textboxina gecerli bir adres girilmeli............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC01 Kullanıcının herhangi bir karakter içeren &quot;First Name&quot; yazması gerekir ve boş bırakılamaz." time="1.882">
+        <failure message="invalid selector: Unable to locate an element with the xpath expression //input[@name='firstName']'] because of the following error:&#10;SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//input[@name='firstName']']' is not a valid XPath expression.&#10;  (Session info: chrome=99.0.4844.82)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception&#10;Build info: version: '4.1.1', revision: 'e8fcc2cecf'&#10;System info: host: 'ONUR', ip: '192.168.1.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [e3c38a7786a498b94dcc3ebedfd829d4, findElement {using=xpath, value=//input[@name='firstName']']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Onur\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:63573}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63573/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: e3c38a7786a498b94dcc3ebedfd829d4" type="org.openqa.selenium.InvalidSelectorException"><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Firstname TextBox'a "" girer............................................failed
+And Send an Appointment Request butonuna tiklar.............................skipped
+And Make An Appointment First Name Uyari Yazisinin gorundugunu dogrular.....skipped
+
+StackTrace:
+org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //input[@name='firstName']'] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//input[@name='firstName']']' is not a valid XPath expression.
+  (Session info: chrome=99.0.4844.82)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'ONUR', ip: '192.168.1.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e3c38a7786a498b94dcc3ebedfd829d4, findElement {using=xpath, value=//input[@name='firstName']']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Onur\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:63573}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63573/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e3c38a7786a498b94dcc3ebedfd829d4
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.sendKeys(Unknown Source)
+	at stepdefinitions.UIStepDefinitions.RegistrationStepDefinition.firstnameTextBoxAGirer(RegistrationStepDefinition.java:478)
+	at ✽.Firstname TextBox'a "" girer.(file:///C:/Users/Onur/Desktop/MedunnaProject03-main/MedunnaProject03-main/src/test/resources/features/US_005.feature:10)
+]]></failure>
+    </testcase>
+    <testcase classname="US_005" name="TC01 Kullanıcının herhangi bir karakter içeren &quot;First Name&quot; yazması gerekir ve boş bırakılamaz. 2" time="2.038">
+        <failure message="invalid selector: Unable to locate an element with the xpath expression //input[@name='firstName']'] because of the following error:&#10;SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//input[@name='firstName']']' is not a valid XPath expression.&#10;  (Session info: chrome=99.0.4844.82)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception&#10;Build info: version: '4.1.1', revision: 'e8fcc2cecf'&#10;System info: host: 'ONUR', ip: '192.168.1.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [e3c38a7786a498b94dcc3ebedfd829d4, findElement {using=xpath, value=//input[@name='firstName']']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Onur\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:63573}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63573/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: e3c38a7786a498b94dcc3ebedfd829d4" type="org.openqa.selenium.InvalidSelectorException"><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Firstname TextBox'a "" girer............................................failed
+And Send an Appointment Request butonuna tiklar.............................skipped
+And Make An Appointment First Name Uyari Yazisinin gorundugunu dogrular.....skipped
+
+StackTrace:
+org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //input[@name='firstName']'] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//input[@name='firstName']']' is not a valid XPath expression.
+  (Session info: chrome=99.0.4844.82)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'ONUR', ip: '192.168.1.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e3c38a7786a498b94dcc3ebedfd829d4, findElement {using=xpath, value=//input[@name='firstName']']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Onur\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:63573}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63573/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e3c38a7786a498b94dcc3ebedfd829d4
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.sendKeys(Unknown Source)
+	at stepdefinitions.UIStepDefinitions.RegistrationStepDefinition.firstnameTextBoxAGirer(RegistrationStepDefinition.java:478)
+	at ✽.Firstname TextBox'a "" girer.(file:///C:/Users/Onur/Desktop/MedunnaProject03-main/MedunnaProject03-main/src/test/resources/features/US_005.feature:10)
+]]></failure>
+    </testcase>
+    <testcase classname="US_005" name="TC02 Kullanıcı SSN numarası girmeli (kayıtlı SSN) gecersiz giris yapilamaz." time="4.767">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And SSN TextBox'a "123456789" girer.........................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid SSN icin SSN Uyari Yazisi gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC02 Kullanıcı SSN numarası girmeli (kayıtlı SSN) gecersiz giris yapilamaz. 2" time="4.57">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And SSN TextBox'a "000000000" girer.........................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid SSN icin SSN Uyari Yazisi gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC02 Kullanıcı SSN numarası girmeli (kayıtlı SSN) gecersiz giris yapilamaz. 3" time="4.518">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And SSN TextBox'a "abc12!@#$" girer.........................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid SSN icin SSN Uyari Yazisi gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC02 Kullanıcı SSN numarası girmeli (kayıtlı SSN) gecersiz giris yapilamaz. 4" time="4.543">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And SSN TextBox'a "abcdefghi" girer.........................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid SSN icin SSN Uyari Yazisi gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC02 Kullanıcı SSN numarası girmeli (kayıtlı SSN) gecersiz giris yapilamaz. 5" time="4.476">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And SSN TextBox'a "123-123-123" girer.......................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid SSN icin SSN Uyari Yazisi gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC02 Kullanıcı SSN numarası girmeli (kayıtlı SSN) boş bırakılamaz." time="4.446">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And SSN TextBox'a "" girer..................................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment SSN icin SSN Uyari Yazisi gorundugunu dogrular......passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC02 Kullanıcı SSN numarası girmeli (kayıtlı SSN) boş bırakılamaz. 2" time="4.481">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And SSN TextBox'a "" girer..................................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment SSN icin SSN Uyari Yazisi gorundugunu dogrular......passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC03 Kullanıcı, herhangi bir karakter içeren &quot;Last Name&quot; yazması gerekir, boş bırakılamaz." time="4.505">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Lastname TextBox'a "" girer.............................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment Last Name Uyari Yazisinin gorundugunu dogrular......passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC03 Kullanıcı, herhangi bir karakter içeren &quot;Last Name&quot; yazması gerekir, boş bırakılamaz. 2" time="4.438">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Lastname TextBox'a "" girer.............................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment Last Name Uyari Yazisinin gorundugunu dogrular......passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC04 Kullanıcı &quot;.&quot; ve &quot;@&quot; içeren e-mail adresi girmeli, gecersiz giris yapilamaz." time="4.575">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Email TextBox'a ".@" girer..............................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid Email icin "This field is invalid" gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC04 Kullanıcı &quot;.&quot; ve &quot;@&quot; içeren e-mail adresi girmeli, gecersiz giris yapilamaz. 2" time="4.591">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Email TextBox'a "ab.bv@c" girer.........................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid Email icin "This field is invalid" gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC04 Kullanıcı &quot;.&quot; ve &quot;@&quot; içeren e-mail adresi girmeli, gecersiz giris yapilamaz. 3" time="4.5">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Email TextBox'a "@." girer..............................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid Email icin "This field is invalid" gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC04 Kullanıcı &quot;.&quot; ve &quot;@&quot; içeren e-mail adresi girmeli, gecersiz giris yapilamaz. 4" time="4.583">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Email TextBox'a "!@$.&*" girer..........................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid Email icin "This field is invalid" gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC04 Kullanıcı &quot;.&quot; ve &quot;@&quot; içeren e-mail adresi girmeli, gecersiz giris yapilamaz. 5" time="4.644">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Email TextBox'a "a.@b.c" girer..........................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid Email icin "This field is invalid" gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC04 Kullanıcı &quot;.&quot; ve &quot;@&quot; içeren e-mail adresi girmeli, boş bırakılamaz." time="4.472">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Email TextBox'a "" girer................................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment Email icin "Your email is required." gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC04 Kullanıcı &quot;.&quot; ve &quot;@&quot; içeren e-mail adresi girmeli, boş bırakılamaz. 2" time="4.532">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Email TextBox'a "" girer................................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment Email icin "Your email is required." gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC05 Kullanıcı, 3. ve 6. rakamdan sonra &quot;-&quot; olan 10 rakamlı telefon numarasını girmeli, gecersiz giris yapilamaz." time="4.584">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Phone TextBox'a "abc-abc-abcd" girer....................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid Phone icin Phone Uyari Yazisi gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC05 Kullanıcı, 3. ve 6. rakamdan sonra &quot;-&quot; olan 10 rakamlı telefon numarasını girmeli, gecersiz giris yapilamaz. 2" time="4.834">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()='Phone number is invalid']&quot;}&#10;  (Session info: chrome=99.0.4844.82)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.1.1', revision: 'e8fcc2cecf'&#10;System info: host: 'ONUR', ip: '192.168.1.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [e3c38a7786a498b94dcc3ebedfd829d4, findElement {using=xpath, value=//div[text()='Phone number is invalid']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Onur\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:63573}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63573/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: e3c38a7786a498b94dcc3ebedfd829d4" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Phone TextBox'a "1234567890" girer......................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid Phone icin Phone Uyari Yazisi gorundugunu dogrular..failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Phone number is invalid']"}
+  (Session info: chrome=99.0.4844.82)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'ONUR', ip: '192.168.1.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e3c38a7786a498b94dcc3ebedfd829d4, findElement {using=xpath, value=//div[text()='Phone number is invalid']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Onur\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:63573}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63573/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e3c38a7786a498b94dcc3ebedfd829d4
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.getText(Unknown Source)
+	at stepdefinitions.UIStepDefinitions.RegistrationStepDefinition.makeAnAppointmentInvalidPhoneIcinPhoneUyariYazisiGorundugunuDogrular(RegistrationStepDefinition.java:543)
+	at ✽.Make An Appointment invalid Phone icin Phone Uyari Yazisi gorundugunu dogrular.(file:///C:/Users/Onur/Desktop/MedunnaProject03-main/MedunnaProject03-main/src/test/resources/features/US_005.feature:110)
+]]></failure>
+    </testcase>
+    <testcase classname="US_005" name="TC05 Kullanıcı, 3. ve 6. rakamdan sonra &quot;-&quot; olan 10 rakamlı telefon numarasını girmeli, gecersiz giris yapilamaz. 3" time="4.577">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Phone TextBox'a "12a-12!-123" girer.....................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid Phone icin Phone Uyari Yazisi gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC05 Kullanıcı, 3. ve 6. rakamdan sonra &quot;-&quot; olan 10 rakamlı telefon numarasını girmeli, gecersiz giris yapilamaz. 4" time="4.59">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Phone TextBox'a "123-123-123" girer.....................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid Phone icin Phone Uyari Yazisi gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC05 Kullanıcı, 3. ve 6. rakamdan sonra &quot;-&quot; olan 10 rakamlı telefon numarasını girmeli, gecersiz giris yapilamaz. 5" time="4.582">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Phone TextBox'a "123-123-12345" girer...................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid Phone icin Phone Uyari Yazisi gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC05 Kullanıcı, 3. ve 6. rakamdan sonra &quot;-&quot; olan 10 rakamlı telefon numarasını girmeli, gecersiz giris yapilamaz. 6" time="4.666">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Phone TextBox'a "123.123.1234" girer....................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment invalid Phone icin Phone Uyari Yazisi gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC05 Kullanıcı, 3. ve 6. rakamdan sonra &quot;-&quot; olan 10 rakamlı telefon numarasını girmeli, bos birakilamaz." time="4.516">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Phone TextBox'a "" girer................................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment Phone icin Phone Uyari Yazisi gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_005" name="TC05 Kullanıcı, 3. ve 6. rakamdan sonra &quot;-&quot; olan 10 rakamlı telefon numarasını girmeli, bos birakilamaz. 2" time="4.936">
+        <system-out><![CDATA[Given Kullanici web uygulamasinin url'ine gider.............................passed
+Then Siteye gidildigini dogrular............................................passed
+And Make an Appointment butonuna tiklar.....................................passed
+And Make an Appointment yazisinin goruldugunu dogrular......................passed
+And Phone TextBox'a "" girer................................................passed
+And Send an Appointment Request butonuna tiklar.............................passed
+And Make An Appointment Phone icin Phone Uyari Yazisi gorundugunu dogrular..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_11" name="TC_02 Doktor patient icin edit yapabilmeli" time="5.549">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+Given Kullanici kendisine verilen "szgn" ve "ervanaz2012" ile sign in yapar ve Appointments sayfasina girer.passed
+Then Kullanici mevcut gun ile ileri tarihleri arasindaki statusu unapproved olanlari gorur.passed
+And Kullanici patient icin edit e tiklar....................................passed
+Then Kullanici Create or Edit an Appointment yazisini gorur.................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US_11" name="TC_04 Kullanici edit sayfasinda patient icin gerekli bilgileri ekleyip save edebilmeli" time="1.69">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()='Sign in']&quot;}&#10;  (Session info: chrome=99.0.4844.82)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.1.1', revision: 'e8fcc2cecf'&#10;System info: host: 'ONUR', ip: '192.168.1.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [e3c38a7786a498b94dcc3ebedfd829d4, findElement {using=xpath, value=//span[text()='Sign in']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Onur\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:63573}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63573/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: e3c38a7786a498b94dcc3ebedfd829d4" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+Given Kullanici kendisine verilen "szgn" ve "ervanaz2012" ile sign in yapar ve Appointments sayfasina girer.failed
+Then Kullanici mevcut gun ile ileri tarihleri arasindaki statusu unapproved olanlari gorur.skipped
+And Kullanici patient icin edit e tiklar....................................skipped
+Given Kullanici "anemi" box a veri girisi yapabilmeli.......................skipped
+Then Kullanici "treatmentt" box a veri girisi yapar.........................skipped
+And Kullanici "diagnosiss" box a veri girisi yaparsa........................skipped
+Then Kullanici save yapar ve succesfully saved yazisini gorur...............skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Sign in']"}
+  (Session info: chrome=99.0.4844.82)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'ONUR', ip: '192.168.1.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e3c38a7786a498b94dcc3ebedfd829d4, findElement {using=xpath, value=//span[text()='Sign in']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Onur\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:63573}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63573/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e3c38a7786a498b94dcc3ebedfd829d4
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
+	at stepdefinitions.UIStepDefinitions.RegistrationStepDefinition.kullaniciKendisineVerilenVeIleSignInYaparVeAppointmentsSayfasinaGirer(RegistrationStepDefinition.java:558)
+	at ✽.Kullanici kendisine verilen "szgn" ve "ervanaz2012" ile sign in yapar ve Appointments sayfasina girer(file:///C:/Users/Onur/Desktop/MedunnaProject03-main/MedunnaProject03-main/src/test/resources/features/US_011.feature:40)
+]]></failure>
+    </testcase>
+</testsuite>

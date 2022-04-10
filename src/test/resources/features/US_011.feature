@@ -13,7 +13,7 @@ Feature: US_11
       | username | password    |
       | szgn     | ervanaz2012 |
 
-
+  @Team93
   Scenario Outline: TC_02 Doktor patient icin edit yapabilmeli
     Given Kullanici kendisine verilen "<username>" ve "<password>" ile sign in yapar ve Appointments sayfasina girer
     Then Kullanici mevcut gun ile ileri tarihleri arasindaki statusu unapproved olanlari gorur
@@ -35,7 +35,7 @@ Feature: US_11
       | username | password    |
       | szgn     | ervanaz2012 |
 
-
+  @Team93
   Scenario Outline: TC_04 Kullanici edit sayfasinda patient icin gerekli bilgileri ekleyip save edebilmeli
     Given Kullanici kendisine verilen "<username>" ve "<password>" ile sign in yapar ve Appointments sayfasina girer
     Then Kullanici mevcut gun ile ileri tarihleri arasindaki statusu unapproved olanlari gorur
@@ -44,12 +44,10 @@ Feature: US_11
     Then Kullanici "<treatment>" box a veri girisi yapar
     And Kullanici "<diagnosis>" box a veri girisi yaparsa
     Then Kullanici save yapar ve succesfully saved yazisini gorur
+
     Examples: Username and password data
-      | username | password    |
-      | szgn     | ervanaz2012 |
-    Examples: veriler
-      | anamnesis | treatment | diagnosis |
-      | anemi     | treatmentt | diagnosiss |
+      | username | password    |anamnesis | treatment | diagnosis |
+      | szgn     | ervanaz2012 |anemi     | treatmentt | diagnosiss |
 
 
   Scenario Outline: TC_05 Kullanici patieint icin status u cancelled yapabilmeli

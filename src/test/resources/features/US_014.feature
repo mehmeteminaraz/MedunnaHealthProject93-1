@@ -38,7 +38,6 @@ Feature:Physician "Edit Inpatient" (Yatılı Tedavi) işlemleri yapabilmeli
     And Doktor acilan menuden My Inpatients butununa tiklar
     Then Doktor yatan hasta satirinin yaninda bulunan Edit butonuna tiklar
     And  Doktor acilan sayfadan Status bolumunden UNAPPOROVED'u secip kaydedebilir
-    And Doktor UNAPPOROVED kaydedildigini kontrol eder
     Then Doktor acilan sayfadan Status bolumunden STAYING secip kaydedebilir
     Then Doktor STAYING secildigini kontrol eder
     And Doktor acilan sayfadan Status bolumunden DISCHARGED secip kaydedebilir

@@ -1,6 +1,8 @@
+@Team93
 Feature: US02 Kayit olmak icin email and username bilgileri girilebilmelidir.
   Background:
     Given Kullanici siteye gider "medunnaUrl"
+
   Scenario: TC01 Herhangi bir karakter içeren ve boş bırakılamayan geçerli bir "Username" olmalıdır
     When  Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir
     And   Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar

@@ -26,13 +26,9 @@ Feature: Physician (Doktor) "Test Results" işlemleri yapabilmeli
     Then Giris yapilan hesaptan signOut yapar.
     Then Web uygulamasindan cikis yapar.
 
-
-
     Examples:
       |username    |password|
       |prof.dr.salihkaya|drsalih |
-
-
 
 
   Scenario Outline: TC02 Doktor "Request Impatient" (hastanın yatılı tedavi görmesi) isteğinde bulunabilmeli

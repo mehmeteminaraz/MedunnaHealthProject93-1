@@ -1,3 +1,4 @@
+@Team93
 Feature: US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir.
   Background:
     Given Kullanici siteye gider "medunnaUrl"
@@ -11,15 +12,11 @@ Feature: US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilm
     And   Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli
     Examples:test
       | ssn         | tireliSSN          |
-      | 0           |  -12364-569-7      |
-      | 63          |  23-98-48-237      |
-      | 987         |  1-2-3-4-5-6-7-8-9 |
-      | 0236        |  123654987-        |
-      | 12354       |  1234567-89        |
-      | 654832      |  -1-29-48-963-4    |
-      | 8756214     |  223-897-456       |
-      | 12345678    |  --------          |
-      | 12345-67891 |   -1236-           |
+      | 0           |  -12364-569-7-     |
+      | 0630        |  23-98-48-237      |
+      | 9870        |  1-2-3-4-5-6-7-8-9 |
+      | 1234567891  |  --------          |
+
   Scenario: TC02 SSN bos birakilamaz
     When  Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir
     And   Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar
