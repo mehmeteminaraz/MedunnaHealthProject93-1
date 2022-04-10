@@ -1,4 +1,4 @@
-
+@Team93
 Feature: US09
 
 
@@ -36,10 +36,10 @@ Feature: US09
 
     Given Kullanici siteye gider "medunnaUrl"
     Then Kullanici Web Sayfasinda bulunan person ikonuna tiklar.
-    Then Kullanici Sign in sekmesine tiklar.
+    Then Kullanici Sign in sekmesine tiklarr.
     And Kullanici Username Box'a gecerli "staff_zeynep" girer.
     And Kullanici Password Box'a gecerli "New2022." girer.
-    Then Kullanici Sign in butonuna tiklar.
+    Then Kullanici Sign in butonuna tiklarr.
     Then Ust menudeki MY_PAGES menusune tiklanir.
     Then Menunun altinda cikan Search Patient item'ina tiklanir.
     And Staff hasta bilgi satirindaki Edit butonuna tiklar.

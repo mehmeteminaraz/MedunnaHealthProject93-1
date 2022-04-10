@@ -1,4 +1,4 @@
-
+@Team93
 Feature:Kayitli kullanici adi ve sifresi ile giris yapma, sifre güncelleme
   Background:
     Given Kullanici siteye gider "medunnaUrl"
@@ -7,14 +7,14 @@ Feature:Kayitli kullanici adi ve sifresi ile giris yapma, sifre güncelleme
     Then Kullanici Sign in sekmesine tiklar.
 
   Scenario: Oturum acma
-    Then Kullanici Username Box'a gecerli "username" girer.
+    Then Kullanici Username Box'a gecerli "username" girerr
     Then Kullanici Password Box'a gecerli "password" girer.
     Then Kullanici Sign in butonuna tiklar.
     Then Kullanici sayfayi kapatir
 
   Scenario: Mevcut parolayi güncelleme ( Pozitif Test)
-    Then Kullanici Username Box'a gecerli "username" girer.
-    Then Kullanici Password Box'a gecerli "password" girer.
+    Then Kullanici Username Box'a gecerli "username" girerr
+    Then Kullanici Password Box'a gecerli "password" girerr.
     Then Kullanici Sign in butonuna tiklar.
     Then Kullanici sayfa sag üstte isim ve soyisminin yer aldigi yaziya tiklar
     Then Kullanici acilan menüde password yazisina tiklar

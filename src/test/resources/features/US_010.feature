@@ -1,6 +1,7 @@
 Feature: US_10
 
   Scenario Outline: Doktor randevu listesini gorebilmeli
+    Given Kullanici siteye gider "medunnaUrl"
     Given kullanici "<title>" olarak oturum acar
     And kullanici Randevularim ogesini secer ve tiklar
     When kullanici Randevular sayfasinda oldugunu dogrular
@@ -13,6 +14,7 @@ Feature: US_10
       |doctor|26/02/2022  |11/03/2022|
 
   Scenario Outline:  Yonetici olarak yeni bir randevu olusturma
+    Given Kullanici siteye gider "medunnaUrl"
     Given kullanici "<username>","<password>" yonetici olarak oturum acar
     And kullanici randevu sayfasina gider
     And kullanici yeni bir Randevu Olustur dugmesini tiklar

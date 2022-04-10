@@ -452,10 +452,6 @@ public class RegistrationStepDefinition {
 
     }
     //------------------------SEZEN---------------------------
-    @Given("Kullanici web uygulamasinin url'ine gider.")
-    public void kullanici_web_uygulamasinin_url_ine_gider() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("medunnaUrl"));
-    }
 
     @And("Siteye gidildigini dogrular.")
     public void siteyeGidildiginiDogrular() {
@@ -906,8 +902,8 @@ public class RegistrationStepDefinition {
         mp.homePageSignInLinki.click();
         Driver.wait(2);
     }
-    @Then("Kullanici Username Box'a gecerli {string} girer.")
-    public void kullanıcı_username_box_a_gecerli_girer(String username) {
+    @Then("Kullanici Username Box'a gecerli {string} girerr")
+    public void kullanıcı_username_box_a_gecerli_girerr(String username) {
         mp.homePageUsernameBox.click();
         mp.homePageUsernameBox.sendKeys(ConfigurationReader.getProperty("username"));
     }
@@ -915,8 +911,8 @@ public class RegistrationStepDefinition {
     public void kullanıcı_password_box_a_gecerli_girer(String SignInValidPassword) {
         mp.homePagePasswordBox.sendKeys(ConfigurationReader.getProperty("SignInValidPassword"));
     }
-    @Then("Kullanici Sign in butonuna tiklar.")
-    public void kullanıcı_sign_in_butonuna_tiklar() {
+    @Then("Kullanici Sign in butonuna tiklarr.")
+    public void kullanıcı_sign_in_butonuna_tiklarr() {
         mp.girisSignInButtonElementi.click();
         Driver.wait(2);
     }
@@ -1003,24 +999,20 @@ public class RegistrationStepDefinition {
         mp.homePageUsernameBox.click();
         mp.homePagePasswordBox.sendKeys(password);
     }
-    @Given("Kullanici siteye gider {string}")
-    public void kullanici_siteye_gider(String string) {
-        Driver.getDriver().get(ConfigurationReader.getProperty("medunnaUrl"));
-    }
     @Then("Kullanici Web Sayfasinda bulunan person ikonuna tiklar.")
     public void kullanici_web_sayfasinda_bulunan_person_ikonuna_tiklar() {
         Driver.waitAndClick(mp.anaSayfaKullaniciIkonu);
     }
-    @Then("Kullanici Sign in sekmesine tiklar.")
-    public void kullanici_sign_in_sekmesine_tiklar() {
+    @Then("Kullanici Sign in sekmesine tiklarr.")
+    public void kullanici_sign_in_sekmesine_tiklarr() {
         Driver.waitAndClick(mp.signInlink);
     }
     @Then("Kullanici Username Box'a gecerli {string} girer.")
     public void kullanici_username_box_a_gecerli_girer(String username) {
         mp.usernameBoxElementi.sendKeys(username);
     }
-    @Then("Kullanici Password Box'a gecerli {string} girer.")
-    public void kullanici_password_box_a_gecerli_girer(String password) {
+    @Then("Kullanici Password Box'a gecerli {string} girerr.")
+    public void kullanici_password_box_a_gecerli_girerr(String password) {
         mp.passwordBoxElementi.sendKeys(password);
     }
     @Then("Kullanici Sign in butonuna tiklar.")

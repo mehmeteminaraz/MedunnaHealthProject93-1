@@ -4,7 +4,7 @@ Feature: Physician (Doktor) "Test Results" işlemleri yapabilmeli
   "id, name(Urea, Sodium, Glucose etc..), default max value, default min value, test, description and the date"
   bilgilerini görebilmeli
 
-    Given Kullanici web uygulamasinin url'ine gider.
+    Given Kullanici siteye gider "medunnaUrl"
     And Siteye gidildigini dogrular.
     Then Web Sayfasinda bulunan person ikonuna tiklar.
     Then Sign in sekmesine tiklar.
@@ -33,7 +33,7 @@ Feature: Physician (Doktor) "Test Results" işlemleri yapabilmeli
 
   Scenario Outline: TC02 Doktor "Request Impatient" (hastanın yatılı tedavi görmesi) isteğinde bulunabilmeli
 
-    Given Kullanici web uygulamasinin url'ine gider.
+    Given Kullanici siteye gider "medunnaUrl"
     And Siteye gidildigini dogrular.
     Then Web Sayfasinda bulunan person ikonuna tiklar.
     Then Sign in sekmesine tiklar.
