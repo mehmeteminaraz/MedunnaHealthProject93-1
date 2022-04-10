@@ -790,4 +790,56 @@ There should be api and DB validation
     @FindBy(xpath = "(//h2)[4]")
     public WebElement makeAnAppointmentYazisi;
 
+
+    //*********************************** new US11 **************
+    //mainPage>SignIn as A doctor>>/My Pages
+    @FindBy(xpath = "//span[text()='MY PAGES']")
+    public WebElement myPagesElementi;
+
+    //doctorpages>> fromdate
+    @FindBy(xpath = "//input[@name='fromDate'] ")
+    public WebElement fromdateboxEelement ;
+
+    //doctorpages>> todate
+    @FindBy(xpath = "//input[@name='fromDate'] ")
+    public WebElement todateboxEelement ;
+    // doctor pages status>> unapproved
+    @FindBy(xpath = "//span[text()='UNAPPROVED']")
+    public WebElement unapprovedwordElementi;
+    // doctor pages status>> pending
+    @FindBy(xpath = "//span[text()='PENDING']")
+    public WebElement pendingwordElementi;
+    //doctor pages status>> Prescription
+    @FindBy(xpath = "//span[text()='Prescription']")
+    public WebElement prescriptionwordElementi;
+
+    // doctor pages status>> cancelled
+    @FindBy(xpath = "//span[text()='CANCELLED']")
+    public WebElement cancelledwordElementi;
+
+    // doctor page edit icon u
+    @FindBy(xpath = "(//span[@class='d-none d-md-inline'])[1]")
+    public WebElement editElementidoctorpage;
+
+    // doctor page edit>>Create or Edit yazisi
+    @FindBy(xpath = "//span[text()='Create or Edit an Appointment']")
+    public WebElement createElementiyazisi;
+    // doctor page edit>>Invalied text yazisi
+    @FindBy(xpath = "//div[@class='invalid-feedback']")
+    public WebElement thisFieldIsRequiredYazisi;
+
+    //doctorpage>>edit>> save button
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement saveDoctorEditPage ;
+
+    // doctorpage register saved yazisi
+
+    @FindBy(xpath = "//*[contains(text(),'Registration Saved')]")
+    public WebElement registersavedYazisiElementi;
+
+    // doctor pages status>> status yazisi elementi
+    @FindBy(xpath = "//select[@name='status']")
+    public WebElement statuswordElementi;
+
+
 }
