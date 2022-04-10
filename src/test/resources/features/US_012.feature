@@ -2,7 +2,7 @@ Feature: US_012 Physician (Doktor) test isteyebilmeli
   @requestatest
   Scenario Outline: TC01 Doctor test isteyebilmeli
 
-    Given Kullanici web uygulamasinin url'ine gider.
+    Given Kullanici siteye gider "medunnaUrl"
     And Siteye gidildigini dogrular.
     Then Web Sayfasinda bulunan person ikonuna tiklar.
     Then Sign in sekmesine tiklar.
@@ -30,7 +30,7 @@ Feature: US_012 Physician (Doktor) test isteyebilmeli
   Scenario Outline: TC02
 
 
-    Given Kullanici web uygulamasinin url'ine gider.
+    Given Kullanici siteye gider "medunnaUrl"
     And Siteye gidildigini dogrular.
     Then Web Sayfasinda bulunan person ikonuna tiklar.
     Then Sign in sekmesine tiklar.

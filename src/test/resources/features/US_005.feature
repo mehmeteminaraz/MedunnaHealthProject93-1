@@ -2,12 +2,11 @@
 Feature:US_005
 
   Scenario Outline: TC01 Kullanıcının herhangi bir karakter içeren "First Name" yazması gerekir ve boş bırakılamaz.
-
-    Given Kullanici web uygulamasinin url'ine gider.
+    Given Kullanici siteye gider "medunnaUrl"
     Then Siteye gidildigini dogrular.
     And Make an Appointment butonuna tiklar.
     And Make an Appointment yazisinin goruldugunu dogrular.
-    And Firstname TextBox'a "<First Name>" girer.
+    # And Firstname TextBox'a "<First Name>" girer.
     And Send an Appointment Request butonuna tiklar.
     And Make An Appointment First Name Uyari Yazisinin gorundugunu dogrular.
 
@@ -17,8 +16,7 @@ Feature:US_005
       |            |
 
   Scenario Outline: TC02 Kullanıcı SSN numarası girmeli (kayıtlı SSN) gecersiz giris yapilamaz.
-
-    Given Kullanici web uygulamasinin url'ine gider.
+    Given Kullanici siteye gider "medunnaUrl"
     Then Siteye gidildigini dogrular.
     And Make an Appointment butonuna tiklar.
     And Make an Appointment yazisinin goruldugunu dogrular.
@@ -36,8 +34,7 @@ Feature:US_005
 
 
   Scenario Outline: TC02 Kullanıcı SSN numarası girmeli (kayıtlı SSN) boş bırakılamaz.
-
-    Given Kullanici web uygulamasinin url'ine gider.
+    Given Kullanici siteye gider "medunnaUrl"
     Then Siteye gidildigini dogrular.
     And Make an Appointment butonuna tiklar.
     And Make an Appointment yazisinin goruldugunu dogrular.
@@ -53,7 +50,7 @@ Feature:US_005
 
   Scenario Outline: TC03 Kullanıcı, herhangi bir karakter içeren "Last Name" yazması gerekir, boş bırakılamaz.
 
-    Given Kullanici web uygulamasinin url'ine gider.
+    Given Kullanici siteye gider "medunnaUrl"
     Then Siteye gidildigini dogrular.
     And Make an Appointment butonuna tiklar.
     And Make an Appointment yazisinin goruldugunu dogrular.
@@ -68,7 +65,7 @@ Feature:US_005
 
   Scenario Outline:TC04 Kullanıcı "." ve "@" içeren e-mail adresi girmeli, gecersiz giris yapilamaz.
 
-    Given Kullanici web uygulamasinin url'ine gider.
+    Given Kullanici siteye gider "medunnaUrl"
     Then Siteye gidildigini dogrular.
     And Make an Appointment butonuna tiklar.
     And Make an Appointment yazisinin goruldugunu dogrular.
@@ -86,7 +83,7 @@ Feature:US_005
 
   Scenario Outline:TC04 Kullanıcı "." ve "@" içeren e-mail adresi girmeli, boş bırakılamaz.
 
-    Given Kullanici web uygulamasinin url'ine gider.
+    Given Kullanici siteye gider "medunnaUrl"
     Then Siteye gidildigini dogrular.
     And Make an Appointment butonuna tiklar.
     And Make an Appointment yazisinin goruldugunu dogrular.
@@ -101,7 +98,7 @@ Feature:US_005
 
   Scenario Outline: TC05 Kullanıcı, 3. ve 6. rakamdan sonra "-" olan 10 rakamlı telefon numarasını girmeli, gecersiz giris yapilamaz.
 
-    Given Kullanici web uygulamasinin url'ine gider.
+    Given Kullanici siteye gider "medunnaUrl"
     Then Siteye gidildigini dogrular.
     And Make an Appointment butonuna tiklar.
     And Make an Appointment yazisinin goruldugunu dogrular.
@@ -120,7 +117,7 @@ Feature:US_005
 
   Scenario Outline: TC05 Kullanıcı, 3. ve 6. rakamdan sonra "-" olan 10 rakamlı telefon numarasını girmeli, bos birakilamaz.
 
-    Given Kullanici web uygulamasinin url'ine gider.
+    Given Kullanici siteye gider "medunnaUrl"
     Then Siteye gidildigini dogrular.
     And Make an Appointment butonuna tiklar.
     And Make an Appointment yazisinin goruldugunu dogrular.
