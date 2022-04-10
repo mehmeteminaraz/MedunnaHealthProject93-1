@@ -1,6 +1,9 @@
 package utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,8 +17,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
+import java.util.*;
 import java.util.NoSuchElementException;
+
+import static io.restassured.RestAssured.given;
 
 public class Driver {
     //create a driver instance
@@ -28,6 +33,25 @@ public class Driver {
     //We can use Driver class with different browser(chrome,firefox,headless)
     private Driver() {
         //we don't want to create another abject. Singleton pattern
+    }
+
+    //Authorization
+    public static String generateToken() {
+        String username = "Team93Admin";
+        String password = "Batch44+";
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("username", username);
+        map.put("password",password);
+        map.put("rememberme","true");
+
+        String endPoint = "https://www.medunna.com/api/authenticate";
+
+        Response response1 = given().contentType(ContentType.JSON).body(map).when().post(endPoint);
+
+        JsonPath token = response1.jsonPath();
+
+        return token.getString("id_token");
     }
 
     //to initialize the driver we create a static method
@@ -191,6 +215,22 @@ public class Driver {
             e.printStackTrace();
         }
     }
+    public static void wait1(int secs) {
+
+        try {
+            Thread.sleep(200 * secs);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        } catch (StaleElementReferenceException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
@@ -256,6 +296,7 @@ public class Driver {
     public static void clickWithJS(WebElement element) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+
     }
 
     /**
@@ -313,5 +354,17 @@ public class Driver {
 
     public static void waitAndClickLocationText(WebElement element, String value) {
         Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
+    }
+
+
+    //==========Return a list of string given a list of Web Element====////
+    public static List<String> getElementsText(List<WebElement> list) {
+        List<String> elemTexts = new ArrayList<>();
+        for (WebElement el : list) {
+            if (!el.getText().isEmpty()) {
+                elemTexts.add(el.getText());
+            }
+        }
+        return elemTexts;
     }
 }
