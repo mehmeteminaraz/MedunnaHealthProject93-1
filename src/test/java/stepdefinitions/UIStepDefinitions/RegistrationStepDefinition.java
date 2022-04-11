@@ -63,8 +63,9 @@ public class RegistrationStepDefinition {
 
     @Then("Kullanici gecerli bir ssn numarasi girmeli")
     public void kullaniciGecerliBirSsnNumarasiGirmeli() {
+        faker=new Faker();
         mp.ssnTextBox.click();
-        mp.ssnTextBox.sendKeys(faker.idNumber().ssnValid(),Keys.ENTER);
+        mp.ssnTextBox.sendKeys(faker.idNumber().ssnValid());
     }
 
     @Then("Firstname textboxı bos birakildiginda cikan Your FirstName is required textinin gorunurlugu test edilmeli")
