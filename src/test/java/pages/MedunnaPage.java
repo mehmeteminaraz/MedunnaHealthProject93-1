@@ -865,9 +865,9 @@ There should be api and DB validation
 
     //=============================SalihEk1==================================
 
-    //Medunna>MainPage/Ana sayfada ki person ikonnu
+    //Medunna>MainPage/Ana sayfada ki person ikonu
     @FindBy(xpath = "(//a[@href='#'])[1]")
-    public WebElement mainPagePersonİkonuElementi;
+    public WebElement mainPagePersonIkonuElementi;
 
     //mainPage>personIkonu altindaki signOut linki butonu
     @FindBy(xpath = "//span[text()='Sign out']")

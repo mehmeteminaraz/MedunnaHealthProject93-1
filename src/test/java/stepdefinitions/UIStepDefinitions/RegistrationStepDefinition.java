@@ -668,7 +668,7 @@ public class RegistrationStepDefinition {
 
     @Then("Web Sayfasinda bulunan person ikonuna tiklar.")
     public void web_sayfasinda_bulunan_person_ikonuna_tiklar() {
-        MedunnaPage.mainPagePersonİkonuElementi.click();
+        MedunnaPage.mainPagePersonIkonuElementi.click();
 
     }
     @Then("Sign in sekmesine tiklar.")
@@ -768,8 +768,8 @@ public class RegistrationStepDefinition {
 
     }
 
-    @Then("Acilan sayfadaki testName'ler arasinda  Glucose, Urea, Creatinine, Sodium, Potassium, Total protein, Albumin, Hemoglobin seçenekleri oldugunu gorur.")
-    public void acilanSayfadakiTestNameLerArasindaGlucoseUreaCreatinineSodiumPotassiumTotalProteinAlbuminHemoglobinSeçenekleriOldugunuGorur() {
+    @Then("Acilan sayfadaki testName'ler arasinda  Glucose, Urea, Creatinine, Sodium, Potassium, Total protein, Albumin, Hemoglobin secenekleri oldugunu gorur.")
+    public void acilanSayfadakiTestNameLerArasindaGlucoseUreaCreatinineSodiumPotassiumTotalProteinAlbuminHemoglobinSecenekleriOldugunuGorur() {
         Driver.wait2(3);
         List<String> testNameStringList= new ArrayList<>();
 
@@ -867,12 +867,6 @@ public class RegistrationStepDefinition {
         Driver.waitAndClick(MedunnaPage.cikisIcinSignInLinkiElementi);
         Driver.waitAndClick(MedunnaPage.signOutLinkiElementi);
     }
-
-    @Then("Hasta yatis isteginin gonderildigini dogrular.")
-    public void hastaYatisIstegininGonderildiginiDogrular() {
-
-    }
-
     @And("Doktor gerekli test {string} secer.")
     public void doktorGerekliTestSecer(String istenenBaslikStr) {
 
@@ -898,88 +892,88 @@ public class RegistrationStepDefinition {
     }
     // ===================Mustafa=======================
     @Then("Kullanici Sign in sekmesine tiklar.")
-    public void kullanıcı_sign_in_sekmesine_tiklar() {
+    public void kullanici_sign_in_sekmesine_tiklar() {
         mp.homePageSignInLinki.click();
         Driver.wait(2);
     }
     @Then("Kullanici Username Box'a gecerli {string} girerr")
-    public void kullanıcı_username_box_a_gecerli_girerr(String username) {
+    public void kullanici_username_box_a_gecerli_girerr(String username) {
         mp.homePageUsernameBox.click();
         mp.homePageUsernameBox.sendKeys(ConfigurationReader.getProperty("username"));
     }
     @Then("Kullanici Password Box'a gecerli {string} girer.")
-    public void kullanıcı_password_box_a_gecerli_girer(String SignInValidPassword) {
+    public void kullanici_password_box_a_gecerli_girer(String SignInValidPassword) {
         mp.homePagePasswordBox.sendKeys(ConfigurationReader.getProperty("SignInValidPassword"));
     }
     @Then("Kullanici Sign in butonuna tiklarr.")
-    public void kullanıcı_sign_in_butonuna_tiklarr() {
+    public void kullanici_sign_in_butonuna_tiklarr() {
         mp.girisSignInButtonElementi.click();
         Driver.wait(2);
     }
-    @Then("Kullanici sayfa sag üstte isim ve soyisminin yer aldigi yaziya tiklar")
-    public void kullanici_sayfa_sag_üstte_isim_ve_soyisminin_yer_aldigi_yaziya_tiklar() {
+    @Then("Kullanici sayfa sag ustte isim ve soyisminin yer aldigi yaziya tiklar")
+    public void kullanici_sayfa_sag_ustte_isim_ve_soyisminin_yer_aldigi_yaziya_tiklar() {
         mp.kullaniciIkoniGirisYaptiktanSonra.click();
         Driver.wait2(2);
     }
-    @And("Kullanici acilan menüden signOut linkine tiklar")
-    public void kullaniciAcilanMenüdenSignOutLinkineTiklar() {
+    @And("Kullanici acilan menuden signOut linkine tiklar")
+    public void kullaniciAcilanMenudenSignOutLinkineTiklar() {
         mp.signOutLinki.click();
     }
     @Then("Kullanici sayfayi kapatir")
     public void kullaniciSayfayiKapatir() {
         Driver.getDriver().close();
     }
-    @Then("Kullanici acilan menüde password yazisina tiklar")
-    public void kullanıcı_acilan_menüde_password_yazisina_tiklar() {
+    @Then("Kullanici acilan menude password yazisina tiklar")
+    public void kullanici_acilan_menude_password_yazisina_tiklar() {
         mp.kullaniciIkonuMenusuAltindakiPasswordYazisi.click();
         Driver.wait(2);
     }
-    @Then("Kullanici acilan sayfadaki Current password kutucuğuna mevcut parolayi girer")
-    public void kullanıcı_acilan_sayfadaki_current_password_kutucuğuna_mevcut_parolayi_girer() {
+    @Then("Kullanici acilan sayfadaki Current password kutucuguna mevcut parolayi girer")
+    public void kullanici_acilan_sayfadaki_current_password_kutucuguna_mevcut_parolayi_girer() {
         Driver.waitAndClick(mp.passwordDegisikligiIcinGecerliPasswordBox, 1);
         mp.passwordDegisikligiIcinGecerliPasswordBox.sendKeys(ConfigurationReader.getProperty("SignInValidPassword"));
         Driver.wait2(2);
     }
-    @Then("Kullanici new password kutucuğuna yeni parolayi girer")
-    public void kullanıcı_new_password_kutucuğuna_yeni_parolayi_girer() {
+    @Then("Kullanici new password kutucuguna yeni parolayi girer")
+    public void kullanici_new_password_kutucuguna_yeni_parolayi_girer() {
         mp.passwordDegisikligiIcinYeniPasswordbox.sendKeys(ConfigurationReader.getProperty("SignInValidPassword"));
         Driver.wait(2);
     }
     @Then("Kullanici Password strength seviyesinin degistigini gorur")
     public void kullaniciPasswordStrengthSeviyesininDegistiginiGorur() {
     }
-    @Then("Kullanici new password confirmation kutucuğuna yeni parolayi tekrar girer")
-    public void kullanıcı_new_password_confirmation_kutucuğuna_yeni_parolayi_tekrar_girer() {
+    @Then("Kullanici new password confirmation kutucuguna yeni parolayi tekrar girer")
+    public void kullanici_new_password_confirmation_kutucuguna_yeni_parolayi_tekrar_girer() {
         mp.passwordDegisikligiIcinYeniPasswordConfirmBox.sendKeys(ConfigurationReader.getProperty("SigInNewPassword"));
     }
     @Then("Kullanici save butonuna tiklar")
-    public void kullanıcıSaveButonunaTiklar() {
+    public void kullaniciSaveButonunaTiklar() {
         Driver.clickWithJS(mp.passwordDegisikligiIcinSaveButonu);
         Driver.wait(2);
     }
-    @Then("Passwordun basarili bir sekilde degistigi görülür")
-    public void passwordun_basarili_bir_sekilde_degistigi_görülür() {
+    @Then("Passwordun basarili bir sekilde degistigi gorulur")
+    public void passwordun_basarili_bir_sekilde_degistigi_gorulur() {
         Driver.waitForVisibility(mp.passwordDegisikligiBasariliYazisi, 1);
         Assert.assertTrue(mp.passwordDegisikligiBasariliYazisi.isDisplayed());
     }
-    @Then("Kullanici acilan sayfadaki Current password kutucuğuna {string} girer")
-    public void kullanıcıAcilanSayfadakiCurrentPasswordKutucuğunaGirer(String mevcutPassword) {
+    @Then("Kullanici acilan sayfadaki Current password kutucuguna {string} girer")
+    public void kullaniciAcilanSayfadakiCurrentPasswordKutucugunaGirer(String mevcutPassword) {
         mp.passwordDegisikligiIcinGecerliPasswordBox.click();
         // Driver.clickWithJS( mp.passwordDegisikligiIcinGecerliPasswordBox);
         mp.passwordDegisikligiIcinGecerliPasswordBox.sendKeys(mevcutPassword);
     }
-    @Then("Kullanici new password kutucuğuna {string} girer")
-    public void kullanıcıNewPasswordKutucuğunaGirer(String yeniParola) {
+    @Then("Kullanici new password kutucuguna {string} girer")
+    public void kullaniciNewPasswordKutucugunaGirer(String yeniParola) {
         Driver.clickWithJS(mp.passwordDegisikligiIcinYeniPasswordbox);
         mp.passwordDegisikligiIcinYeniPasswordbox.sendKeys(yeniParola);
     }
-    @Then("Kullanici new password confirmation kutucuğuna {string} tekrar girer")
-    public void kullanıcıNewPasswordConfirmationKutucuğunaTekrarGirer(String yeniParola) {
+    @Then("Kullanici new password confirmation kutucuguna {string} tekrar girer")
+    public void kullaniciNewPasswordConfirmationKutucugunaTekrarGirer(String yeniParola) {
         Driver.clickWithJS(mp.passwordDegisikligiIcinYeniPasswordConfirmBox);
         mp.passwordDegisikligiIcinYeniPasswordConfirmBox.sendKeys(yeniParola);
     }
-    @Then("Passwordun degismedigi görülür")
-    public void passwordunDegismedigiGörülür() {
+    @Then("Passwordun degismedigi gorulur")
+    public void passwordunDegismedigiGorulur() {
         String expectedData="An error has occurred! The password could not be changed.";
         String actualDAta=mp.passwordDegisikligiBasarisizYazisi.getText();
         System.out.println(expectedData);
