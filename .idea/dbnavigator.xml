@@ -17,7 +17,7 @@
       <scope value="GLOBAL" />
       <destination value="FILE" />
       <format value="EXCEL" />
-      <charset value="windows-1254" />
+      <charset value="windows-1252" />
     </export-instructions>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -27,19 +27,19 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="3f37e51b-9658-4fa1-a23a-baa7021e2431">
-      <console name="MedunnaDB" type="STANDARD" schema="public" session="Main"><![CDATA[select * from patient
+    <connection id="c5f23f09-d99d-474d-aae5-cf71e06e4c34">
+      <console name="Medunna_Database" type="STANDARD" schema="public" session="Main">select * from patient
 
 select * from physician
 
-select * from jhi_user]]></console>
+select * from jhi_user</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="3f37e51b-9658-4fa1-a23a-baa7021e2431" />
+    <connection id="c5f23f09-d99d-474d-aae5-cf71e06e4c34" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -70,9 +70,9 @@ select * from jhi_user]]></console>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="3f37e51b-9658-4fa1-a23a-baa7021e2431" active="true" signed="false">
+      <connection id="c5f23f09-d99d-474d-aae5-cf71e06e4c34" active="true" signed="false">
         <database>
-          <name value="MedunnaDB" />
+          <name value="Medunna_Database" />
           <description value="" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />
@@ -537,7 +537,7 @@ select * from jhi_user]]></console>
       </regional-settings>
       <environment>
         <environment-types>
-          <environment-type id="development" name="Development" description="Development environment" color="-2430209/-14581644" readonly-code="false" readonly-data="false" />
+          <environment-type id="development" name="Development" description="Development environment" color="-2430209/-12296320" readonly-code="false" readonly-data="false" />
           <environment-type id="integration" name="Integration" description="Integration environment" color="-2621494/-12163514" readonly-code="true" readonly-data="false" />
           <environment-type id="production" name="Production" description="Productive environment" color="-11574/-10271420" readonly-code="true" readonly-data="true" />
           <environment-type id="other" name="Other" description="" color="-1576/-10724543" readonly-code="false" readonly-data="false" />
