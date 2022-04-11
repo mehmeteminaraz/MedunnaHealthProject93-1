@@ -17,9 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.NoSuchElementException;
 
 import static io.restassured.RestAssured.given;
@@ -217,6 +215,22 @@ public class Driver {
             e.printStackTrace();
         }
     }
+    public static void wait1(int secs) {
+
+        try {
+            Thread.sleep(200 * secs);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        } catch (StaleElementReferenceException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
@@ -282,6 +296,7 @@ public class Driver {
     public static void clickWithJS(WebElement element) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+
     }
 
     /**
@@ -339,5 +354,17 @@ public class Driver {
 
     public static void waitAndClickLocationText(WebElement element, String value) {
         Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
+    }
+
+
+    //==========Return a list of string given a list of Web Element====////
+    public static List<String> getElementsText(List<WebElement> list) {
+        List<String> elemTexts = new ArrayList<>();
+        for (WebElement el : list) {
+            if (!el.getText().isEmpty()) {
+                elemTexts.add(el.getText());
+            }
+        }
+        return elemTexts;
     }
 }

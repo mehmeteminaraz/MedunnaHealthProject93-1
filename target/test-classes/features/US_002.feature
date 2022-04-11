@@ -1,4 +1,3 @@
-@Team93
 Feature: US02 Kayit olmak icin email and username bilgileri girilebilmelidir.
 
   Background:
@@ -16,7 +15,6 @@ Feature: US02 Kayit olmak icin email and username bilgileri girilebilmelidir.
     And   Username textboxi bos birakildiginda cikan Your username is required textinin gorunurlugu test edilmeli
     Then  Bosluk birakilarak girilen bir username in gecersiz oldugu Your username is invalid textinin gorunurlugu ile test edilmeli
     And   Username textboxina gecerli bir kullanici adı girilmeli
-
 
   Scenario Outline: TC02 Email adresi "@" ve "." karakterleri olmadan doldurulamamalıdır.
 
@@ -36,9 +34,6 @@ Feature: US02 Kayit olmak icin email and username bilgileri girilebilmelidir.
       |qakubrahotmail.com  |
       |qakubra@hotmailcom |
       |qakubrahotmailcom   |
-
-
-  Scenario: TC03 e-mail bos birakilamaz
 
   Scenario: TC03 e-mail bos birakilamaz
 

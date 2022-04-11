@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="17" time="39.5">
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır." time="17.027">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "0" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "-12364-569-7" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 2" time="0.665">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "63" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "23-98-48-237" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 3" time="0.647">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "987" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "1-2-3-4-5-6-7-8-9" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 4" time="0.617">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "0236" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "123654987-" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 5" time="0.688">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "12354" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "1234567-89" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 6" time="0.715">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "654832" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "-1-29-48-963-4" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 7" time="0.682">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "8756214" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "223-897-456" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 8" time="0.595">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "12345678" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "--------" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra &quot;-&quot;  icermeli ve 9 rakamdan olusmalıdır. 9" time="0.639">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Girilecek olan "12345-67891" numarasi dokuzu gecmemeli ve dokuzun altinda olmamali.passed
+Then Kullanici SSN numarasinin ucuncu ve besinci rakamından sonra - isareti "-1236-" koymali.passed
+And Gecersiz SSN numarasi girildiginde Your SSN is invalid text'inin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC02 SSN bos birakilamaz" time="0.667">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+And SSN textboxi bos birakildiginda Your SSN is required textinin gorunurlugu test edilmeli.passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC03 Herhangi bir karakter içeren ve boş bırakılamayan geçerli bir &quot;First Name&quot; olmalıdır" time="1.008">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxı bos birakildiginda cikan Your FirstName is required textinin gorunurlugu test edilmeli.passed
+And Firstname textboxina gecerli bir isim girilmeli.........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US01 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girililebilmelidir." name="TC04 Herhangi bir karakter içeren ve boş bırakılamayan geçerli bir &quot;Last Name&quot; olmalıdır" time="1.233">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxina gecerli bir isim girilmeli........................passed
+And Lastname textboxi bos birakildiginda cikan Your LastName is required textinin gorunurlugu test edilmeli.passed
+Then Lastname textboxina gecerli bir soyisim girilmeli......................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US02 Kayit olmak icin email and username bilgileri girilebilmelidir." name="TC01 Herhangi bir karakter içeren ve boş bırakılamayan geçerli bir &quot;Username&quot; olmalıdır" time="3.189">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxina gecerli bir isim girilmeli........................passed
+Then Lastname textboxina gecerli bir soyisim girilmeli......................passed
+And Username textboxi bos birakildiginda cikan Your username is required textinin gorunurlugu test edilmeli.passed
+Then Bosluk birakilarak girilen bir username in gecersiz oldugu Your username is invalid textinin gorunurlugu ile test edilmeli.passed
+And Username textboxina gecerli bir kullanici adı girilmeli.................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US02 Kayit olmak icin email and username bilgileri girilebilmelidir." name="TC02 Email adresi &quot;@&quot; ve &quot;.&quot; karakterleri olmadan doldurulamamalıdır." time="3.074">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxina gecerli bir isim girilmeli........................passed
+Then Lastname textboxina gecerli bir soyisim girilmeli......................passed
+And Username textboxina gecerli bir kullanici adı girilmeli.................passed
+Then Email textboxina "qakubrahotmail.com" @ ve . isareti icermeyen bir adres girildiginde cikan This field is invalid textin gorunurlugu test edilmeli.passed
+And Email textboxina bes karakterden az olucak sekilde email adresi yazildiginda cikan Your email is required to be at least five characters textin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US02 Kayit olmak icin email and username bilgileri girilebilmelidir." name="TC02 Email adresi &quot;@&quot; ve &quot;.&quot; karakterleri olmadan doldurulamamalıdır. 2" time="3.146">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxina gecerli bir isim girilmeli........................passed
+Then Lastname textboxina gecerli bir soyisim girilmeli......................passed
+And Username textboxina gecerli bir kullanici adı girilmeli.................passed
+Then Email textboxina "qakubra@hotmailcom" @ ve . isareti icermeyen bir adres girildiginde cikan This field is invalid textin gorunurlugu test edilmeli.passed
+And Email textboxina bes karakterden az olucak sekilde email adresi yazildiginda cikan Your email is required to be at least five characters textin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US02 Kayit olmak icin email and username bilgileri girilebilmelidir." name="TC02 Email adresi &quot;@&quot; ve &quot;.&quot; karakterleri olmadan doldurulamamalıdır. 3" time="3.142">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxina gecerli bir isim girilmeli........................passed
+Then Lastname textboxina gecerli bir soyisim girilmeli......................passed
+And Username textboxina gecerli bir kullanici adı girilmeli.................passed
+Then Email textboxina "qakubrahotmailcom" @ ve . isareti icermeyen bir adres girildiginde cikan This field is invalid textin gorunurlugu test edilmeli.passed
+And Email textboxina bes karakterden az olucak sekilde email adresi yazildiginda cikan Your email is required to be at least five characters textin gorunurlugu test edilmeli.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="US02 Kayit olmak icin email and username bilgileri girilebilmelidir." name="TC03 e-mail bos birakilamaz" time="1.303">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+Then Kullanici kayıt olusturabilmek icin Register linkine tiklar............passed
+And Kayit sayfasinda olundugu Registration yazisi ile dogrulanir............passed
+Then Kullanici gecerli bir ssn numarasi girmeli.............................passed
+Then Firstname textboxina gecerli bir isim girilmeli........................passed
+Then Lastname textboxina gecerli bir soyisim girilmeli......................passed
+And Username textboxina gecerli bir kullanici adı girilmeli.................passed
+Then Email textboxi bos birakildiginda cikan Your email is required textinin gorunurlugu test edilmeli.passed
+And Email textboxina gecerli bir adres girilmeli............................passed
+]]></system-out>
+    </testcase>
+</testsuite>

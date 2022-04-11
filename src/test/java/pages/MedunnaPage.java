@@ -1,10 +1,12 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MedunnaPage {
@@ -155,30 +157,28 @@ public class MedunnaPage {
     @FindBy(xpath = "//span[text()='No Appointments found']")
     public WebElement NoAppointmentsFoundYazisi;
 
-//-------------------US09 Zeynep--------------------------
-
+    //-------------------US09 Zeynep--------------------------
     // Staff --> MY PAGES menüsü
-    @FindBy(xpath = "//li[7]")
+    @FindBy(xpath = "//li[@id='entity-menu']")
     public WebElement myPagesMenu;
     // Staff --> MY PAGES menüsü --> Search Patient item
-    @FindBy(xpath = "//li[7]//div[1]//a[1]//span[1]")
+    @FindBy(xpath = "//ul//li//div//a//span[text()='Search Patient']")
     public WebElement searchPatientItem;
     //  Staff --> MY PAGES menüsü --> In Patient item
-    @FindBy(xpath = "//li[7]//div[1]//a[2]//span[1]")
+    @FindBy(xpath = "//li//div//a[2]//span[text()='In Patient']")
     public WebElement inPatientItem;
     // Staff --> Search Patient item --> patientSSN textbox
     @FindBy(xpath = "//input[@name='ssn']")
     public WebElement patientSSN;
     // Admin --> Items&Titles menüsü
-    @FindBy(xpath = "//nav//div//ul//li[7]")
+    @FindBy(xpath = "//li[@id='entity-menu']")
     public WebElement itemsTitlesMenu;
     // Admin --> Items&Titles menüsü --> Patient item
-    @FindBy(xpath = "(//div//a[@class='dropdown-item'])[1]")
+    @FindBy(xpath = "//li//div//a[1]//span[text()='Patient']")
     public WebElement patientItem;
     // Admin --> Items&Titles menüsü --> Patient item --> Create a new Patient
     @FindBy(xpath = "//a[@class='btn btn-primary float-right jh-create-entity']")
     public WebElement createNewPatient;
-    //----------------------------------------//
     // Search Patient --> View
     // Staff --> Search Patient --> View Button --> Edit Button
     @FindBy(xpath = "//a[@class='btn btn-primary']")
@@ -186,7 +186,6 @@ public class MedunnaPage {
     // Staff --> Patients --> View Button --> Back Button
     @FindBy(xpath = "//a[@class='btn btn-info']")
     public WebElement backButtonView;
-    //----------------------------------------//
     // Search Patient --> Edit -->
     // Staff --> Create or edit a Patient --> First Name Textbox
     @FindBy(xpath = "//input[@name='firstName']")
@@ -230,8 +229,7 @@ public class MedunnaPage {
     // Staff --> Search Patient item --> Edit Button --> Create or edit a Patient --> Back Button
     @FindBy(xpath = "//a[@id='cancel-save']")
     public WebElement backButtonEditPatientForm;
-    //----------------------------------------//
-// Search Patient --> Show Appointments
+    // Search Patient --> Show Appointments
 // Staff --> Search Patient --> Appointments --> Edit --> Start DateTime
     @FindBy(xpath = "//input[@name='startDate']")
     public WebElement startDateTimeDropBox;
@@ -265,8 +263,7 @@ public class MedunnaPage {
     // Staff --> Search Patient --> Appointments --> Edit --> Back Button
     @FindBy(xpath = "//a[@id='cancel-save']")
     public WebElement backButtonAppointment;
-    //----------------------------------------//
-// In Patient --> In Patients --> from
+    // In Patient --> In Patients --> from
     @FindBy(xpath = "//input[@name='fromDate']")
     public WebElement fromDateAppointment;
     // In Patient --> In Patients --> to
@@ -296,6 +293,57 @@ public class MedunnaPage {
     // In Patient --> In Patients --> Edit --> Create or edit a In Patient --> Back
     @FindBy(xpath = "//a[@id='cancel-save']")
     public WebElement backAppointmentButton;
+    @FindBy(xpath = "//tbody//tr")
+    public List<WebElement> rawsList;
+    // Patient Control Text
+    @FindBy(xpath = "//h2//span[text()='Patients']")
+    public WebElement patientInfoControl;
+    // Patient List Next Button
+    @FindBy(xpath = "//li[@class='page-item'][2]")
+    public WebElement patientListNextButton;
+    // Confirm delete operation --> Delete Button
+    @FindBy(xpath = "//button[@id='jhi-confirm-delete-patient']")
+    public WebElement confirmDeleteOperationElement;
+    // Confirm delete operation --> Cancel Button
+    @FindBy(xpath = "//button[@class='btn btn-secondary']")
+    public WebElement cancelDeleteOperationElement;
+    // New Patient Created Alert
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement allAlertMessages;
+    // Create or edit a Patient Form
+    @FindBy(xpath = "//h2[@id='hospitalmsappfrontendApp.patient.home.createOrEditLabel']")
+    public WebElement createOrEditPatientForm;
+    // Patient is Updated Message
+    @FindBy(xpath = "//*[@class='Toastify']")
+    public WebElement patientUpdatedMessage;
+    // Staff --> Show Appointments Button --> Appointment Text Header
+    @FindBy(xpath = "//h2[text()='Appointments']")
+    public WebElement appointmentListText;
+    // Staff --> Show Appointments Button --> Edit Button
+    @FindBy(xpath = "//tbody//td//div//a[1]")
+    public WebElement editButtonShowAppointments;
+    // Staff --> Show Appointments Button --> Show Tests
+    @FindBy(xpath = "//tbody//td//div//a[2]")
+    public WebElement showTestsButton;
+    // Staff --> Show Appointments Button --> Show Tests --> Test Text Header
+    @FindBy(xpath = "//span[text()='Tests']")
+    public WebElement testsListText;
+    // Staff --> Show Appointments Button --> Edit Button --> Appointment is Updated Message
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement appointmentNotUpdatedMessage;
+
+    // In Patient View Button
+    @FindBy(xpath = "//tbody//tr[" + 1 + "]//td//div//a")
+    public WebElement  viewButtonGetirInPatient;
+    // Create or edit a In Patient Text Header
+    @FindBy(xpath = "//span[text()='Create or edit a In Patient']")
+    public WebElement inPatientCreateOrEditText;
+    // In Patient Hasta bilgisi olusturulamadi Alert
+    @FindBy(xpath = "//div[text()='InPatient status can not be changed with this type of status']")
+    public WebElement inPatientNotCreatedAlert;
+    // Staff --> Patient Control Text --> View --> Edit
+    @FindBy(xpath = "//h2//span[text()='Patient']")
+    public WebElement patientInfoControlStaffEdit;
 
     //--------------US010 Mehmet Emin Araz--------------------
 
@@ -376,7 +424,6 @@ public class MedunnaPage {
 
 
     //--------------US08---Mustafa----------------------------------
-
     @FindBy(xpath = "//li[@id='account-menu']")
     public WebElement homePageKullaniciIkonu;
     @FindBy(xpath = "(//a[@class='dropdown-item'])[1]")
@@ -397,6 +444,20 @@ public class MedunnaPage {
     public WebElement passwordDegisikligiIcinYeniPasswordConfirmBox;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement passwordDegisikligiIcinSaveButonu;
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement homePageSignInButonu;
+    @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-left toastify-container']")
+    public  WebElement passwordDegisikligiBasariliYazisi;;
+    @FindBy(xpath = "//div[@class='Toastify__toast Toastify__toast--error toastify-toast']")
+    public  WebElement passwordDegisikligiBasarisizYazisi;
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[5]")
+    public WebElement signOutLinki;
+    @FindBy(xpath = "//li[@style='background-color: rgb(255, 0, 0);']")
+    public WebElement passwordStrengthBirinciSeviye;
+    @FindBy(xpath = "(//li[@style='background-color: rgb(221, 221, 221);'])[4]")
+    public WebElement passwordStrengthBesinciSeviye;
+    @FindBy(xpath = "//li[@id='account-menu']")
+    public WebElement kullaniciIkoniGirisYaptiktanSonra;
 
     //-------------------US12 - US013- Salih------------------------
 
@@ -459,39 +520,207 @@ public class MedunnaPage {
     @FindBy(xpath = "//span[text()='My Appointments']")
     public WebElement myAppointmentsElementi;
 
+    //*************** US_011 ****************************
+
+    //*********************************   MAIN PAGE ************************************
+
+    // contact@medunna.com ==> main page
+    @FindBy(xpath = "//a[@href='mailto:contact@medunna.com']")
+    public WebElement ContactMedunnaCom;
+
+    // contact@medunna.com  IMG ==> main page
+    @FindBy(xpath = "(//i[@class='bi bi-envelope'])[1]")
+    public WebElement ContactMedunnaComImg;
+
+    // contact number Main Page
+    @FindBy(xpath = "(//div[@class='contact-info d-flex align-items-center'])[2]")
+    public WebElement ContactNumber;
+
+    // twitter image main page header
+    @FindBy(xpath = "(//a[@class='twitter'])[1]")
+    public WebElement twitterImageTop;
+
+    // facebook image main page header
+    @FindBy(xpath = "(//a[@class='facebook'])[1]")
+    public WebElement facebookImageTop;
+
+    // instegram image main page header
+    @FindBy(xpath = "(//a[@class='instagram'])[1]")
+    public WebElement instegramImageTop;
+
+    // linkedin image main page header
+    @FindBy(xpath = "(//a[@class='linkedin'])[1]")
+    public WebElement linkedInImageTop;
+
+    //************ US_001 ***************
+  /*
+  Registration should be available using SSN, Firstname and Lastname
+There should be api and DB validation
+   */
+
+    // MainPage>>SignIn&Register dropdown item
+    @FindBy(xpath = "//li[@id='account-menu']")
+    public WebElement accountMenuDropdownElement;
+
+    // MainPage>>SignIn&Register Dropdown item/SignIn
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[1]")
+    public WebElement SignInIconElement;
+
+    // MainPage >>>>SignIn&Register Dropdown item/Registration
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+    public WebElement RegistrationIconElement;
+
+    // MainPage>>Sign In/ Usernamebox
+    @FindBy(xpath = "//input[@name='username']")
+    public WebElement usrnameBoxSignInElement;
+
+
+    // MainPage>>Sign In/ Passwordbox
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement passwordBoxSignInElement;
+
+    // MainPage>>Sign In/ remembermebox
+    @FindBy(xpath = "//input[@name='rememberMe']")
+    public WebElement rememberMeBoxSignInElement;
+
+    // MainPage>>Sign In/ sign in
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement SignInElement;
+
+
+    //MainPage>>SignIn as a Doctor>>My Pages
+    @FindBy(xpath = "//li[@id='entity-menu']")
+    public WebElement myPagesElement;
+
+    //MainPage>>SignIn as a Doctor>>My Pages/My Appointments
+    @FindBy(xpath = "//span[text()='My Appointments']")
+    public WebElement myAppoitnmentsPagesElement;
+
+    //MainPage>>SignIn as a Doctor>>My Pages>>My Appointments page/ Appointments header word
+    @FindBy(xpath = "//h2[@id='appointment-heading']")
+    public WebElement AppoitnmentsHeaderWordElement;
+
+    //MainPage>>SignIn as a Doctor>>My Pages>>My Appointments page/ date from...
+    @FindBy(xpath = "//input[@name='fromDate']")
+    public WebElement fromDateBoxElement;
+
+    //MainPage>>SignIn as a Doctor>>My Pages>>My Appointments page/ date ... to
+    @FindBy(xpath = "//input[@name='toDate']")
+    public WebElement toDateBoxElement;
+
+    //Doctor page>>My Appointments/ status>>Pending
+    @FindBy(xpath = "//*[@span='PENDING']")
+    public WebElement pendingYazisiElement;
+
+    //Doctor page>>My Appointments/ status>>UNAPPROVED
+    @FindBy(xpath = "//*[@span='UNAPPROVED']")
+    public WebElement UnapprovedYazisiElement;
+
+    //Doctor page>>My Appointments/ status>>COMPLETED
+    @FindBy(xpath = "//*[@span='COMPLETED']")
+    public WebElement CompletedYazisiElement;
+
+    //Doctor page>>My Appointments/ status>>CANCELLED
+    @FindBy(xpath = "//*[@span='CANCELLED']")
+    public WebElement CancelledYazisiElement;
+
+    //Doctor page>>My Appointments/ status>>Edit icon
+    @FindBy(xpath = "//*[@span='Edit']")
+    public WebElement EditIconElement;
+
+    //Doctor page>>My Appointments>>Edit/Anamnesis box
+    @FindBy(xpath = "//*[@span='Anamnesis']")
+    public WebElement AnamnesisBoxElement;
+
+    //Doctor page>>My Appointments>>Edit/Treatment box
+    @FindBy(xpath = "//*[@span='Treatment']")
+    public WebElement TreatmentBoxElement;
+
     //-------------------US014 Locaten Onur--------------------------
 
-      // Main Page>Kullanici iconu
+    // Main Page>Kullanici iconu
     @FindBy(xpath = "//li[@id='account-menu']")
     public WebElement userIcon;
 
     // Main Page>Kullanici iconu>Sign In
     @FindBy(xpath = "(//a[@role='menuitem'])[1]")
-    public WebElement signId;
+    public WebElement signInlink;
 
     // Main Page>Kullanici iconu>Sign In>User Name
     @FindBy(xpath = "//input[@name='username']")
     public WebElement userName;
 
-    // Main Page>Kullanici iconu>Sign In>User Name
+    // Main Page>Kullanici iconu>Sign In>Password
     @FindBy(xpath = "//input[@name='password']")
     public WebElement passWord;
 
+    // Main Page>Kullanici iconu>Sign In>sign in
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signIn;
+
+    // Main Page>Kullanici iconu>Sign In>Doktor text
+    @FindBy(xpath = "//*[@id=\"account-menu\"]/a")
+    public WebElement recepaltinkaya;
+
     // Doctor Page>My pages
-    @FindBy(xpath = "//li[@id='entity-menu']")
-    public WebElement mayPages;
+    @FindBy(xpath = "//*[@id=\"entity-menu\"]")
+    public WebElement myPages;
 
     // Doctor Page>My pages>My Inpatients
     @FindBy(xpath = "(//a[@role='menuitem'])[3]")
     public WebElement myInpatients;
 
-    // Doctor Page>My pages>My Inpatients>Id (For dongu ile digerlerine ulas)
+    // Doctor Page>My pages>My Inpatients>inpatients From Text Box
+    @FindBy(xpath = "//input[@id='fromDate']")
+    public WebElement inpatientsFromTextBox;
+
+    // Doctor Page>My pages>My Inpatients>inpatients to Text Box
+    @FindBy(xpath = "//input[@id='fromDate']")
+    public WebElement inpatientsToTextBox;
+
+    // Doctor Page>My pages>My Inpatients>Id )
     @FindBy(xpath = "//tbody//tr[2]//td[1]")
     public WebElement inpatientId;
 
+    // Doctor Page>My pages>My Inpatients>start date
+    @FindBy(xpath = "//tbody//tr[2]//td[2]")
+    public WebElement inpatientStart;
+
+    // Doctor Page>My pages>My Inpatients>end date
+    @FindBy(xpath = "//tbody//tr[2]//td[3]")
+    public WebElement inpatientEnd;
+
+    // Doctor Page>My pages>My Inpatients>status
+    @FindBy(xpath = "//tbody//tr[3]//td[4]")
+    public WebElement inpatientstatus;
+
+    // Doctor Page>My pages>My Inpatients>Description
+    @FindBy(xpath = "//tbody//tr[2]//td[5]")
+    public WebElement inpatientDescription;
+
+    // Doctor Page>My pages>My Inpatients>Created Date
+    @FindBy(xpath = "(//*[text()='30/03/22 22:10'])[2]")
+    public WebElement inpatientCreatedDate;
+
+    // Doctor Page>My pages>My Inpatients>Room
+    @FindBy(xpath = "//tbody//tr[2]//td[7]")
+    public WebElement inpatientRoom;
+
+    // Doctor Page>My pages>My Inpatients>Appointment
+    @FindBy(xpath = "//tbody//tr[2]//td[8]")
+    public WebElement inpatientAppointment;
+
+    // Doctor Page>My pages>My Inpatients>Patient
+    @FindBy(xpath = "//tbody//tr[2]//td[9]")
+    public WebElement inpatientPatient;
+
     // Doctor Page>My pages>My Inpatients>Edit Button
-    @FindBy(xpath = "(//div[@class='btn-group flex-btn-group-container'])[2]")
+    @FindBy(xpath = "(//div[@class='btn-group flex-btn-group-container'])[3]")
     public WebElement editButton;
+
+    // Doctor Page>My pages>My Inpatients>Edit Button
+    @FindBy(xpath = "(//div[@class='btn-group flex-btn-group-container'])[1]")
+    public WebElement editButton1;
 
     // Doctor Page>My pages>My Inpatients>Edit Button>id Textbox
     @FindBy(xpath = "//input[@name='id']")
@@ -513,6 +742,10 @@ public class MedunnaPage {
     @FindBy(xpath = "//input[@name='createdDate']")
     public WebElement createdDateTextbox;
 
+    // Doctor Page>My pages>My Inpatients>Edit Button>createdDate Textbox
+    @FindBy(xpath = "(//input[@value='2022-03-30T22:10'])[2]")
+    public WebElement createdDateTextboxDate;
+
     // Doctor Page>My pages>My Inpatients>Edit Button>appointment Textbox
     @FindBy(xpath = "//select[@id='in-patient-appointment']")
     public WebElement appointmentTextbox;
@@ -532,4 +765,259 @@ public class MedunnaPage {
     // Doctor Page>My pages>My Inpatients>Edit Button>save Button
     @FindBy(xpath = "//button[@id='save-entity']")
     public WebElement saveButton;
+
+    //--------------US010 Mehmet Emin Araz--------------------
+
+    //Medunna>MainPage>Admin olarak>Appointment/Create a new Appointment
+    @FindBy(xpath = "(//*[@value='PENDING'])")
+    public static WebElement pendingAnAppointment;
+
+    //Medunna>MainPage>Admin olarak>Appointment/Create a new Appointment/successMessage
+    @FindBy(xpath = "//*[@class='Toastify']")
+    public static WebElement successMessageT;
+
+    //Medunna>MainPage> items&titileDropdown/Appointment/Appointments/fromDate
+    @FindBy (id="fromDate")
+    public static WebElement fromDateAppointment1;
+
+    @FindBy(xpath = "//*[.='Days between begin date and end date must be max 15 days']")
+    public static WebElement alertMessage;
+
+    @FindBy(xpath = "(//*[span='Edit'])[1]" )
+    public static WebElement editFirstAppointment;
+
+    //Medunna>MainPage>Doctor Page>physician-appointment>appointment liste
+    @FindBy(xpath = "(//*[tr])[1]")
+    public static WebElement headersOfAppointmentsTable;
+
+    //-----------------US05-Sezen-eklenenler------------------------------
+
+    //Medunna>MainPage>Make an Appointment/SSN Uyari Yazisi
+    @FindBy(xpath = "//div[text()='Your SSN is invalid']")
+    public WebElement makeAnAppointmentSSNInvalidUyariYazisi;
+
+    //Medunna>MainPage>Make an Appointment/Email Uyari Yazisi
+    @FindBy(xpath = "//div[text()='This field is invalid']")
+    public WebElement makeAnAppointmentEmailInvalidUyariYazisi;
+
+    //Medunna>MainPage>Make an Appointment/Phone Uyari Yazisi
+    @FindBy(xpath = "//div[text()='Phone number is invalid']")
+    public WebElement makeAnAppointmentInvalidPhoneUyariYazisi;
+
+    //Medunna>MainPage>Send an Appointment Request butonu
+    @FindBy(xpath = "//button[@id='register-submit']")
+    public WebElement sendAnAppointmentRequestButton;
+
+    //Medunna>MainPage>Make an Appointment Yazisi
+    @FindBy(xpath = "(//h2)[4]")
+    public WebElement makeAnAppointmentYazisi;
+
+
+    //*********************************** new US11 **************
+    //mainPage>SignIn as A doctor>>/My Pages
+    @FindBy(xpath = "//span[text()='MY PAGES']")
+    public WebElement myPagesElementi;
+
+    //doctorpages>> fromdate
+    @FindBy(xpath = "//input[@name='fromDate'] ")
+    public WebElement fromdateboxEelement ;
+
+    //doctorpages>> todate
+    @FindBy(xpath = "//input[@name='fromDate'] ")
+    public WebElement todateboxEelement ;
+    // doctor pages status>> unapproved
+    @FindBy(xpath = "//span[text()='UNAPPROVED']")
+    public WebElement unapprovedwordElementi;
+    // doctor pages status>> pending
+    @FindBy(xpath = "//span[text()='PENDING']")
+    public WebElement pendingwordElementi;
+    //doctor pages status>> Prescription
+    @FindBy(xpath = "//span[text()='Prescription']")
+    public WebElement prescriptionwordElementi;
+
+    // doctor pages status>> cancelled
+    @FindBy(xpath = "//span[text()='CANCELLED']")
+    public WebElement cancelledwordElementi;
+
+    // doctor page edit icon u
+    @FindBy(xpath = "(//span[@class='d-none d-md-inline'])[1]")
+    public WebElement editElementidoctorpage;
+
+    // doctor page edit>>Create or Edit yazisi
+    @FindBy(xpath = "//span[text()='Create or Edit an Appointment']")
+    public WebElement createElementiyazisi;
+    // doctor page edit>>Invalied text yazisi
+    @FindBy(xpath = "//div[@class='invalid-feedback']")
+    public WebElement thisFieldIsRequiredYazisi;
+
+    //doctorpage>>edit>> save button
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement saveDoctorEditPage ;
+
+    // doctorpage register saved yazisi
+
+    @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-left toastify-container']")
+    public WebElement registersavedYazisiElementi;
+
+    // doctor pages status>> status yazisi elementi
+    @FindBy(xpath = "//select[@name='status']")
+    public WebElement statuswordElementi;
+
+    //=============================SalihEk1==================================
+
+    //Medunna>MainPage/Ana sayfada ki person ikonnu
+    @FindBy(xpath = "(//a[@href='#'])[1]")
+    public WebElement mainPagePersonİkonuElementi;
+
+    //mainPage>personIkonu altindaki signOut linki butonu
+    @FindBy(xpath = "//span[text()='Sign out']")
+    public WebElement signOutLinkiElementi;
+
+
+    // mainPage> MY PAGES
+    @FindBy(xpath = "//a[@aria-expanded='false']")
+    public WebElement myPagesLinkiElementi;
+
+    //*******
+    //mainPage>myPages>myAppointments/Edit Butonu
+    @FindBy(xpath = "//a[@class='btn btn-primary btn-sm']")
+    public List<WebElement> hastaEditButonuElementiListesi;
+
+
+    //mainPage>myPages>myAppointments>EditButton>RequestATest Butonu> Test Id'leri
+    @FindBy(xpath = "(//a[@class='btn btn-link btn-sm'])[3]")
+    public WebElement testIDElementi;
+
+    public List<WebElement> testIDListOlusturma() {
+        List<WebElement> testIDList = new ArrayList<WebElement>();
+
+        for (int i = 1; i < 247; i++) {
+            String xpath = "(//a[@class='btn btn-link btn-sm'])[" + i + "]";
+
+            testIDList.add(Driver.getDriver().findElement(By.xpath(xpath)));
+
+        }
+        return testIDList;
+
+    }
+
+    public List<WebElement> testNameListOlustur() {
+        List<WebElement> testNameList = new ArrayList<WebElement>();
+
+        for (int i = 1; i < 247; i++) {
+            String xpath = "(//tbody//tr//td[2])[" + i + "]";
+
+            testNameList.add(Driver.getDriver().findElement(By.xpath(xpath)));
+
+        }
+        return testNameList;
+    }
+
+
+    //mainPage>myPages>myAppointments>EditButton>RequestATest Butonu>tablo basliklari
+    @FindBy(xpath = "//thead//tr//th")
+    public List<WebElement> baslikWebelementListesi;
+
+
+    public List<WebElement> sutunListesiGetir(int index) {
+
+        //     //tbody//tr//td[3]
+
+        String dinamikXpath = "//tbody//tr//td[" + (index + 1) + "]";
+
+        List<WebElement> istenenSutunWebelementleri = Driver.getDriver().findElements(By.xpath(dinamikXpath));
+
+        return istenenSutunWebelementleri;
+
+    }
+
+    @FindBy(xpath = "//tbody//tr")
+    public List<WebElement> viewResultTbody;
+
+
+    @FindBy(xpath = "//tbody//tr//td[2]")
+    public List<WebElement> testResultNames;
+
+
+    @FindBy(xpath = "  //li[@id='account-menu']//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
+    public WebElement cikisIcinSignInLinkiElementi;
+
+    @FindBy(xpath = "//thead//tr//th")
+    public List<WebElement> testsSayfasiBaslikListeElementi;
+
+    @FindBy(xpath = "//button[@class='btn btn-warning btn-sm']")
+    public WebElement requestInpatientButonElementi;
+
+    @FindBy(xpath = "(//a[@class='btn btn-info btn-sm'])[1]")
+    public WebElement testResultsViewResultsElementi;
+
+
+    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[2]")
+    public WebElement ikinciSiradakiHastaEditButonu;
+
+    public List<WebElement> testsSayfasiBaslikListeOlusturma() {
+        List<WebElement> testsSayfasiBaslikListesi = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+
+            String a = ("//thead//tr//th[" + i + "]");
+            Driver.getDriver().findElement(By.xpath(a));
+            testsSayfasiBaslikListesi.add(Driver.getDriver().findElement(By.xpath(a)));
+
+        }
+        return testsSayfasiBaslikListesi;
+    }
+
+
+    public void viewResultListOlustur() {
+        int index = viewResultTbody.size();
+        List<WebElement> viewResultList = new ArrayList<WebElement>();
+        // (//a[@class='btn btn-link btn-sm'])[1]
+
+        for (int i = 1; i < viewResultTbody.size(); i++) {
+            String xpath = "(//a[@class='btn btn-info btn-sm'])[" + i + "]";
+            Driver.getDriver().findElement(By.xpath(xpath));
+            viewResultList.add(Driver.getDriver().findElement(By.xpath(xpath)));
+
+        }
+        WebElement viewResultTest = Driver.getDriver().findElement(By.xpath(String.valueOf(viewResultList.get(index))));
+
+        viewResultTest.click();
+
+    }
+
+    public List<String> testResultValueStringOlustur() {
+        List<String> testResultValue = new ArrayList<String>();
+        testResultValue.add("ID");
+        testResultValue.add("Name ");
+        testResultValue.add("Default Min. Value");
+        testResultValue.add("Default Max. Value");
+        testResultValue.add("Test");
+        testResultValue.add("Description");
+        testResultValue.add("Date");
+
+        return testResultValue;
+    }
+
+    public List<String> testNameExpectedDataOlustur() {
+        List<String> testNameExpectedData = new ArrayList<String>();
+        testNameExpectedData.add("Glucose");
+        testNameExpectedData.add("Urea");
+        testNameExpectedData.add("Creatinine");
+        testNameExpectedData.add("Sodium");
+        testNameExpectedData.add("Potassium");
+        testNameExpectedData.add("Total protein");
+        testNameExpectedData.add("Albumin");
+        testNameExpectedData.add("Hemoglobin");
+
+        return testNameExpectedData;
+    }
+
+
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[6]")
+    public WebElement signout;
+
+    // Main Page>Kullanici iconu>Sign In
+    @FindBy(xpath = "//li[@id='account-menu']")
+    public WebElement signInlink1;
+
 }
