@@ -1,8 +1,6 @@
-Feature: Physician (Doktor) "Test Results" işlemleri yapabilmeli
-
-  Scenario Outline: TC01 Test sonuçları güncellendikten sonra doktor
-  "id, name(Urea, Sodium, Glucose etc..), default max value, default min value, test, description and the date"
-  bilgilerini görebilmeli
+Feature: US_012 Physician (Doktor) test isteyebilmeli
+  @requestatest
+  Scenario Outline: TC01 Doctor test isteyebilmeli
 
     Given Kullanici siteye gider "medunnaUrl"
     And Siteye gidildigini dogrular.
@@ -16,22 +14,21 @@ Feature: Physician (Doktor) "Test Results" işlemleri yapabilmeli
     And My Appointments linkine tiklar.
     Then Test istemek istedigi hasta randevusunu secer
     Then Request A Test butonuna tiklar.
-    Then Acilan sayfadaki testName'ler arasinda  Glucose, Urea, Creatinine, Sodium, Potassium, Total protein, Albumin, Hemoglobin seçenekleri oldugunu gorur.
-    Then Test sayfasindan istenilen testlerin checkbox kutusu tiklanir.
+    And Doktor gerekli testleri secer.
     Then Testin ilgili birime gonderilmesi icin save butonuna tiklar.
     And Test isteginin ilgili birime gonderildigini test eder.
-    Then Show Test Result'a tiklar.
-    Then View Result butonuna tiklar.
     And Ana sayfaya geri doner.
     Then Giris yapilan hesaptan signOut yapar.
     Then Web uygulamasindan cikis yapar.
 
     Examples:
-      |username    |password|
+      |     username    |password|
       |prof.dr.salihkaya|drsalih |
 
-@paralel2
-  Scenario Outline: TC02 Doktor "Request Impatient" (hastanın yatılı tedavi görmesi) isteğinde bulunabilmeli
+
+  @Team93
+  Scenario Outline: TC02
+
 
     Given Kullanici siteye gider "medunnaUrl"
     And Siteye gidildigini dogrular.
@@ -46,14 +43,6 @@ Feature: Physician (Doktor) "Test Results" işlemleri yapabilmeli
     Then Test istemek istedigi hasta randevusunu secer
     Then Request A Test butonuna tiklar.
     Then Acilan sayfadaki testName'ler arasinda  Glucose, Urea, Creatinine, Sodium, Potassium, Total protein, Albumin, Hemoglobin seçenekleri oldugunu gorur.
-    Then Test sayfasindan istenilen testlerin checkbox kutusu tiklanir.
-    Then Testin ilgili birime gonderilmesi icin save butonuna tiklar.
-    And Test isteginin ilgili birime gonderildigini test eder.
-    Then Show Test Result'a tiklar.
-    Then View Result butonuna tiklar.
-    And Hasta edit sayfasina geri doner
-    Then Request Inpatient butonuna tiklar.
-    Then Hasta yatis isteginin gonderildigini dogrular.
     And Ana sayfaya geri doner.
     Then Giris yapilan hesaptan signOut yapar.
     Then Web uygulamasindan cikis yapar.
@@ -61,5 +50,5 @@ Feature: Physician (Doktor) "Test Results" işlemleri yapabilmeli
 
 
     Examples:
-      |username    |password|
+      |username         |password|
       |prof.dr.salihkaya|drsalih |
