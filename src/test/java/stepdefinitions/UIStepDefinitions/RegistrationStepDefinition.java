@@ -27,6 +27,12 @@ public class RegistrationStepDefinition {
     Actions actions;
     SoftAssert softAssert = new SoftAssert();
     String doktorName;
+
+
+
+
+
+
     // ------------------------- KÜBRA -----------------------------------
     @Given("Kullanici siteye gider {string}")
     public void kullaniciSiteyeGider(String medunnaUrl) {
