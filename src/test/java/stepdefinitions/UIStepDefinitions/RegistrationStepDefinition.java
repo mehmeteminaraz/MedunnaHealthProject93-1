@@ -8,11 +8,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
+import pages.MedPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 import pages.MedunnaPage;
@@ -28,7 +30,7 @@ public class RegistrationStepDefinition {
     SoftAssert softAssert = new SoftAssert();
     String doktorName;
     MedPage medpage=new MedPage();
-
+    MedPage mpage=new MedPage();
 
 
 
@@ -1524,5 +1526,101 @@ public class RegistrationStepDefinition {
             each.isDisplayed();
         }
     }
+    // ------------------------- KÜBRA US-20 -----------------------------------
 
+    @And("Kullanici administration linkine tiklar")
+    public void kullaniciAdministrationLinkineTiklar() {
+        Driver.wait(2);
+        mpage.administrationLinki.click();
+        Driver.wait(1);
+    }
+
+    @And("Kullanici user management linkine tiklar")
+    public void kullaniciUserManagementLinkineTiklar() {
+        mpage.usermanagementLinki.click();
+    }
+
+    @Then("Kullanici creat a new user butonuna tiklar")
+    public void kullanici_creat_a_new_user_butonuna_tiklar() {
+        Driver.wait(2);
+        mpage.createANewUserButonu.click();
+    }
+    @Then("Yeni kullanici olusturmak icin dogru sayfaya gelindigi Create or edit a user yazisinin gorunurlugu ile dogrulanir")
+    public void yeni_kullanici_olusturmak_icin_dogru_sayfaya_gelindigi_create_or_edit_a_user_yazisinin_gorunurlugu_ile_dogrulanir() {
+        Assert.assertTrue(mpage.createANewUserTexti.isDisplayed());
+    }
+    @Then("Kullanici login textboxina username girer")
+    public void kullanici_login_textboxina_username_girer() {
+        mpage.createANewUserSayfasiloginTextBox.sendKeys(faker.name().username());
+    }
+    @Then("Kullanici firstname textboxina isim girer")
+    public void kullanici_firstname_textboxina_isim_girer() {
+        mpage.createANewUserSayfasifirstnameTextBox.sendKeys(faker.name().firstName());
+    }
+    @Then("Kullanici lastname textboxina soyisim girer")
+    public void kullanici_lastname_textboxina_soyisim_girer() {
+        mpage.createANewUserSayfasilastnameTextBox.sendKeys(faker.name().lastName());
+    }
+    @Given("Kullanici email textboxina email adresi girer")
+    public void kullanici_email_textboxina_email_adresi_girer() {
+        mpage.createANewUserSayfasiEmailTextBox.sendKeys(faker.internet().emailAddress());
+    }
+    @Given("Kullanici ssn textboxina ssn numarasi girer")
+    public void kullanici_ssn_textboxina_ssn_numarasi_girer() {
+        mpage.createANewUserSayfasiSSNBox.sendKeys(faker.idNumber().ssnValid());
+    }
+    @Then("Olusturulan kullaniciya rol atamasi yapilir")
+    public void olusturulan_kullaniciya_rol_atamasi_yapilir() {
+        actions=new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        Select select=new Select(mpage.createANewUserSayfasiProfilesDropDownElementi);
+        select.selectByIndex(2);
+    }
+    @Then("Kullanici create a new user sayfasindaki save butonuna tiklar")
+    public void kullanici_create_a_new_user_sayfasindaki_save_butonuna_tiklar() {
+        mpage.createANewUserSayfasiSaveButonu.click();
+    }
+
+    @Then("Kullanici users sayfasinda en sonuncu sayfaya gider")
+    public void kullaniciUsersSayfasindaEnSonuncuSayfayaGider() {
+        Driver.waitAndClick(mpage.usersSayfasiSonSayfaElementi);
+    }
+
+    @And("Kullanici view butonuna basarak olusturdugu hesabin bilgilerini dogrular")
+    public void kullaniciViewButonunaBasarakOlusturduguHesabinBilgileriniDogrular() {
+        Driver.wait(2);
+
+        Driver.clickWithJS(mpage.viewButonu);
+        Driver.wait(2);
+
+        Assert.assertTrue(mpage.hesapdogrulama.isDisplayed());
+    }
+
+    @And("Kullanici edit butonuna tiklar gerekli degisiklikleri yapar")
+    public void kullaniciEditButonunaTiklarGerekliDegisiklikleriYapar() {
+
+        Driver.wait(2);
+        Driver.clickWithJS(mpage.editButtons);
+        Driver.wait(2);
+        mpage.editSayfasiFirstnameTextBox.clear();
+        mpage.editSayfasiFirstnameTextBox.sendKeys(faker.name().firstName());
+        Driver.wait(2);
+        Driver.clickWithJS(mpage.editSayfasiRole);
+        Driver.clickWithJS(mpage.editSayfasiSaveButonu);
+    }
+
+    @And("Kullanici silmek istedigi hesabi delete butonuna basarak silme islemini gerceklestirir")
+    public void kullaniciSilmekIstedigiHesabiDeleteButonunaBasarakSilmeIsleminiGerceklestirir() {
+        Driver.wait(2);
+        Driver.clickWithJS(mpage.usersSayfasindakiDeleteButonu);
+        Driver.wait(2);
+        mpage.alertDeleteButonu.click();
+    }
+
+    @And("Kullanici hesabindan cikis yapar")
+    public void kullaniciHesabindanCikisYapar() {
+        mpage.sagUstHesapIkonu.click();
+        mpage.signOutButonu.click();
+        mpage.signOutSonrasıSignInButonu.click();
+    }
 }
