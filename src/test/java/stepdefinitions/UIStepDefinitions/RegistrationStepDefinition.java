@@ -1354,5 +1354,175 @@ public class RegistrationStepDefinition {
         WebElement editButton = Driver.getDriver().findElement(By.xpath("//tbody//tr[" + 1 + "]//td//div//a[@class='btn btn-primary btn-sm']"));
         Driver.clickWithJS(editButton);
     }
+      //------------------------------Onur US018---------------------------------------
+    @When("admin acilan menuden Sign In e tiklar")
+    public void admin_acilan_menuden_sign_in_e_tiklar() {
+        Driver.wait1(3);
+        mp.signInlink.click();
+    }
+    @When("admin kendi {string} ve {string} girip Sign In butonuna tiklar")
+    public void admin_kendi_ve_girip_sign_in_butonuna_tiklar(String userName, String password) {
+        Driver.wait1(5);
+        mp.userName.sendKeys(userName);
+        mp.passWord.sendKeys(password);
+        mp.signIn.click();
+    }
+    @Then("admin sag ust kosede kendi adini gorur")
+    public void admin_sag_ust_kosede_kendi_adini_gorur() {
+        Driver.wait1(5);
+        Assert.assertTrue(mp.recepaltinkaya.isDisplayed());
+    }
+   @Then("Items&Titles menusu gorunur olmali")
+   public void items_titles_menusu_gorunur_olmali() {
+       Driver.wait1(5);
+       Assert.assertTrue(medpage.itemtitlesMenu.isDisplayed());
+
+   }
+    @Then("admin Items&Titles menusune tiklar")
+    public void admin_items_titles_menusune_tiklar() {
+        Driver.wait1(7);
+        medpage.itemtitlesMenu.click();
+
+    }
+    @Then("admin Physician'a tiklar")
+    public void admin_physician_a_tiklar() {
+        Driver.wait1(5);
+        medpage.itemtitlesPhysician.click();
+    }
+    @Then("admin Create a new Physician'a tiklar")
+    public void admin_create_a_new_physician_a_tiklar() {
+        Driver.wait1(3);
+        medpage.CreatPhysician.click();
+    }
+    @Then("admin SSN Box'a kayitli bir kisinin SSN'nini girer")
+    public void admin_ssn_box_a_kayitli_bir_kisinin_ssn_nini_girer() {
+        Driver.wait1(3);
+        medpage.CreatPhysicianSsn.sendKeys("158-56-9638");
+    }
+    @Then("admin Use Search CheckBox'a tiklar")
+    public void admin_use_search_check_box_a_tiklar() {
+        Driver.wait1(3);
+        medpage.useSearch.click();
+    }
+    @Then("admin Search User butonuna tiklar")
+    public void admin_search_user_butonuna_tiklar() {
+        Driver.wait1(3);
+        medpage.searchUserButton.click();
+    }
+
+    @Then("admin sol ust kosede User found with search SSN popup'ini gorur")
+    public void admin_sol_ust_kosede_user_found_with_search_ssn_popup_ini_gorur() {
+        Driver.wait1(3);
+        Assert.assertTrue(medpage.solustkosepupop.isDisplayed());
+    }
+
+    @Then("admin firstname, lastname, birthname textboxlarini gorebilmeli")
+    public void admin_firstname_lastname_birthname_textboxlarini_gorebilmeli() {
+        Driver.wait1(3);
+        Assert.assertTrue(medpage.firstName.isDisplayed());
+        Assert.assertTrue(medpage.lastName.isDisplayed());
+        Assert.assertTrue(medpage.birthDate.isDisplayed());
+    }
+
+    @Then("admin firstname textboxina {string} girer")
+    public void admin_firstname_textboxina_girer(String firstname) {
+        Driver.wait1(3);
+        medpage.firstName.sendKeys(firstname,Keys.TAB);
+    }
+
+    @Then("admin isim icin {string} gorundugunu dogrular")
+    public void admin_isim_icin_gorundugunu_dogrular(String uyariyazisi) {
+        Driver.wait1(3);
+        Assert.assertEquals(uyariyazisi,medpage.textboxaltiuyariyazisi.getText());
+
+    }
+    @Then("admin lastname textboxina {string} girer")
+    public void admin_lastname_textboxina_girer(String lastname) {
+        Driver.wait1(3);
+        medpage.lastName.sendKeys(lastname);
+    }
+
+    @Then("admin soyisim icin {string} gorundugunu dogrular")
+    public void admin_soyisim_icin_gorundugunu_dogrular(String uyariyazisi1) {
+        Driver.wait1(5);
+        Assert.assertEquals(uyariyazisi1,medpage.textboxaltiuyariyazisi.getText());
+
+    }
+    @Then("admin birtdate textboxina {string} girer")
+    public void admin_birtdate_textboxina_girer(String birthdate) {
+        Driver.wait1(5);
+        medpage.birthDate.sendKeys(birthdate,Keys.TAB);
+    }
+
+    @Then("admin birthdate icin  {string} gorundugunu dogrular")
+    public void admin_birthdate_icin_gorundugunu_dogrular(String uyariyazisi2) {
+        Driver.wait1(5);
+        Assert.assertEquals(uyariyazisi2,medpage.birtdatetextboxaltiuyariyazisi.getText());
+    }
+
+    @Then("admin isim icin uyari yazisi gorunmedigini dogrular")
+    public void admin_isim_icin_uyari_yazisi_gorunmedigini_dogrular() {
+        Driver.wait1(5);
+        Assert.assertTrue(medpage.validformkontrol.isDisplayed());
+    }
+    @Then("admin soyisim icin uyari yazisi gorunmedigini dogrular")
+    public void admin_soyisim_icin_uyari_yazisi_gorunmedigini_dogrular() {
+        Driver.wait1(5);
+        Assert.assertTrue(medpage.validformkontrol.isDisplayed());
+    }
+
+    @Then("admin birthdate icin  uyari yazisi gorunmedigini dogrular")
+    public void admin_birthdate_icin_uyari_yazisi_gorunmedigini_dogrular() {
+        Driver.wait1(5);
+        Assert.assertTrue(medpage.validformkontrol.isDisplayed());
+    }
+
+    @Then("admin doktor icin farkli uzmanlik alanlari secebilir")
+    public void admin_doktor_icin_farkli_uzmanlik_alanlari_secebilir() {
+       // Driver.clickWithJS(medpage.speciality);
+         Driver.selectByIndex(medpage.speciality,1);
+             Driver.wait1(8);
+         Driver.selectByIndex(medpage.speciality,2);
+             Driver.wait1(8);
+         Driver.selectByIndex(medpage.speciality,3);
+             Driver.wait1(8);
+        Driver.selectByIndex(medpage.speciality,3);
+             Driver.wait1(8);
+    }
+
+    @Then("admin doktorun profil resmini degistirebilir")
+    public void admin_doktorun_profil_resmini_degistirebilir() {
+        Driver.clickWithJS(medpage.image);
+        Driver.wait1(5);
+    }
+
+    @Then("admin doktorun muayene ucretini girebilmelidir")
+    public void admin_doktorun_muayene_ucretini_girebilmelidir() {
+        Driver.clickWithJS(medpage.examFee);
+       medpage.examFee.sendKeys("-500");
+        Driver.wait1(10);
+       medpage.examFee.clear();
+        medpage.examFee.sendKeys("1000");
+        Driver.wait1(10);
+        medpage.examFee.clear();
+        medpage.examFee.sendKeys("1500");
+        Driver.wait1(10);
+    }
+
+    @Then("admin edit'e tiklar")
+    public void admin_edit_e_tiklar() {
+       medpage.doktorwiev.click();
+        Driver.wait1(8);
+        Driver.clickWithJS(medpage.doktorwieveditbutton);
+    }
+
+    @Then("admin butun doktorlarin bilgilerini gorebilmelidir")
+    public void admin_butun_doktorlarin_bilgilerini_gorebilmelidir() {
+        Driver.wait1(8);
+        for (WebElement each:medpage.doktorbilgileri) {
+            ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", each);
+            each.isDisplayed();
+        }
+    }
 
 }
