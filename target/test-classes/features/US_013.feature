@@ -16,7 +16,7 @@ Feature: Physician (Doktor) "Test Results" işlemleri yapabilmeli
     And My Appointments linkine tiklar.
     Then Test istemek istedigi hasta randevusunu secer
     Then Request A Test butonuna tiklar.
-    Then Acilan sayfadaki testName'ler arasinda  Glucose, Urea, Creatinine, Sodium, Potassium, Total protein, Albumin, Hemoglobin seçenekleri oldugunu gorur.
+    Then Acilan sayfadaki testName'ler arasinda  Glucose, Urea, Creatinine, Sodium, Potassium, Total protein, Albumin, Hemoglobin secenekleri oldugunu gorur.
     Then Test sayfasindan istenilen testlerin checkbox kutusu tiklanir.
     Then Testin ilgili birime gonderilmesi icin save butonuna tiklar.
     And Test isteginin ilgili birime gonderildigini test eder.
@@ -45,7 +45,7 @@ Feature: Physician (Doktor) "Test Results" işlemleri yapabilmeli
     And My Appointments linkine tiklar.
     Then Test istemek istedigi hasta randevusunu secer
     Then Request A Test butonuna tiklar.
-    Then Acilan sayfadaki testName'ler arasinda  Glucose, Urea, Creatinine, Sodium, Potassium, Total protein, Albumin, Hemoglobin seçenekleri oldugunu gorur.
+    Then Acilan sayfadaki testName'ler arasinda  Glucose, Urea, Creatinine, Sodium, Potassium, Total protein, Albumin, Hemoglobin secenekleri oldugunu gorur.
     Then Test sayfasindan istenilen testlerin checkbox kutusu tiklanir.
     Then Testin ilgili birime gonderilmesi icin save butonuna tiklar.
     And Test isteginin ilgili birime gonderildigini test eder.

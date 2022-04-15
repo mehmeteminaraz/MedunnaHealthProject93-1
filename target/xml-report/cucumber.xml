@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="28.633">
+    <testcase classname="Admin olarak; Yeni Physicians Oluştur / Güncelle / Görüntüle ve Sil" name="Admin, bütün doctorların bilgilerini görebilmelidir." time="27.796">
+        <system-out><![CDATA[Given Kullanici siteye gider "medunnaUrl"...................................passed
+When Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir.passed
+And Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar.passed
+And admin acilan menuden Sign In e tiklar...................................passed
+And admin kendi "adminonur" ve "Urfa2016" girip Sign In butonuna tiklar.....passed
+Then admin sag ust kosede kendi adini gorur.................................passed
+And Items&Titles menusu gorunur olmali......................................passed
+Then admin Items&Titles menusune tiklar.....................................passed
+Then admin Physician'a tiklar...............................................passed
+Then admin edit'e tiklar....................................................passed
+Then admin butun doktorlarin bilgilerini gorebilmelidir.....................passed
+Then Doktor tarayiciyi kapatir..............................................passed
+]]></system-out>
+    </testcase>
+</testsuite>
