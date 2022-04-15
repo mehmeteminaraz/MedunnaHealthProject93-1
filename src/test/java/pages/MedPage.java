@@ -175,4 +175,87 @@ public class MedPage {
   */
     //------------------- Mehmet Ali--------------------------
     //------------------- Onur--------------------------
+    //Item/Titles
+    @FindBy(xpath="(//*[@class=\"dropdown nav-item\"])[1]")
+    public WebElement itemtitlesMenu;
+
+    //Item/Titles--->Physician
+    @FindBy(xpath="//*[@id=\"entity-menu\"]/div/a[3]")
+    public WebElement itemtitlesPhysician;
+
+    //Item/Titles--->Physician---->Creat Physician
+    @FindBy(xpath="//a[@id='jh-create-entity']")
+    public WebElement CreatPhysician;
+
+    //Item/Titles--->Physician---->Creat Physician>SSn
+    @FindBy(xpath="//input[@id='searchSSN']")
+    public WebElement CreatPhysicianSsn;
+
+    //Item/Titles--->Physician---->Creat Physician>Search _User Button
+    @FindBy(xpath="//button[text()='Search User']")
+    public WebElement searchUserButton;
+
+    //Item/Titles--->Physician---->Creat Physician>Use Search tik
+    @FindBy(xpath="//input[@id='useSSNSearch']")
+    public WebElement useSearch;
+
+    //Item/Titles--->Physician---->First Name
+    @FindBy(xpath="//input[@id='physician-firstName']")
+    public WebElement firstName;
+
+    //Item/Titles--->Physician---->Last Name
+    @FindBy(xpath="//input[@name='lastName']")
+    public WebElement lastName;
+
+    //Item/Titles--->Physician---->BirthDate
+    @FindBy(xpath="//input[@name='birthDate']")
+    public WebElement birthDate;
+
+    //Item/Titles--->Physician---->speciality
+    @FindBy(xpath="//select[@id='physician-speciality']")
+    public WebElement speciality;
+
+    //Item/Titles--->Physician---->image
+    @FindBy(xpath="//input[@id='file_image']")
+    public WebElement image;
+
+    //Item/Titles--->Physician---->Exam fee
+    @FindBy(xpath="//input[@id='physician-examFee']")
+    public WebElement examFee;
+
+    //Item/Titles--->Physician---->textbox alti uyari yazisi
+    @FindBy(xpath="//div[text()='This field is required.']")
+    public WebElement textboxaltiuyariyazisi;
+
+    //Item/Titles--->Physician---->Birtdate textbox alti uyari yazisi
+    @FindBy(xpath="//div[text()='This field is invalid']")
+    public WebElement birtdatetextboxaltiuyariyazisi;
+
+    //Item/Titles--->Physician---->sol ust kose pupop
+    @FindBy(xpath="//div[@class='Toastify__toast-body']")
+    public WebElement solustkosepupop;
+
+    //Item/Titles--->Physician---->valid form kontrol
+    @FindBy(xpath="(//input[@class='is-touched is-dirty av-valid form-control'])[2]")
+    public WebElement validformkontrol;
+
+    //Item/Titles--->Physician---->doktor edit button
+    @FindBy(xpath="//*[@id=\"app-view-container\"]/div/div/div/div/div[1]/div/table/tbody/tr[1]/td[18]/div/a[2]")
+    public WebElement doktoredit;
+
+    //Item/Titles--->Physician---->doktor delete button
+    @FindBy(xpath="(//a[@class='btn btn-danger btn-sm'])[1]")
+    public WebElement doktordelete;
+
+    //Item/Titles--->Physician---->doktor wiev button
+    @FindBy(xpath="//*[@id=\"app-view-container\"]/div/div/div/div/div[1]/div/table/tbody/tr[1]/td[18]/div/a[1]")
+    public WebElement doktorwiev;
+
+    //Item/Titles--->Physician---->doktor wiev button-->Edit button
+    @FindBy(xpath="//a[@class='btn btn-primary']")
+    public WebElement doktorwieveditbutton;
+
+    //Item/Titles--->Physician---->doktor bilgileri
+    @FindBy(xpath="//div[@class='form-group']")
+    public List<WebElement> doktorbilgileri;
 }
