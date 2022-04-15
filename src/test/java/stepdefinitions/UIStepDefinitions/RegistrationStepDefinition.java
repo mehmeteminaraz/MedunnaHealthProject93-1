@@ -27,7 +27,7 @@ public class RegistrationStepDefinition {
     Actions actions;
     SoftAssert softAssert = new SoftAssert();
     String doktorName;
-
+    MedPage medpage=new MedPage();
 
 
 
