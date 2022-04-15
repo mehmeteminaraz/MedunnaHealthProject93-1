@@ -16,7 +16,7 @@ import org.testng.asserts.SoftAssert;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 import pages.MedunnaPage;
-
+import utilities.ReusableMethods;
 import java.util.ArrayList;
 import java.util.List;
 
