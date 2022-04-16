@@ -352,6 +352,115 @@ public class MedPage {
     //Item/Titles--->Physician---->doktor edit button---->gender
     @FindBy(xpath="//select[@name='gender']")
     public WebElement doktoreditbuttongender;
+    //------------------- Mehmet Emin--------------------------
+    //- US16_RoomCreateEditDeleteByAdminPage
+
+    @FindBy(xpath ="(//a[@href='/room'])[2]" )
+    public WebElement roomCta;
+
+    @FindBy(xpath = "//*[text()='Create a new Room']")
+    public WebElement createANewRoom;
+
+    @FindBy(xpath = "//select[@id='room-roomType']")
+    public WebElement roomTypeDropDown;
+
+    @FindBy(xpath ="//input[@id='room-status']" )
+    public WebElement statusCheck;
+
+    @FindBy(xpath = "//input[@id='room-description']")
+    public WebElement descriptionField;
+
+    @FindBy(xpath = "//input[@id='room-createdDate']")
+    public WebElement createdDate;
+
+    @FindBy(xpath = "//span[text()='Save']")
+    public WebElement saveButton;
+
+    @FindBy(xpath = "(//*[text()='This field is required.'])[1]")
+    public WebElement fieldRequiredRoom;
+
+    @FindBy(xpath ="(//*[text()='This field is required.'])[2]" )
+    public WebElement fieldRequiredPrice;
+
+    @FindBy(xpath = "//input[@name='roomNumber']")
+    public WebElement roomNumberTextBox;
+
+    @FindBy(xpath = "//input[@id='room-price']")
+    public WebElement priceTextBox;
+
+    @FindBy(xpath = "//*[contains(text(), 'A new Room is created')]")
+    public WebElement roomCreateSuccessMessage;
+
+    @FindBy(xpath = "(//a[@class='page-link'])[9]")
+    public WebElement lastPageArrow;
+
+    @FindBy(xpath = "(//span[text()='Edit'])[last()]")
+    public WebElement editButton;
+
+    @FindBy(xpath = "(//span[text()='Delete'])[last()]")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//button[@id='jhi-confirm-delete-room']")
+    public WebElement confirmDelete;
+
+    @FindBy(xpath ="//*[contains(text(), 'deleted')]" )
+    public WebElement roomDeleteSuccessMessage;
+    //--Mehmet Emin- US17_===============================================
+
+    //Item/Titles
+    @FindBy(xpath="//span[normalize-space()='Items&Titles']")
+    public WebElement itemsTitles1;
+
+    //Item/Titles--->testItem
+    @FindBy(xpath="(//li[@id='entity-menu'])[1]")
+    public WebElement itemsTitles;
+
+    @FindBy(xpath = "(//a[@role='menuitem'])[5]")
+    public WebElement testItem;
+
+    @FindBy(xpath = "//a[@id='jh-create-entity']")
+    public WebElement CreateTestItem;
+    //a[class='dropdown-item active'] span
+
+    @FindBy(xpath = "//input[@id='c-test-item-name']")
+    public WebElement testNameBox;
+
+    @FindBy(xpath = "//input[@id='c-test-item-description']")
+    public WebElement description;
+
+    @FindBy(xpath = "//input[@id='c-test-item-price']")
+    public WebElement price;
+
+    @FindBy(xpath = "//input[@id='c-test-item-defaultValMin']")
+    public WebElement minValue;
+
+    @FindBy(xpath = "//input[@id='c-test-item-defaultValMax']")
+    public WebElement maxValue;
+
+    @FindBy(xpath = "//input[@id='c-test-item-createdDate']")
+    public WebElement createDate;
+
+    @FindBy(id = "save-entity")
+    public WebElement saveButton1;
+
+    @FindBy(xpath = "//div[@id='app-view-container']")
+    public WebElement savingSuccessMessage;
+
+    @FindBy(xpath = "//div[@class='jh-card card']//li[7]")
+    public WebElement arrowLastItem;
+
+    @FindBy(xpath = "(//li[@class='page-item'])[5]")
+    public WebElement lastFigureItem;
+
+    @FindBy(xpath = "(//span[@class='d-none d-md-inline'])[45]")
+    public WebElement deleteTestItem;
+
+    @FindBy(xpath = "//button[@id='jhi-confirm-delete-cTestItem']")
+    public WebElement confirmDeleteButton;
+
+    @FindBy(xpath = "(//span[contains(text(),'Delete')])[17]")
+    public WebElement deleteSuccessMessage;
+
 
 
 }

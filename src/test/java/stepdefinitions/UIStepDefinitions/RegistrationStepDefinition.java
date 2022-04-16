@@ -1667,6 +1667,239 @@ public class RegistrationStepDefinition {
         mpage.signOutSonrasıSignInButonu.click();
     }
 
+    //___US-16- 17____________________________________Emin____________________________________//
+    @Given("Kullanici giris sayfasina gider")
+    public void kullanici_giris_sayfasina_gider() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("base_url"));
+
+    }
+    @Given("Kullanici yonetici olarak oturum acar")
+    public void kullanici_yonetici_olarak_oturum_acar() {
+        Driver.waitAndClick(mp.loginDropdown);
+        Driver.waitAndClick(mp.signDropdown);
+        Driver.waitAndSendText(mp.username,"adminTeam93-10");
+        Driver.waitAndSendText(mp.password,"adminTeam93-10");
+        Driver.waitAndClick(mp.signInButonu);
+
+
+    }
+    @Given("Kullanici Baglantilarim altindaki Oda cta'sini tiklar")
+    public void kullanici_baglantilarim_altindaki_oda_cta_sini_tiklar() {
+        Driver.waitAndClick(mpage.roomCta);
+    }
+    @Given("Kullanici Yeni bir oda olustur'u tiklar")
+    public void kullanici_yeni_bir_oda_olustur_u_tiklar() {
+        Driver.waitAndClick(mpage.createANewRoom);
+    }
+    @Given("Kullanici oda numarasi alanini bos birakir")
+    public void kullanici_oda_numarasi_alanini_bos_birakir() {
+
+    }
+    @Given("Kullanici Oda Tipi acilir menusunde TWIN'i secer")
+    public void kullanici_oda_tipi_acilir_menusunde_twin_i_secer() {
+        Driver.selectAnItemFromDropdown(mpage.roomTypeDropDown,"TWIN");
+        Driver.selectAnItemFromDropdown(mpage.roomTypeDropDown,"DELUXE");
+        Driver.selectAnItemFromDropdown(mpage.roomTypeDropDown,"TWIN");
+
+    }
+    @Given("Kullanici Durum onay kutusuna tiklayarak mevcut durumu ayarlar")
+    public void kullanici_durum_onay_kutusuna_tiklayarak_mevcut_durumu_ayarlar() {
+        Driver.waitAndClick(mpage.statusCheck);
+
+    }
+    @Given("Kullanici fiyat alanini bos birakir")
+    public void kullanici_fiyat_alanini_bos_birakir() {
+        mpage.priceTextBox.clear();
+
+    }
+    @Given("Kullanici aciklama girer")
+    public void kullanici_aciklama_girer() {
+        Driver.waitAndSendText(mpage.descriptionField,"This is a test room creation by Team93");
+    }
+    @Given("Kullanici  olusturulma tarihini girer")
+    public void kullanici_olusturulma_tarihini_girer() {
+        Driver.waitAndSendText(mpage.createdDate,"05/12/2022T03:35 PM");
+    }
+    @Given("Kullanici  Kaydet dugmesine tiklarr")
+    public void kullaniciKaydetDugmesineTiklar() {
+        Driver.waitAndClick(mpage.saveButton);
+    }
+
+    @Given("This field is required mesaji, gerekli alan metin kutusunun altinda gorunur")
+    public void thisFieldIsRequiredMesajiGerekliAlanMetinKutusununAltindaGorunur() {
+        Assert.assertTrue(mpage.fieldRequiredRoom.isDisplayed());
+        Assert.assertTrue(mpage.fieldRequiredPrice.isDisplayed());
+    }
+
+    @Given("Kullanici Verilen oda numarasini girer")
+    public void kullaniciVerilenOdaNumarasiniGirer() {
+        //mpage.roomNumberTextBox.clear();
+        mpage.roomNumberTextBox.sendKeys(faker.number().digits(4));
+    }
+
+    @And("Kullanici fiyat girer")
+    public void kullaniciFiyatGirer() {
+        //Driver.waitAndSendText(mpage.priceTextBox,"500");
+        mpage.priceTextBox.sendKeys(faker.number().digits(3));
+    }
+
+    @Then("Kullanici , odanin basariyla olusturuldugunu dogrular")
+    public void kullaniciOdaninBasariylaOlusturuldugunuDogrular() {
+        Driver.wait(1);
+        Assert.assertTrue(mpage.roomCreateSuccessMessage.isDisplayed());
+    }
+
+    @Given("Kullanici son sayfa dugmesine tiklar")
+    public void kullaniciSonSayfaDugmesineTiklar() {
+        Driver.waitAndClick(mpage.lastPageArrow);
+    }
+
+    @When("Kullanici Duzenle dugmesine tiklar")
+    public void kullaniciDuzenleDugmesineTiklar() {
+        Driver.waitAndClick(mpage.editButton);
+    }
+
+    @And("Kullanici oda numarasını gunceller")
+    public void kullaniciOdaNumarasiniGunceller() {
+        Driver.wait(1);
+        mpage.roomNumberTextBox.clear();
+        mpage.roomNumberTextBox.sendKeys(faker.number().digits(5));
+    }
+
+    @And("Kullanici oda tipi olarak DELUXE'u secer")
+    public void kullaniciOdaTipiOlarakDELUXEUSecer() {
+        Driver.selectAnItemFromDropdown(mpage.roomTypeDropDown,"DELUXE");
+    }
+
+    @And("Kullanici fiyati gunceller")
+    public void kullaniciFiyatiGunceller() {
+        mpage.priceTextBox.clear();
+        mpage.priceTextBox.sendKeys(faker.number().digits(3));
+    }
+
+    @And("Kullanici aciklamayi gunceller")
+    public void kullaniciAciklamayiGunceller() {
+        mpage.descriptionField.clear();
+        Driver.waitAndSendText(mpage.descriptionField,"This is another test make by Team93");
+    }
+
+    @And("Kullanici sil dugmesine tiklar")
+    public void kullaniciSilDugmesineTiklar() {
+        Driver.waitAndClick(mpage.deleteButton);
+    }
+
+    @And("Kullanici acilir mesaji silmeyi onaylar")
+    public void kullaniciAcilirMesajiSilmeyiOnaylar() {
+        Driver.wait(1);
+        mpage.confirmDelete.click();
+    }
+
+    @Then("Kullanici , odanın basariyla silindigini dogrular")
+    public void kullaniciOdaninBasariylaSilindiginiDogrular() {
+        Driver.wait(1);
+        // Driver.waitForVisibility(roomCreate.roomDeleteSuccessMessage,5);
+        Assert.assertTrue(mpage.roomDeleteSuccessMessage.isDisplayed());
+        Driver.wait(1);
+    }
+
+    @And("Kullanici TestItemi tiklar")
+    public void kullaniciTestItemiTiklar() {
+        Driver.waitAndClick(mpage.testItem);
+    }
+
+    @And("Kullanici createNewTestItem acilir menusunu titular")
+    public void kullaniciCreateNewTestItemAcilirMenusunuTitular() {
+        //mpage.CreateTestItem.click();
+        Driver.clickElementByJS(mpage.CreateTestItem);
+    }
+
+    @And("Kullanici {string} bir test adi saglar")
+    public void kullaniciBirTestAdiSaglar(String testName) {
+        //        testItemPage.testName.sendKeys("Team93");
+        testName =faker.name().firstName();
+        Driver.waitAndSendText(mpage.testNameBox,testName);
+    }
+
+    @Then("Kullanici {string} aciklamasini girer")
+    public void kullaniciAciklamasiniGirer(String description) {
+        mpage.description.sendKeys("mg/ml");
+    }
+
+    @And("Kullanici {string} fiyatini girer")
+    public void kullaniciFiyatiniGirer(String currentPrice) {
+        mpage.price.sendKeys("130");
+    }
+
+    @And("Kullanici bir {string} minimum degeri girin")
+    public void kullaniciBirMinimumDegeriGirin(String minValue) {
+        mpage.minValue.sendKeys("80");
+    }
+
+    @And("Kullanici bir maksimum deger {string} girer")
+    public void kullaniciBirMaksimumDegerGirer(String maxValue) {
+        mpage.maxValue.sendKeys("130");
+        mpage.maxValue.clear();
+        mpage.maxValue.sendKeys(faker.number().digits(3));
+    }
+
+    @Then("Kullanici  Kaydet dugmesine tiklar")
+    public void user_clicks_on_save_button() {
+        Driver.waitAndClick(mpage.saveButton1);
+    }
+
+    @Then("Kullanici ,odanin basariyla kaydedildigini dogrular")
+    public void user_verifies_that_saving_is_successful() {
+        Driver.wait(3);
+        Assert.assertTrue(mpage.savingSuccessMessage.isDisplayed());
+
+    }
+
+    @And("Kullanici last arrow buttonnuna tiklar")
+    public void kullaniciLastArrowButtonnunaTiklar() {
+        Driver.waitAndClick(mpage.arrowLastItem);
+    }
+
+    @And("Kullanici  last itemNumbera tiklar")
+    public void kullaniciLastItemNumberaTiklar() {
+        mpage.lastFigureItem.click();
+    }
+
+
+    @And("Kullanici TestItemi silmeyi onaylar")
+    public void kullaniciTestItemiSilmeyiOnaylar() {
+        Driver.wait(3);
+        mpage.confirmDeleteButton.click();
+
+    }
+
+    @And("Kullanici yeni bir maksimum deger {string} girer")
+    public void kullaniciYeniBirMaksimumDegerGirer(String arg0) {
+        mpage.maxValue.clear();
+        mpage.maxValue.sendKeys(faker.number().digits(3));
+
+    }
+
+    @Then("Kullanici {string}yeni  aciklama girer")
+    public void kullaniciYeniAciklamaGirer(String arg0) {
+        mpage.description.sendKeys("mg/ml");
+
+    }
+
+    @And("Kullanici {string}yeni fiyat girer")
+    public void kullaniciYeniFiyatGirer(String arg0) {
+        mpage.price.clear();
+        mpage.price.sendKeys(faker.number().digits(3));
+    }
+
+    @And("Kullanici bir {string}yeni minimum deger girer")
+    public void kullaniciBirYeniMinimumDegerGirer(String arg0) {
+        mpage.minValue.clear();
+        mpage.minValue.sendKeys(faker.number().digits(3));
+    }
+    @Then("Kullanici , odanın basariyla silindigini dogrularr")
+    public void kullaniciOdaninBasariylaSilindiginiDogrularr() {
+        Assert.assertTrue(mpage.deleteSuccessMessage.isDisplayed());
+    }
 
 
 

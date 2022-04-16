@@ -1020,4 +1020,13 @@ There should be api and DB validation
     @FindBy(xpath = "//li[@id='account-menu']")
     public WebElement signInlink1;
 
+    //--------------US010 Mehmet Emin Araz--------------------
+
+
+    @FindBy(id = "account-menu")
+    public WebElement loginDropdown;
+
+    @FindBy(xpath = "//*[contains(text(),'Sign in')]")
+    public WebElement signDropdown;
+
 }
