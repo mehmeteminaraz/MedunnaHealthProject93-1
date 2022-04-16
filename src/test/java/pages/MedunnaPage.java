@@ -215,7 +215,7 @@ public class MedunnaPage {
     @FindBy(xpath = "//input[@name='description']")
     public WebElement descriptionTextBox;
     // Staff --> Create or edit a Patient --> User Dropbox
-    @FindBy(xpath = "//option[@value='18356']")
+    @FindBy(xpath = "//select[@name='user.id']")
     public WebElement userSelect;
     // Staff --> Create or edit a Patient --> Country Dropbox
     @FindBy(xpath = "//select[@name='country.id']")

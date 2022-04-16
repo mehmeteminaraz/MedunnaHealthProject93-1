@@ -1057,14 +1057,13 @@ public class RegistrationStepDefinition {
     @Then("Last Name alanina soyisim girilir.")
     public void last_name_alanina_soyisim_girilir() throws InterruptedException {
         mp.lastNameEditTextbox.clear();
-        faker = new Faker();
         String lastName = faker.name().lastName();
         Driver.waitAndSendText(mp.lastNameEditTextbox,lastName);
     }
     @Then("Birth Date alanindan dogum tarihi secilir.")
     public void birth_date_alanindan_dogum_tarihi_secilir() {
         mp.birthDateDropbox.clear();
-        Driver.waitAndSendText(mp.birthDateDropbox,("03-12-201200:02:45"));
+        Driver.waitAndSendText(mp.birthDateDropbox,("03-12-2001"));
     }
     @Then("Email alanina email bilgisi girilir.")
     public void email_alanina_email_bilgisi_girilir() throws InterruptedException {
@@ -1083,12 +1082,12 @@ public class RegistrationStepDefinition {
     @Then("Gender alanina cinsiyet girilir.")
     public void gender_alanina_cinsiyet_girilir() {
         Driver.selectAnItemFromDropdown(mp.genderSelect,"FEMALE");
-        Driver.wait(1);
+        Driver.wait1(3);
     }
     @Then("Blood Group alanina kan grubu girilir.")
     public void blood_group_alanina_kan_grubu_girilir() {
         Driver.selectAnItemFromDropdown(mp.bloodGroupSelect,"AB+");
-        Driver.wait(1);
+        Driver.wait1(3);
     }
     @Then("Address alanina adres bilgisi girilir.")
     public void address_alanina_adres_bilgisi_girilir() {
@@ -1106,18 +1105,18 @@ public class RegistrationStepDefinition {
     }
     @Then("User alanindan kullanici secilir.")
     public void user_alanindan_kullanici_secilir() {
-        Driver.selectAnItemFromDropdown(mp.userSelect,"system");
-        Driver.wait(2);
+        Driver.selectAnItemFromDropdown(mp.userSelect,"user_112233445_56677889991649602727823:461-33-1709");
+        Driver.wait1(3);
     }
     @Then("Country alanindan ulke secilir.")
     public void country_alanindan_ulke_secilir() {
         Driver.selectAnItemFromDropdown(mp.countrySelect,"US");
-        Driver.wait(1);
+        Driver.wait1(2);
     }
     @Then("State City alanindan sehir secilir.")
     public void state_city_alanindan_sehir_secilir() {
         Driver.selectAnItemFromDropdown(mp.stateCitySelect,"Hawaii");
-        Driver.wait(1);
+        Driver.wait1(3);
     }
     @Then("Save butonuna tiklanir.")
     public void save_butonuna_tiklanir() {
@@ -1364,31 +1363,31 @@ public class RegistrationStepDefinition {
     }
     @When("admin kendi {string} ve {string} girip Sign In butonuna tiklar")
     public void admin_kendi_ve_girip_sign_in_butonuna_tiklar(String userName, String password) {
-        Driver.wait1(5);
+        Driver.wait1(4);
         mp.userName.sendKeys(userName);
         mp.passWord.sendKeys(password);
         mp.signIn.click();
     }
     @Then("admin sag ust kosede kendi adini gorur")
     public void admin_sag_ust_kosede_kendi_adini_gorur() {
-        Driver.wait1(5);
+        Driver.wait1(3);
         Assert.assertTrue(mp.recepaltinkaya.isDisplayed());
     }
    @Then("Items&Titles menusu gorunur olmali")
    public void items_titles_menusu_gorunur_olmali() {
-       Driver.wait1(5);
+       Driver.wait1(3);
        Assert.assertTrue(medpage.itemtitlesMenu.isDisplayed());
 
    }
     @Then("admin Items&Titles menusune tiklar")
     public void admin_items_titles_menusune_tiklar() {
-        Driver.wait1(7);
+        Driver.wait1(3);
         medpage.itemtitlesMenu.click();
 
     }
     @Then("admin Physician'a tiklar")
     public void admin_physician_a_tiklar() {
-        Driver.wait1(5);
+        Driver.wait1(4);
         medpage.itemtitlesPhysician.click();
     }
     @Then("admin Create a new Physician'a tiklar")
@@ -1483,38 +1482,38 @@ public class RegistrationStepDefinition {
     public void admin_doktor_icin_farkli_uzmanlik_alanlari_secebilir() {
        // Driver.clickWithJS(medpage.speciality);
          Driver.selectByIndex(medpage.speciality,1);
-             Driver.wait1(8);
+             Driver.wait1(7);
          Driver.selectByIndex(medpage.speciality,2);
-             Driver.wait1(8);
+             Driver.wait1(7);
          Driver.selectByIndex(medpage.speciality,3);
-             Driver.wait1(8);
+             Driver.wait1(7);
         Driver.selectByIndex(medpage.speciality,3);
-             Driver.wait1(8);
     }
 
     @Then("admin doktorun profil resmini degistirebilir")
     public void admin_doktorun_profil_resmini_degistirebilir() {
+        Driver.wait1(8);
         Driver.clickWithJS(medpage.image);
-        Driver.wait1(5);
     }
 
     @Then("admin doktorun muayene ucretini girebilmelidir")
     public void admin_doktorun_muayene_ucretini_girebilmelidir() {
         Driver.clickWithJS(medpage.examFee);
+        medpage.examFee.clear();
        medpage.examFee.sendKeys("-500");
-        Driver.wait1(10);
+        Driver.wait1(7);
        medpage.examFee.clear();
         medpage.examFee.sendKeys("1000");
-        Driver.wait1(10);
+        Driver.wait1(7);
         medpage.examFee.clear();
         medpage.examFee.sendKeys("1500");
-        Driver.wait1(10);
+        Driver.wait1(7);
     }
 
     @Then("admin edit'e tiklar")
     public void admin_edit_e_tiklar() {
-        Driver.wait(5);
-        WebElement editButton = Driver.getDriver().findElement(By.xpath("//a[@href='/physician/2051/edit?page=1&sort=id,asc']"));
+        Driver.wait(3);
+        WebElement editButton = Driver.getDriver().findElement(By.xpath("//a[@href='/physician/3651/edit?page=1&sort=id,asc']"));
         Driver.clickWithJS(editButton);
     }
 
@@ -1627,46 +1626,47 @@ public class RegistrationStepDefinition {
 
     //--------------------------Onur-----------------------------
 
-    @Then("admin doktorlarin bilgilerini duzenleyebilir")
-    public void admin_doktorlarin_bilgilerini_duzenleyebilir() {
-        Driver.wait(1);
-        mp.firstNameEditTextBox.clear();
-        faker = new Faker();
-        String firstName = faker.name().firstName();
-        Driver.waitAndSendText(mp.firstNameEditTextBox,firstName);
-        mp.lastNameEditTextbox.clear();
-        String lastName = faker.name().lastName();
-        Driver.waitAndSendText(mp.lastNameEditTextbox,lastName);
-        mp.birthDateDropbox.clear();
-        Driver.waitAndSendText(mp.birthDateDropbox,("03-12-2001"));
-        mp.phoneTextbox.clear();
-        String phone = "1234567890";
-        Driver.waitAndSendText(mp.phoneTextbox,phone);
-        mp.adressTextBox.clear();
-        String address = faker.address().fullAddress();
-        Driver.waitAndSendText(mp.adressTextBox,address);
-        Driver.selectAnItemFromDropdown(mp.genderSelect,"FEMALE");
-        Driver.wait(1);
-        Driver.selectAnItemFromDropdown(mp.bloodGroupSelect,"AB+");
-        Driver.wait(1);
-        mp.descriptionTextBox.clear();
-        String description = faker.expression("Patient Info");
-        Driver.waitAndSendText(mp.descriptionTextBox,description);
-        Driver.wait(1);
-        Driver.clickWithJS(mp.userSelect);
-        //Driver.selectAnItemFromDropdown(mp.userSelect,"jazmine.stracke:232-65-0798");
-        Driver.wait(1);
-        Driver.clickWithJS(mp.countrySelect);
-        Driver.selectAnItemFromDropdown(mp.countrySelect,"Germany");
-        Driver.wait(1);
-
-    }
     @Then("admin doktor bilgilerinin duzenlendigini dogrular")
     public void admin_doktor_bilgilerinin_duzenlendigini_dogrular() {
         Driver.waitAndClickElement(mp.saveButtonEditPatientForm,1);
         Driver.wait(1);
         WebElement newPatientCreatedMessage = Driver.waitForVisibility(mp.allAlertMessages,2000);
         Assert.assertTrue(newPatientCreatedMessage.isDisplayed());
+    }
+
+    @Then("Speciality alanina uzmanlik alani girilir.")
+    public void speciality_alanina_uzmanlik_alani_girilir() {
+        Driver.selectAnItemFromDropdown(medpage.doktorspeciality,"OPHTHALMOLOGY");
+        Driver.wait(1);
+    }
+    @Then("Exam Fee alanina doktor ucreti girilir.")
+    public void exam_fee_alanina_doktor_ucreti_girilir() {
+        medpage.doktorexamFee.clear();
+       medpage.doktorexamFee.sendKeys("1000");
+    }
+    @Then("A Physician is updated mesaji gorunur.")
+    public void a_physician_is_updated_mesaji_gorunur() {
+        Driver.waitAndClickElement(mp.saveButtonEditPatientForm,1);
+        Driver.wait1(3);
+        WebElement newPatientCreatedMessage = Driver.waitForVisibility(mp.allAlertMessages,2000);
+        Assert.assertTrue(newPatientCreatedMessage.isDisplayed());
+    }
+
+    @Then("admin delete butonuna tiklar")
+    public void admin_delete_butonuna_tiklar() {
+        Driver.wait(3);
+        WebElement editButton = Driver.getDriver().findElement(By.xpath("//a[@href='/physician/3652/delete?page=1&sort=id,asc']"));
+        Driver.clickWithJS(editButton);
+        Driver.wait1(4);
+        medpage.doktordeletedelete.click();
+        medpage.doktordeletedelete.click();
+    }
+
+    @Then("admin doktorlari silemeyecegini gorur")
+    public void admin_doktorlari_silemeyecegini_gorur() {
+        Driver.wait1(3);
+        String alert="Internal server error.";
+        Assert.assertEquals(alert,medpage.doktordeletealertmessage.getText());
     }
 }
 

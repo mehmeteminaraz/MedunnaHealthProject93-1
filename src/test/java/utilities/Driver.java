@@ -277,7 +277,8 @@ public class Driver {
     }
 
     public static void selectAnItemFromDropdown(WebElement item, String selectableItem) {
-        wait(3);
+        wait1(4);
+
         Select select = new Select(item);
         for (int i = 0; i < select.getOptions().size(); i++) {
             if (select.getOptions().get(i).getText().equalsIgnoreCase(selectableItem)) {

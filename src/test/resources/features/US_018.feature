@@ -159,8 +159,8 @@ Feature: Admin olarak; Yeni Physicians Oluştur / Güncelle / Görüntüle ve Si
       |userName |password|
       |adminonur|Urfa2016|
 
-    @recep
-  Scenario Outline: Admin, bütün doctorların bilgilerini görebilmelidir.
+
+  Scenario Outline: Admin, Doktorların bilgilerini düzenleyebilir.
 
     When  Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir
     And   Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar
@@ -171,9 +171,43 @@ Feature: Admin olarak; Yeni Physicians Oluştur / Güncelle / Görüntüle ve Si
     Then  admin Items&Titles menusune tiklar
     Then  admin Physician'a tiklar
     Then  admin edit'e tiklar
-    Then  admin doktorlarin bilgilerini duzenleyebilir
-    Then  admin doktor bilgilerinin duzenlendigini dogrular
+    And   First Name alanina isim girilir.
+    And   Last Name alanina soyisim girilir.
+    And   Birth Date alanindan dogum tarihi secilir.
+    And   Phone alanina telefon bilgisi girilir.
+    And   Address alanina adres bilgisi girilir.
+    And   Gender alanina cinsiyet girilir.
+    And   Speciality alanina uzmanlik alani girilir.
+    And   Blood Group alanina kan grubu girilir.
+    And   Description alanina veri girilir.
+    And   Exam Fee alanina doktor ucreti girilir.
+    And   User alanindan kullanici secilir.
+    And   Country alanindan ulke secilir.
+    Then  State City alanindan sehir secilir.
+    Then  Save butonuna tiklanir.
+    Then  A Physician is updated mesaji gorunur.
     Then  Doktor tarayiciyi kapatir
+
+    Examples:
+      |userName |password|
+      |adminonur|Urfa2016|
+
+
+  @recep
+  Scenario Outline: Admin mevcut doktorları silebilir.
+
+    When  Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir
+    And   Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar
+    And   admin acilan menuden Sign In e tiklar
+    And   admin kendi "<userName>" ve "<password>" girip Sign In butonuna tiklar
+    Then  admin sag ust kosede kendi adini gorur
+    And   Items&Titles menusu gorunur olmali
+    Then  admin Items&Titles menusune tiklar
+    Then  admin Physician'a tiklar
+    Then  admin delete butonuna tiklar
+    Then  admin doktorlari silemeyecegini gorur
+    Then  Doktor tarayiciyi kapatir
+
 
     Examples:
       |userName |password|
