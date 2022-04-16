@@ -140,7 +140,7 @@ Feature: Admin olarak; Yeni Physicians Oluştur / Güncelle / Görüntüle ve Si
       |userName |password|
       |adminonur|Urfa2016|
 
-  @recep
+
   Scenario Outline: Admin, bütün doctorların bilgilerini görebilmelidir.
 
     When  Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir
@@ -153,6 +153,26 @@ Feature: Admin olarak; Yeni Physicians Oluştur / Güncelle / Görüntüle ve Si
     Then  admin Physician'a tiklar
     Then  admin edit'e tiklar
     Then  admin butun doktorlarin bilgilerini gorebilmelidir
+    Then  Doktor tarayiciyi kapatir
+
+    Examples:
+      |userName |password|
+      |adminonur|Urfa2016|
+
+    @recep
+  Scenario Outline: Admin, bütün doctorların bilgilerini görebilmelidir.
+
+    When  Sayfaya gidildigi ana sayfadaki WELCOME TO MEDUNNA texti ile dogrulanir
+    And   Kullanici sayfaya giris icin CONTACT linkinin sagında bulunan kullanici girisi linkine tiklar
+    And   admin acilan menuden Sign In e tiklar
+    And   admin kendi "<userName>" ve "<password>" girip Sign In butonuna tiklar
+    Then  admin sag ust kosede kendi adini gorur
+    And   Items&Titles menusu gorunur olmali
+    Then  admin Items&Titles menusune tiklar
+    Then  admin Physician'a tiklar
+    Then  admin edit'e tiklar
+    Then  admin doktorlarin bilgilerini duzenleyebilir
+    Then  admin doktor bilgilerinin duzenlendigini dogrular
     Then  Doktor tarayiciyi kapatir
 
     Examples:

@@ -1624,6 +1624,50 @@ public class RegistrationStepDefinition {
         mpage.signOutButonu.click();
         mpage.signOutSonrasıSignInButonu.click();
     }
+
+    //--------------------------Onur-----------------------------
+
+    @Then("admin doktorlarin bilgilerini duzenleyebilir")
+    public void admin_doktorlarin_bilgilerini_duzenleyebilir() {
+        Driver.wait(1);
+        mp.firstNameEditTextBox.clear();
+        faker = new Faker();
+        String firstName = faker.name().firstName();
+        Driver.waitAndSendText(mp.firstNameEditTextBox,firstName);
+        mp.lastNameEditTextbox.clear();
+        String lastName = faker.name().lastName();
+        Driver.waitAndSendText(mp.lastNameEditTextbox,lastName);
+        mp.birthDateDropbox.clear();
+        Driver.waitAndSendText(mp.birthDateDropbox,("03-12-2001"));
+        mp.phoneTextbox.clear();
+        String phone = "1234567890";
+        Driver.waitAndSendText(mp.phoneTextbox,phone);
+        mp.adressTextBox.clear();
+        String address = faker.address().fullAddress();
+        Driver.waitAndSendText(mp.adressTextBox,address);
+        Driver.selectAnItemFromDropdown(mp.genderSelect,"FEMALE");
+        Driver.wait(1);
+        Driver.selectAnItemFromDropdown(mp.bloodGroupSelect,"AB+");
+        Driver.wait(1);
+        mp.descriptionTextBox.clear();
+        String description = faker.expression("Patient Info");
+        Driver.waitAndSendText(mp.descriptionTextBox,description);
+        Driver.wait(1);
+        Driver.clickWithJS(mp.userSelect);
+        //Driver.selectAnItemFromDropdown(mp.userSelect,"jazmine.stracke:232-65-0798");
+        Driver.wait(1);
+        Driver.clickWithJS(mp.countrySelect);
+        Driver.selectAnItemFromDropdown(mp.countrySelect,"Germany");
+        Driver.wait(1);
+
+    }
+    @Then("admin doktor bilgilerinin duzenlendigini dogrular")
+    public void admin_doktor_bilgilerinin_duzenlendigini_dogrular() {
+        Driver.waitAndClickElement(mp.saveButtonEditPatientForm,1);
+        Driver.wait(1);
+        WebElement newPatientCreatedMessage = Driver.waitForVisibility(mp.allAlertMessages,2000);
+        Assert.assertTrue(newPatientCreatedMessage.isDisplayed());
+    }
 }
 
 

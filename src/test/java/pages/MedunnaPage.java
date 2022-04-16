@@ -212,10 +212,10 @@ public class MedunnaPage {
     @FindBy(xpath = "//input[@name='adress']")
     public WebElement adressTextBox;
     // Staff --> Create or edit a Patient --> Description Textbox
-    @FindBy(xpath = "//textarea[@name='description']")
+    @FindBy(xpath = "//input[@name='description']")
     public WebElement descriptionTextBox;
     // Staff --> Create or edit a Patient --> User Dropbox
-    @FindBy(xpath = "//select[@name='user.id']")
+    @FindBy(xpath = "//option[@value='18356']")
     public WebElement userSelect;
     // Staff --> Create or edit a Patient --> Country Dropbox
     @FindBy(xpath = "//select[@name='country.id']")

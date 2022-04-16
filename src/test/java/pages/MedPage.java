@@ -329,4 +329,14 @@ public class MedPage {
     //Item/Titles--->Physician---->doktor bilgileri
     @FindBy(xpath="//div[@class='form-group']")
     public List<WebElement> doktorbilgileri;
+
+    //Item/Titles--->Physician---->doktor edit button---->First name
+    @FindBy(xpath="//input[@value='Doctorpp']")
+    public WebElement doktoreditbuttonfirstname;
+
+    //Item/Titles--->Physician---->doktor edit button---->gender
+    @FindBy(xpath="//select[@name='gender']")
+    public WebElement doktoreditbuttongender;
+
+
 }
