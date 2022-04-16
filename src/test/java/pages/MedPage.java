@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-
+import java.util.List;
 public class MedPage {
 
     public MedPage(){
@@ -13,6 +13,80 @@ public class MedPage {
     }
 
     //------------------- Kubra--------------------------
+    //mainpage>KullaniciIkonu>signInLinki/AdministrationLinki
+    @FindBy(xpath ="//*[@id=\"admin-menu\"]/a/span")
+    public WebElement administrationLinki;
+
+    //mainpage>KullaniciIkonu>signInLinki/AdministrationLinki/UserManagementLinki
+    @FindBy(xpath = "//span[text()='User management']")
+    public WebElement usermanagementLinki;
+
+    //mainpage>KullaniciIkonu>signInLinki/AdministrationLinki/UserManagementLinki/CreateANewUserButonu
+    @FindBy(xpath = "//a[@class='btn btn-primary float-right jh-create-entity']")
+    public WebElement createANewUserButonu;
+
+    //mainpage>KullaniciIkonu>signInLinki/AdministrationLinki/UserManagementLinki/CreateANewUserButonu/createANewUserTexti
+    @FindBy(xpath = "//*[@id=\"app-view-container\"]/div/div/div/div/div[1]/div/h1/span")
+    public WebElement createANewUserTexti;
+
+    //mainpage>KullaniciIkonu>signInLinki/AdministrationLinki/UserManagementLinki/CreateANewUserButonu/CreateANewUserSayfasi/LoginTextBox
+    @FindBy(xpath = "//input[@id='login']")
+    public WebElement createANewUserSayfasiloginTextBox;
+
+    @FindBy(xpath = "//input[@id='firstName']")
+    public WebElement createANewUserSayfasifirstnameTextBox;
+
+    @FindBy(xpath = "//input[@id='lastName']")
+    public WebElement createANewUserSayfasilastnameTextBox;
+
+    @FindBy(xpath = "//input[@id='email']")
+    public WebElement createANewUserSayfasiEmailTextBox;
+
+    @FindBy(xpath = "//input[@id='ssn']")
+    public WebElement createANewUserSayfasiSSNBox;
+
+    @FindBy(xpath = "//select[@id='authorities']")
+    public WebElement createANewUserSayfasiProfilesDropDownElementi;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement createANewUserSayfasiSaveButonu;
+
+    @FindBy(xpath ="(//a[@class='page-link'])[9]")
+    public WebElement usersSayfasiSonSayfaElementi;
+
+    //administrationButonu>UserManagement Sayfası/view butonu
+    @FindBy(xpath = "//*[text()='View']")
+    public WebElement viewButonu;
+
+    @FindBy(xpath = "//*[@id=\"app-view-container\"]/div/div/div/div/div/dl/dd[8]")
+    public WebElement hesapdogrulama;
+
+    @FindBy(xpath = "//*[text()='Edit']")
+    public WebElement editButtons;
+
+    @FindBy(xpath = "//input[@id='firstName']")
+    public WebElement editSayfasiFirstnameTextBox;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement editSayfasiSaveButonu;
+
+    @FindBy(xpath = "//*[@id=\"authorities\"]/option[4]")
+    public WebElement editSayfasiRole;
+
+    @FindBy(xpath = "//*[text()='Delete']")
+    public WebElement usersSayfasindakiDeleteButonu;
+
+    @FindBy(xpath = "//button[@class='btn btn-danger']")
+    public WebElement alertDeleteButonu;
+
+    @FindBy(xpath = "(//a[@class='d-flex align-items-center dropdown-toggle nav-link'])[3]")
+    public WebElement sagUstHesapIkonu;
+
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[12]")
+    public WebElement signOutButonu;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement signOutSonrasıSignInButonu;
     //------------------- Mehmet Emin--------------------------
     //------------------- Mustafa--------------------------
     //------------------- Zeynep--------------------------
@@ -160,19 +234,109 @@ public class MedPage {
 /*
     @FindBy(xpath="")
     public WebElement
-
     //
     @FindBy(xpath="")
     public WebElement
-
      //
     @FindBy(xpath="")
     public WebElement
-
     //
     @FindBy(xpath="")
     public WebElement
   */
     //------------------- Mehmet Ali--------------------------
     //------------------- Onur--------------------------
+    //Item/Titles
+    @FindBy(xpath="(//*[@class=\"dropdown nav-item\"])[1]")
+    public WebElement itemtitlesMenu;
+
+    //Item/Titles--->Physician
+    @FindBy(xpath="//*[@id=\"entity-menu\"]/div/a[3]")
+    public WebElement itemtitlesPhysician;
+
+    //Item/Titles--->Physician---->Creat Physician
+    @FindBy(xpath="//a[@id='jh-create-entity']")
+    public WebElement CreatPhysician;
+
+    //Item/Titles--->Physician---->Creat Physician>SSn
+    @FindBy(xpath="//input[@id='searchSSN']")
+    public WebElement CreatPhysicianSsn;
+
+    //Item/Titles--->Physician---->Creat Physician>Search _User Button
+    @FindBy(xpath="//button[text()='Search User']")
+    public WebElement searchUserButton;
+
+    //Item/Titles--->Physician---->Creat Physician>Use Search tik
+    @FindBy(xpath="//input[@id='useSSNSearch']")
+    public WebElement useSearch;
+
+    //Item/Titles--->Physician---->First Name
+    @FindBy(xpath="//input[@id='physician-firstName']")
+    public WebElement firstName;
+
+    //Item/Titles--->Physician---->Last Name
+    @FindBy(xpath="//input[@name='lastName']")
+    public WebElement lastName;
+
+    //Item/Titles--->Physician---->BirthDate
+    @FindBy(xpath="//input[@name='birthDate']")
+    public WebElement birthDate;
+
+    //Item/Titles--->Physician---->speciality
+    @FindBy(xpath="//select[@id='physician-speciality']")
+    public WebElement speciality;
+
+    //Item/Titles--->Physician---->image
+    @FindBy(xpath="//input[@id='file_image']")
+    public WebElement image;
+
+    //Item/Titles--->Physician---->Exam fee
+    @FindBy(xpath="//input[@id='physician-examFee']")
+    public WebElement examFee;
+
+    //Item/Titles--->Physician---->textbox alti uyari yazisi
+    @FindBy(xpath="//div[text()='This field is required.']")
+    public WebElement textboxaltiuyariyazisi;
+
+    //Item/Titles--->Physician---->Birtdate textbox alti uyari yazisi
+    @FindBy(xpath="//div[text()='This field is invalid']")
+    public WebElement birtdatetextboxaltiuyariyazisi;
+
+    //Item/Titles--->Physician---->sol ust kose pupop
+    @FindBy(xpath="//div[@class='Toastify__toast-body']")
+    public WebElement solustkosepupop;
+
+    //Item/Titles--->Physician---->valid form kontrol
+    @FindBy(xpath="(//input[@class='is-touched is-dirty av-valid form-control'])[2]")
+    public WebElement validformkontrol;
+
+    //Item/Titles--->Physician---->doktor edit button
+    @FindBy(xpath="//*[@id=\"app-view-container\"]/div/div/div/div/div[1]/div/table/tbody/tr[1]/td[18]/div/a[2]")
+    public WebElement doktoredit;
+
+    //Item/Titles--->Physician---->doktor delete button
+    @FindBy(xpath="(//a[@class='btn btn-danger btn-sm'])[1]")
+    public WebElement doktordelete;
+
+    //Item/Titles--->Physician---->doktor wiev button
+    @FindBy(xpath="//*[@id=\"app-view-container\"]/div/div/div/div/div[1]/div/table/tbody/tr[1]/td[18]/div/a[1]")
+    public WebElement doktorwiev;
+
+    //Item/Titles--->Physician---->doktor wiev button-->Edit button
+    @FindBy(xpath="//a[@class='btn btn-primary']")
+    public WebElement doktorwieveditbutton;
+
+    //Item/Titles--->Physician---->doktor bilgileri
+    @FindBy(xpath="//div[@class='form-group']")
+    public List<WebElement> doktorbilgileri;
+
+    //Item/Titles--->Physician---->doktor edit button---->First name
+    @FindBy(xpath="//input[@value='Doctorpp']")
+    public WebElement doktoreditbuttonfirstname;
+
+    //Item/Titles--->Physician---->doktor edit button---->gender
+    @FindBy(xpath="//select[@name='gender']")
+    public WebElement doktoreditbuttongender;
+
+
 }
