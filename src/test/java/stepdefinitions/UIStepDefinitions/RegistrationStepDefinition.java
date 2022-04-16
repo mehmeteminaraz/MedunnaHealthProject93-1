@@ -1526,6 +1526,49 @@ public class RegistrationStepDefinition {
         }
     }
 
+    @Then("admin doktor bilgilerinin duzenlendigini dogrular")
+    public void admin_doktor_bilgilerinin_duzenlendigini_dogrular() {
+        Driver.waitAndClickElement(mp.saveButtonEditPatientForm,1);
+        Driver.wait(1);
+        WebElement newPatientCreatedMessage = Driver.waitForVisibility(mp.allAlertMessages,2000);
+        Assert.assertTrue(newPatientCreatedMessage.isDisplayed());
+    }
+
+    @Then("Speciality alanina uzmanlik alani girilir.")
+    public void speciality_alanina_uzmanlik_alani_girilir() {
+        Driver.selectAnItemFromDropdown(medpage.doktorspeciality,"OPHTHALMOLOGY");
+        Driver.wait(1);
+    }
+    @Then("Exam Fee alanina doktor ucreti girilir.")
+    public void exam_fee_alanina_doktor_ucreti_girilir() {
+        medpage.doktorexamFee.clear();
+        medpage.doktorexamFee.sendKeys("1000");
+    }
+    @Then("A Physician is updated mesaji gorunur.")
+    public void a_physician_is_updated_mesaji_gorunur() {
+        Driver.waitAndClickElement(mp.saveButtonEditPatientForm,1);
+        Driver.wait1(3);
+        WebElement newPatientCreatedMessage = Driver.waitForVisibility(mp.allAlertMessages,2000);
+        Assert.assertTrue(newPatientCreatedMessage.isDisplayed());
+    }
+
+    @Then("admin delete butonuna tiklar")
+    public void admin_delete_butonuna_tiklar() {
+        Driver.wait(3);
+        WebElement editButton = Driver.getDriver().findElement(By.xpath("//a[@href='/physician/3652/delete?page=1&sort=id,asc']"));
+        Driver.clickWithJS(editButton);
+        Driver.wait1(4);
+        medpage.doktordeletedelete.click();
+        medpage.doktordeletedelete.click();
+    }
+
+    @Then("admin doktorlari silemeyecegini gorur")
+    public void admin_doktorlari_silemeyecegini_gorur() {
+        Driver.wait1(3);
+        String alert="Internal server error.";
+        Assert.assertEquals(alert,medpage.doktordeletealertmessage.getText());
+    }
+
     // ------------------------- KÜBRA US-20 -----------------------------------
 
     @And("Kullanici administration linkine tiklar")
@@ -1624,50 +1667,9 @@ public class RegistrationStepDefinition {
         mpage.signOutSonrasıSignInButonu.click();
     }
 
-    //--------------------------Onur-----------------------------
 
-    @Then("admin doktor bilgilerinin duzenlendigini dogrular")
-    public void admin_doktor_bilgilerinin_duzenlendigini_dogrular() {
-        Driver.waitAndClickElement(mp.saveButtonEditPatientForm,1);
-        Driver.wait(1);
-        WebElement newPatientCreatedMessage = Driver.waitForVisibility(mp.allAlertMessages,2000);
-        Assert.assertTrue(newPatientCreatedMessage.isDisplayed());
-    }
 
-    @Then("Speciality alanina uzmanlik alani girilir.")
-    public void speciality_alanina_uzmanlik_alani_girilir() {
-        Driver.selectAnItemFromDropdown(medpage.doktorspeciality,"OPHTHALMOLOGY");
-        Driver.wait(1);
-    }
-    @Then("Exam Fee alanina doktor ucreti girilir.")
-    public void exam_fee_alanina_doktor_ucreti_girilir() {
-        medpage.doktorexamFee.clear();
-       medpage.doktorexamFee.sendKeys("1000");
-    }
-    @Then("A Physician is updated mesaji gorunur.")
-    public void a_physician_is_updated_mesaji_gorunur() {
-        Driver.waitAndClickElement(mp.saveButtonEditPatientForm,1);
-        Driver.wait1(3);
-        WebElement newPatientCreatedMessage = Driver.waitForVisibility(mp.allAlertMessages,2000);
-        Assert.assertTrue(newPatientCreatedMessage.isDisplayed());
-    }
 
-    @Then("admin delete butonuna tiklar")
-    public void admin_delete_butonuna_tiklar() {
-        Driver.wait(3);
-        WebElement editButton = Driver.getDriver().findElement(By.xpath("//a[@href='/physician/3652/delete?page=1&sort=id,asc']"));
-        Driver.clickWithJS(editButton);
-        Driver.wait1(4);
-        medpage.doktordeletedelete.click();
-        medpage.doktordeletedelete.click();
-    }
-
-    @Then("admin doktorlari silemeyecegini gorur")
-    public void admin_doktorlari_silemeyecegini_gorur() {
-        Driver.wait1(3);
-        String alert="Internal server error.";
-        Assert.assertEquals(alert,medpage.doktordeletealertmessage.getText());
-    }
 }
 
 
