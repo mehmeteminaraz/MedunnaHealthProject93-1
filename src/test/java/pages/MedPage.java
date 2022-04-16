@@ -315,8 +315,17 @@ public class MedPage {
     public WebElement doktoredit;
 
     //Item/Titles--->Physician---->doktor delete button
-    @FindBy(xpath="(//a[@class='btn btn-danger btn-sm'])[1]")
+    @FindBy(xpath="//a[@href='/physician/3652/delete?page=1&sort=id,asc']")
     public WebElement doktordelete;
+
+    //Item/Titles--->Physician---->doktor delete button delete
+    @FindBy(xpath="//button[@id='jhi-confirm-delete-physician']")
+    public WebElement doktordeletedelete;
+
+
+    //Item/Titles--->Physician---->doktor delete button--->alert message
+    @FindBy(xpath="//div[text()='Internal server error.']")
+    public WebElement doktordeletealertmessage;
 
     //Item/Titles--->Physician---->doktor wiev button
     @FindBy(xpath="//*[@id=\"app-view-container\"]/div/div/div/div/div[1]/div/table/tbody/tr[1]/td[18]/div/a[1]")
@@ -333,6 +342,12 @@ public class MedPage {
     //Item/Titles--->Physician---->doktor edit button---->First name
     @FindBy(xpath="//input[@value='Doctorpp']")
     public WebElement doktoreditbuttonfirstname;
+
+    @FindBy(xpath = "//select[@name='speciality']")
+    public WebElement doktorspeciality;
+
+    @FindBy(xpath = "//input[@name='examFee']")
+    public WebElement doktorexamFee;
 
     //Item/Titles--->Physician---->doktor edit button---->gender
     @FindBy(xpath="//select[@name='gender']")
